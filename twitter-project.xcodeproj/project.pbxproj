@@ -18,6 +18,8 @@
 		A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */; };
 		A9D1A47220EE643600E55550 /* AddTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */; };
 		A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */; };
+		A9D1A47B20EEA9F300E55550 /* EditTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47920EEA9F300E55550 /* EditTwit.storyboard */; };
+		A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitTableViewController.swift; sourceTree = "<group>"; };
 		A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddTwit.storyboard; path = ../../../../../../../.Trash/AddTwit.storyboard; sourceTree = "<group>"; };
+		A9D1A47A20EEA9F300E55550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "twitter-project/Start/View/Base.lproj/EditTwit.storyboard"; sourceTree = SOURCE_ROOT; };
+		A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTwitTableViewController.swift; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,7 @@
 				A9D1A45920EE5DA600E55550 /* Application */,
 				A9D1A45D20EE5F6500E55550 /* Start */,
 				A9D1A46A20EE633300E55550 /* AddTwit */,
+				A9D1A47520EEA93700E55550 /* EditTwit */,
 				A9D1A46120EE5F9C00E55550 /* Resources */,
 			);
 			path = "twitter-project";
@@ -199,6 +204,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A9D1A47520EEA93700E55550 /* EditTwit */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A47820EEA95C00E55550 /* Model */,
+				A9D1A47720EEA94F00E55550 /* View */,
+				A9D1A47620EEA94700E55550 /* Controller */,
+			);
+			path = EditTwit;
+			sourceTree = "<group>";
+		};
+		A9D1A47620EEA94700E55550 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9D1A47720EEA94F00E55550 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A47920EEA9F300E55550 /* EditTwit.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9D1A47820EEA95C00E55550 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CA07C0A917CC405C866C6CDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +307,7 @@
 			files = (
 				A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */,
 				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
+				A9D1A47B20EEA9F300E55550 /* EditTwit.storyboard in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
 				A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */,
@@ -328,6 +367,7 @@
 				A9D1A46520EE603800E55550 /* TwitterRealm.swift in Sources */,
 				A9D1A46720EE61A500E55550 /* TwitterTableViewController.swift in Sources */,
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
+				A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +388,14 @@
 				A9D1A44F20EE588600E55550 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A9D1A47920EEA9F300E55550 /* EditTwit.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9D1A47A20EEA9F300E55550 /* Base */,
+			);
+			name = EditTwit.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
