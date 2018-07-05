@@ -14,12 +14,16 @@
 		A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44E20EE588600E55550 /* LaunchScreen.storyboard */; };
 		A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A45720EE5D8F00E55550 /* .gitignore */; };
 		A9D1A46520EE603800E55550 /* TwitterRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46420EE603800E55550 /* TwitterRealm.swift */; };
-		A9D1A46720EE61A500E55550 /* TwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46620EE61A500E55550 /* TwitterTableViewController.swift */; };
+		A9D1A46720EE61A500E55550 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */; };
 		A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */; };
 		A9D1A47220EE643600E55550 /* AddTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */; };
 		A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */; };
 		A9D1A47B20EEA9F300E55550 /* EditTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47920EEA9F300E55550 /* EditTwit.storyboard */; };
 		A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */; };
+		A9D1A48020EEAD5B00E55550 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47F20EEAD5B00E55550 /* APIManager.swift */; };
+		A9D1A48220EEAD8000E55550 /* APIWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */; };
+		A9D1A48420EEADBA00E55550 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48320EEADBA00E55550 /* ErrorManager.swift */; };
+		A9D1A48620EEADE000E55550 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48520EEADE000E55550 /* CurrentWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +37,16 @@
 		A9D1A45120EE588600E55550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D1A45720EE5D8F00E55550 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A9D1A46420EE603800E55550 /* TwitterRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterRealm.swift; sourceTree = "<group>"; };
-		A9D1A46620EE61A500E55550 /* TwitterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTableViewController.swift; sourceTree = "<group>"; };
+		A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitTableViewController.swift; sourceTree = "<group>"; };
 		A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddTwit.storyboard; path = ../../../../../../../.Trash/AddTwit.storyboard; sourceTree = "<group>"; };
 		A9D1A47A20EEA9F300E55550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "twitter-project/Start/View/Base.lproj/EditTwit.storyboard"; sourceTree = SOURCE_ROOT; };
 		A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTwitTableViewController.swift; sourceTree = "<group>"; };
+		A9D1A47F20EEAD5B00E55550 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeatherManager.swift; sourceTree = "<group>"; };
+		A9D1A48320EEADBA00E55550 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		A9D1A48520EEADE000E55550 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */,
-				A9D1A46620EE61A500E55550 /* TwitterTableViewController.swift */,
+				A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,6 +165,8 @@
 		A9D1A46020EE5F8500E55550 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1A47E20EEAD2D00E55550 /* WeatherAPI */,
+				A9D1A48520EEADE000E55550 /* CurrentWeather.swift */,
 				A9D1A46420EE603800E55550 /* TwitterRealm.swift */,
 			);
 			path = Model;
@@ -235,6 +245,16 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A9D1A47E20EEAD2D00E55550 /* WeatherAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A47F20EEAD5B00E55550 /* APIManager.swift */,
+				A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */,
+				A9D1A48320EEADBA00E55550 /* ErrorManager.swift */,
+			);
+			path = WeatherAPI;
 			sourceTree = "<group>";
 		};
 		CA07C0A917CC405C866C6CDB /* Frameworks */ = {
@@ -362,12 +382,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D1A48420EEADBA00E55550 /* ErrorManager.swift in Sources */,
 				A9D1A47220EE643600E55550 /* AddTwitTableViewController.swift in Sources */,
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitterRealm.swift in Sources */,
-				A9D1A46720EE61A500E55550 /* TwitterTableViewController.swift in Sources */,
+				A9D1A46720EE61A500E55550 /* FeedTableViewController.swift in Sources */,
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
+				A9D1A48620EEADE000E55550 /* CurrentWeather.swift in Sources */,
 				A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */,
+				A9D1A48020EEAD5B00E55550 /* APIManager.swift in Sources */,
+				A9D1A48220EEAD8000E55550 /* APIWeatherManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
