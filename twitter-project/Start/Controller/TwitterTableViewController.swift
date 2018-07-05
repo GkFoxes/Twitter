@@ -76,7 +76,7 @@ class FeedTableViewController: UITableViewController {
         
         let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
             let twitToBeUpdated = self.twitList[indexPath.row]
-            self.performSegue(withIdentifier: "editDetail", sender: twitToBeUpdated)
+            self.performSegue(withIdentifier: "editTwit", sender: twitToBeUpdated)
         }
         
         edit.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
@@ -87,18 +87,16 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "editDetail" {
-//            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditDetailTableViewController
-//            
-//            let object = sender as! Messages
-//            
-//            let editText = object.text
-//            
-//            destinationEditViewController.editDetailName = editName
-//            destinationEditViewController.editDetailBiography = editBiography
-//            destinationEditViewController.editDetailLink = editLink
-//            destinationEditViewController.girlToDelete = object
-//        }
+        if segue.identifier == "editTwit" {
+            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitTableViewController
+            
+            let object = sender as! Messages
+            
+            let editText = object.text
+            
+            destinationEditViewController.editTwitText = editText
+            destinationEditViewController.twitToDelete = object
+        }
     }
     
     // MARK: - This Data for Weather API

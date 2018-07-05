@@ -59,6 +59,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableTwitContent" destination="OCP-GO-lNn" id="cNH-Ya-5Uc"/>
+                        <segue destination="Hsp-hz-MTO" kind="presentation" identifier="editTwit" id="SR1-o9-zfl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53b-NJ-JZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,6 +91,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHS-FF-AMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1231" y="-447"/>
+        </scene>
+        <!--EditTwit-->
+        <scene sceneID="VJb-6X-S2S">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditTwit" id="Hsp-hz-MTO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IM8-44-Pdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1230" y="41"/>
         </scene>
     </scenes>
 </document>
