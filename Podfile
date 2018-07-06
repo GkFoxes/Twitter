@@ -7,5 +7,8 @@ target 'twitter-project' do
 
   # Pods for twitter-project
     pod 'RealmSwift'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
 
 end

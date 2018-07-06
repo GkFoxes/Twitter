@@ -24,6 +24,7 @@
 		A9D1A48220EEAD8000E55550 /* APIWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */; };
 		A9D1A48420EEADBA00E55550 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48320EEADBA00E55550 /* ErrorManager.swift */; };
 		A9D1A48620EEADE000E55550 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48520EEADE000E55550 /* CurrentWeather.swift */; };
+		A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeatherManager.swift; sourceTree = "<group>"; };
 		A9D1A48320EEADBA00E55550 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		A9D1A48520EEADE000E55550 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 			children = (
 				A9D1A44C20EE588600E55550 /* Assets.xcassets */,
 				A9D1A45120EE588600E55550 /* Info.plist */,
+				A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
 				A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */,
+				A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,13 +348,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
