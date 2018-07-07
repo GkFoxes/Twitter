@@ -1,5 +1,5 @@
 //
-//  TwitterRealm.swift
+//  TwitRealm.swift
 //  twitter-project
 //
 //  Created by Дмитрий Матвеенко on 05.07.2018.
@@ -18,3 +18,4 @@ class Messages: Object {
         self.text = text
     }
 }
+
