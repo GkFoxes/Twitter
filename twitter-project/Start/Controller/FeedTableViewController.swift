@@ -35,19 +35,15 @@ class FeedTableViewController: UITableViewController {
         
         reference = Database.database().reference(withPath: "users")
         
-        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
-            if user != nil {
-                Auth.auth().signIn(withEmail: (self?.myEmail)!, password: (self?.myPassword)!) { (user, error) in
-                    if error != nil {
-                        let alert = UIAlertController(title: "Can not sign", message: "Please check again.", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                            NSLog("The \"OK\" alert occured.")
-                        }))
-                        self?.present(alert, animated: true, completion: nil)
-                    }
-                }
+        Auth.auth().signIn(withEmail: myEmail, password: myPassword) { (user, error) in
+            if error != nil {
+                let alert = UIAlertController(title: "Can not sign", message: "Please check again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
-        })
+        }
         
         guard let currentUser = Auth.auth().currentUser else { return }
         user = Username(user: currentUser)
@@ -56,19 +52,10 @@ class FeedTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-        self.reference.observe(.value, with: {[weak self] (snapshot) in
-            for item in snapshot.children {
-                let twits = Twit(snapshot: item as! DataSnapshot)
-                let twitForRealm = Messages()
-                twitForRealm.text = twits.text
-                
-                try! realm.write({
-                    realm.add(twitForRealm)
-                })
-            }
-            self?.tableTwitContent.reloadData()
-        })
+       
+        if !UserDefaults.standard.bool(forKey: "db_install") {
+            twitInitial()
+        }
         
         twitList = realm.objects(Messages.self)
         self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending:false)
@@ -117,6 +104,9 @@ class FeedTableViewController: UITableViewController {
             try! realm.write({
                 realm.delete(item)
             })
+            //let indexTwit = indexPath.row
+            let twit = self.twits[indexPath.row]
+            twit.reference?.removeValue()
             
             tableView.deleteRows(at:[indexPath], with: .automatic)
         }
@@ -149,6 +139,28 @@ class FeedTableViewController: UITableViewController {
             destinationEditViewController.editTwitText = editText
             destinationEditViewController.twitToDelete = object
         }
+    }
+    // MARK: - Initial Firebase Data
+    
+    func twitInitial() {
+        self.reference.observe(.value, with: {[weak self] (snapshot) in
+            var twitsFromFirebase = Array<Twit>()
+            
+            for item in snapshot.children {
+                let twits = Twit(snapshot: item as! DataSnapshot)
+                twitsFromFirebase.append(twits)
+                
+                let twitForRealm = Messages()
+                twitForRealm.text = twits.text
+                try! realm.write({
+                    realm.add(twitForRealm)
+                })
+            }
+            
+            self?.twits = twitsFromFirebase
+            self?.tableTwitContent.reloadData()
+        })
+        UserDefaults.standard.set(true, forKey: "db_install")
     }
     
     // MARK: - This Data for Weather API
