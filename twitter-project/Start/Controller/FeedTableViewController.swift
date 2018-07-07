@@ -8,9 +8,10 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 class FeedTableViewController: UITableViewController {
-
+    
     @IBOutlet var tableTwitContent: UITableView!
     @IBAction func close(segue: UIStoryboardSegue) {
         tableTwitContent.reloadData()
@@ -18,21 +19,67 @@ class FeedTableViewController: UITableViewController {
     
     var twitList: Results<Messages>!
     
+    var reference: DatabaseReference!
+    var user: Username!
+    var twits = Array<Twit>()
+    
+    let myEmail = "dima26tamys@gmail.com"
+    let myPassword = "xyz123456"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         realm = try! Realm()
-        fetchCurrentWeatherData()
+        
+        //fetchCurrentWeatherData()
+        
+        reference = Database.database().reference(withPath: "users")
+        
+        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
+            if user != nil {
+                Auth.auth().signIn(withEmail: (self?.myEmail)!, password: (self?.myPassword)!) { (user, error) in
+                    if error != nil {
+                        let alert = UIAlertController(title: "Can not sign", message: "Please check again.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                            NSLog("The \"OK\" alert occured.")
+                        }))
+                        self?.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+        })
+        
+        guard let currentUser = Auth.auth().currentUser else { return }
+        user = Username(user: currentUser)
+        reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    
+        self.reference.observe(.value, with: {[weak self] (snapshot) in
+            for item in snapshot.children {
+                let twits = Twit(snapshot: item as! DataSnapshot)
+                let twitForRealm = Messages()
+                twitForRealm.text = twits.text
+                
+                try! realm.write({
+                    realm.add(twitForRealm)
+                })
+            }
+            self?.tableTwitContent.reloadData()
+        })
         
         twitList = realm.objects(Messages.self)
         self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending:false)
         
         self.tableTwitContent.setEditing(false, animated: true)
         self.tableTwitContent.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.reference.removeAllObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,11 +134,16 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addSegue" {
+            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitTableViewController
+            destinationEditViewController.ref = reference
+            destinationEditViewController.user = user
+        }
+        
         if segue.identifier == "editTwit" {
             let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitTableViewController
             
             let object = sender as! Messages
-            
             let editText = object.text
             
             destinationEditViewController.editTwitText = editText

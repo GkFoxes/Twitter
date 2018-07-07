@@ -42,6 +42,7 @@ class EditTwitTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.tableFooterView = UIView()
         editTwitTextView.text = editTwitText
     }
     

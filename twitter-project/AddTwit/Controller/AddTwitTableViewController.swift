@@ -8,9 +8,13 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 class AddTwitTableViewController: UITableViewController {
-
+    
+    var ref: DatabaseReference!
+    var user: Username!
+    
     @IBOutlet weak var addTextView: UITextView!
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -28,12 +32,19 @@ class AddTwitTableViewController: UITableViewController {
             try! realm.write({
                 realm.add(twitItem)
             })
+
+            let twit = Twit(text: addTextView.text!, userId: (self.user.uid))
+            let taskRef = self.ref.child(twit.text.lowercased())
+            taskRef.setValue(twit.convertToDictionary())
+            
             performSegue(withIdentifier: "unwindSegueFromNewTwit", sender: self)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.tableFooterView = UIView()
     }
     
     override func didReceiveMemoryWarning() {

@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" id="dIa-YL-cUs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="58V-Qu-kwl">
                             <connections>
-                                <segue destination="7xN-Ad-Awa" kind="presentation" modalPresentationStyle="currentContext" id="4bl-bC-mq5"/>
+                                <segue destination="7xN-Ad-Awa" kind="presentation" identifier="addSegue" modalPresentationStyle="currentContext" id="4bl-bC-mq5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
