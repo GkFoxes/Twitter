@@ -12,23 +12,25 @@ import Firebase
 var twits = Array<Twit>()
 
 struct Twit {
+    var postId: String = ""
     let text: String
-    let userId: String
+    let username: String
     let date: Date
     let reference: DatabaseReference?
     
-    init(text: String, userId: String, date: Date) {
+    init(text: String, username: String, date: Date) {
+        //self.postId = postId
         self.text = text
-        self.userId = userId
+        self.username = username
         self.date = date
-        
         self.reference = nil
     }
     
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         text = snapshotValue["text"] as! String
-        userId = snapshotValue["userId"] as! String
+        username = snapshotValue["username"] as! String
+        postId = snapshot.key
         
         let dateString = snapshotValue["date"] as! String
         let dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
@@ -40,6 +42,6 @@ struct Twit {
     }
     
     func convertToDictionary() -> Any {
-        return ["text": text, "userId": userId, "date": "\(date)"]
+        return ["text": text, "username": username, "date": "\(date)"]
     }
 }

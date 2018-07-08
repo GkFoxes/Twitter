@@ -32,32 +32,36 @@ class FeedTableViewController: UITableViewController {
         
         //fetchCurrentWeatherData()
         
-        reference = Database.database().reference(withPath: "users")
+        //reference = Database.database().reference(withPath: "users")
         
-        Auth.auth().signIn(withEmail: myEmail, password: myPassword) { (user, error) in
-            if error != nil {
-                let alert = UIAlertController(title: "Can not sign", message: "Please check again.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                    NSLog("The \"OK\" alert occured.")
-                }))
-                self.present(alert, animated: true, completion: nil)
+        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
+            if user == nil {
+                Auth.auth().signIn(withEmail: (self?.myEmail)!, password: (self?.myPassword)!) { (user, error) in
+                    if error != nil {
+                        let alert = UIAlertController(title: "Can not sign", message: "Please check again.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                            NSLog("The \"OK\" alert occured.")
+                        }))
+                        self?.present(alert, animated: true, completion: nil)
+                    }
+                }
             }
-        }
+        })
         
-        guard let currentUser = Auth.auth().currentUser else { return }
-        user = Username(user: currentUser)
-        reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
+//        guard let currentUser = Auth.auth().currentUser else { return }
+//        user = Username(user: currentUser)
+//        reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
+        
+        if !UserDefaults.standard.bool(forKey: "db_install") {
+            twitInitial()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
-        if !UserDefaults.standard.bool(forKey: "db_install") {
-            twitInitial()
-        }
         
         twitList = realm.objects(Messages.self)
-        self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending: true)
+        self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending: false)
         
         self.tableTwitContent.setEditing(false, animated: true)
         self.tableTwitContent.reloadData()
@@ -142,6 +146,11 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Initial Firebase Data
     
     func twitInitial() {
+        
+        guard let currentUser = Auth.auth().currentUser else { return }
+        self.user = Username(user: currentUser)
+        self.reference = Database.database().reference(withPath: "users").child(String(self.user.uid)).child("twits")
+        
         self.reference.observe(.value, with: {[weak self] (snapshot) in
             
             for item in snapshot.children {
@@ -151,6 +160,7 @@ class FeedTableViewController: UITableViewController {
                 
                 let twitForRealm = Messages()
                 twitForRealm.text = twitsInitial.text
+                
                 try! realm.write({
                     realm.add(twitForRealm)
                 })

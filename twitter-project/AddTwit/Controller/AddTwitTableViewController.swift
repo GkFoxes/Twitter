@@ -35,9 +35,11 @@ class AddTwitTableViewController: UITableViewController {
             
             let dateNow = Date()
             
-            let twit = Twit(text: addTextView.text!, userId: (self.user.uid), date: dateNow)
+            let twit = Twit(text: addTextView.text!, username: ("GkFoxes"), date: dateNow)
             twits.append(twit)
-            let taskRef = self.ref.child(twit.text.lowercased())
+            twits.sort(by: { $0.date.compare($1.date) == .orderedDescending })
+            
+            let taskRef = self.ref.childByAutoId()
             taskRef.setValue(twit.convertToDictionary())
             
             performSegue(withIdentifier: "unwindSegueFromNewTwit", sender: self)

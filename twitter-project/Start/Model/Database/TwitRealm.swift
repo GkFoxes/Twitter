@@ -18,4 +18,3 @@ class Messages: Object {
         self.text = text
     }
 }
-
