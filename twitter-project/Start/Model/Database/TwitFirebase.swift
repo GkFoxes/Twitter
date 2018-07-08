@@ -9,15 +9,22 @@
 import Foundation
 import Firebase
 
+var twits = Array<Twit>()
+
 struct Twit {
     let text: String
     let userId: String
-    //var createdAt = NSDate()
+    //let postedDate: Date
     let reference: DatabaseReference?
     
     init(text: String, userId: String) {
         self.text = text
         self.userId = userId
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+       // guard let date = dateFormatter.date(from: dateString) else { return }
+        
         self.reference = nil
     }
     
@@ -25,7 +32,7 @@ struct Twit {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         text = snapshotValue["text"] as! String
         userId = snapshotValue["userId"] as! String
-        //createdAt = snapshotValue["createdAt"] as! NSDate
+        //postedDate = snapshotValue["postedDate"] as! String
         reference = snapshot.ref
     }
     

@@ -32,8 +32,9 @@ class AddTwitTableViewController: UITableViewController {
             try! realm.write({
                 realm.add(twitItem)
             })
-
+            
             let twit = Twit(text: addTextView.text!, userId: (self.user.uid))
+            twits.append(twit)
             let taskRef = self.ref.child(twit.text.lowercased())
             taskRef.setValue(twit.convertToDictionary())
             

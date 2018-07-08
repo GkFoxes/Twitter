@@ -21,7 +21,6 @@ class FeedTableViewController: UITableViewController {
     
     var reference: DatabaseReference!
     var user: Username!
-    var twits = Array<Twit>()
     
     let myEmail = "dima26tamys@gmail.com"
     let myPassword = "xyz123456"
@@ -58,7 +57,7 @@ class FeedTableViewController: UITableViewController {
         }
         
         twitList = realm.objects(Messages.self)
-        self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending:false)
+        self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending: true)
         
         self.tableTwitContent.setEditing(false, animated: true)
         self.tableTwitContent.reloadData()
@@ -104,8 +103,8 @@ class FeedTableViewController: UITableViewController {
             try! realm.write({
                 realm.delete(item)
             })
-            //let indexTwit = indexPath.row
-            let twit = self.twits[indexPath.row]
+            
+            let twit = twits[indexPath.row]
             twit.reference?.removeValue()
             
             tableView.deleteRows(at:[indexPath], with: .automatic)
@@ -144,20 +143,18 @@ class FeedTableViewController: UITableViewController {
     
     func twitInitial() {
         self.reference.observe(.value, with: {[weak self] (snapshot) in
-            var twitsFromFirebase = Array<Twit>()
             
             for item in snapshot.children {
-                let twits = Twit(snapshot: item as! DataSnapshot)
-                twitsFromFirebase.append(twits)
+                let twitsInitial = Twit(snapshot: item as! DataSnapshot)
+                twits.append(twitsInitial)
                 
                 let twitForRealm = Messages()
-                twitForRealm.text = twits.text
+                twitForRealm.text = twitsInitial.text
                 try! realm.write({
                     realm.add(twitForRealm)
                 })
             }
             
-            self?.twits = twitsFromFirebase
             self?.tableTwitContent.reloadData()
         })
         UserDefaults.standard.set(true, forKey: "db_install")
@@ -165,18 +162,18 @@ class FeedTableViewController: UITableViewController {
     
     // MARK: - This Data for Weather API
     
-    lazy var weatherManager = APIWeatherManager(apiKey: "416e4d01fc649f94c5c4b5c68ec20ed6")
-    
-    let coordinates = [
-        Coordinates(latitude: 59.939095, longitude: 30.315868, name: "St. Petersburg"),
-        Coordinates(latitude: 55.755814, longitude: 37.617635, name: "Moscow"),
-        Coordinates(latitude: 54.707390, longitude: 20.507307, name: "Kaliningrad"),
-        Coordinates(latitude: 53.195063, longitude: 45.018316, name: "Penza"),
-        Coordinates(latitude: 55.030199, longitude: 82.920430, name: "Novosibirsk"),
-        Coordinates(latitude: 55.796289, longitude: 49.108795, name: "Kazan"),
-        Coordinates(latitude: 58.522810, longitude: 31.269915, name: "Veliky Novgorod"),
-        Coordinates(latitude: 56.326887, longitude: 44.005986, name: "Nizhny Novgorod"),
-        Coordinates(latitude: 54.989342, longitude: 73.368212, name: "Omsk"),
-        Coordinates(latitude: 53.195538, longitude: 50.101783, name: "Samara")
-    ]
+//    lazy var weatherManager = APIWeatherManager(apiKey: "416e4d01fc649f94c5c4b5c68ec20ed6")
+//    
+//    let coordinates = [
+//        Coordinates(latitude: 59.939095, longitude: 30.315868, name: "St. Petersburg"),
+//        Coordinates(latitude: 55.755814, longitude: 37.617635, name: "Moscow"),
+//        Coordinates(latitude: 54.707390, longitude: 20.507307, name: "Kaliningrad"),
+//        Coordinates(latitude: 53.195063, longitude: 45.018316, name: "Penza"),
+//        Coordinates(latitude: 55.030199, longitude: 82.920430, name: "Novosibirsk"),
+//        Coordinates(latitude: 55.796289, longitude: 49.108795, name: "Kazan"),
+//        Coordinates(latitude: 58.522810, longitude: 31.269915, name: "Veliky Novgorod"),
+//        Coordinates(latitude: 56.326887, longitude: 44.005986, name: "Nizhny Novgorod"),
+//        Coordinates(latitude: 54.989342, longitude: 73.368212, name: "Omsk"),
+//        Coordinates(latitude: 53.195538, longitude: 50.101783, name: "Samara")
+//    ]
 }
