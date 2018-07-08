@@ -9,27 +9,39 @@
 import Foundation
 import Firebase
 
+var twits = Array<Twit>()
+
 struct Twit {
+    var postId: String = ""
     let text: String
-    let userId: String
-    //var createdAt = NSDate()
+    let username: String
+    let date: Date
     let reference: DatabaseReference?
     
-    init(text: String, userId: String) {
+    init(text: String, username: String, date: Date) {
+        //self.postId = postId
         self.text = text
-        self.userId = userId
+        self.username = username
+        self.date = date
         self.reference = nil
     }
     
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         text = snapshotValue["text"] as! String
-        userId = snapshotValue["userId"] as! String
-        //createdAt = snapshotValue["createdAt"] as! NSDate
+        username = snapshotValue["username"] as! String
+        postId = snapshot.key
+        
+        let dateString = snapshotValue["date"] as! String
+        let dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        date = dateFormatter.date(from: dateString)!
+        
         reference = snapshot.ref
     }
     
     func convertToDictionary() -> Any {
-        return ["text": text, "userId": userId]
+        return ["text": text, "username": username, "date": "\(date)"]
     }
 }

@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class EditTwitTableViewController: UITableViewController {
-
+    
+    var ref: DatabaseReference!
+    
+    var user: Username!
     @IBOutlet weak var editTwitTextView: UITextView!
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -31,6 +35,8 @@ class EditTwitTableViewController: UITableViewController {
             try! realm.write({
                 realm.delete(twitToDelete)
             })
+            
+//            ref.child("yourKey").child("yourKey").updateChildValues(["yourKey": yourValue])
             performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
         }
     }
