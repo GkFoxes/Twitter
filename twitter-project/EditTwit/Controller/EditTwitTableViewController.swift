@@ -11,9 +11,12 @@ import Firebase
 
 class EditTwitTableViewController: UITableViewController {
     
+    var editTwitText = "Twit"
+    var twitToDelete = Messages()
     var ref: DatabaseReference!
-    
     var user: Username!
+    var twitToEdit: Twit!
+    
     @IBOutlet weak var editTwitTextView: UITextView!
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -28,28 +31,25 @@ class EditTwitTableViewController: UITableViewController {
             let twitlItem = Messages()
             twitlItem.text = editTwitTextView.text!
             
-            try! realm.write({
-                realm.add(twitlItem, update: false)
-            })
+            try! realm.write {
+                twitToDelete.text = twitlItem.text
+            }
             
-            try! realm.write({
-                realm.delete(twitToDelete)
-            })
-            
-//            ref.child("yourKey").child("yourKey").updateChildValues(["yourKey": yourValue])
+            ref.child(twitToEdit.postId).updateChildValues(["text" : editTwitTextView.text])
             performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
         }
     }
-    
-    var editTwitText = "Twit"
-    
-    var twitToDelete = Messages()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.tableFooterView = UIView()
         editTwitTextView.text = editTwitText
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        editTwitTextView.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {

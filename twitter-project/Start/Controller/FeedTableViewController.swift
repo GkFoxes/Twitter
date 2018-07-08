@@ -115,8 +115,8 @@ class FeedTableViewController: UITableViewController {
         }
         
         let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
-            let twitToBeUpdated = self.twitList[indexPath.row]
-            self.performSegue(withIdentifier: "editTwit", sender: twitToBeUpdated)
+            let twitIndex = indexPath.row
+            self.performSegue(withIdentifier: "editTwit", sender: twitIndex)
         }
         
         edit.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
@@ -136,13 +136,19 @@ class FeedTableViewController: UITableViewController {
         if segue.identifier == "editTwit" {
             let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitTableViewController
             
-            let object = sender as! Messages
+            let index = sender as! Int
+            let object = twitList[index]
+            let objectToFirebase = twits[index]
             let editText = object.text
             
             destinationEditViewController.editTwitText = editText
             destinationEditViewController.twitToDelete = object
+            destinationEditViewController.ref = reference
+            destinationEditViewController.user = user
+            destinationEditViewController.twitToEdit = objectToFirebase
         }
     }
+    
     // MARK: - Initial Firebase Data
     
     func twitInitial() {
