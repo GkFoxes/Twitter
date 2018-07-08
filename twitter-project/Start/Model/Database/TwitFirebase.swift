@@ -14,16 +14,13 @@ var twits = Array<Twit>()
 struct Twit {
     let text: String
     let userId: String
-    //let postedDate: Date
+    let date: Date
     let reference: DatabaseReference?
     
-    init(text: String, userId: String) {
+    init(text: String, userId: String, date: Date) {
         self.text = text
         self.userId = userId
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
-       // guard let date = dateFormatter.date(from: dateString) else { return }
+        self.date = date
         
         self.reference = nil
     }
@@ -32,11 +29,17 @@ struct Twit {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         text = snapshotValue["text"] as! String
         userId = snapshotValue["userId"] as! String
-        //postedDate = snapshotValue["postedDate"] as! String
+        
+        let dateString = snapshotValue["date"] as! String
+        let dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        date = dateFormatter.date(from: dateString)!
+        
         reference = snapshot.ref
     }
     
     func convertToDictionary() -> Any {
-        return ["text": text, "userId": userId]
+        return ["text": text, "userId": userId, "date": "\(date)"]
     }
 }

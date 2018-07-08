@@ -147,6 +147,7 @@ class FeedTableViewController: UITableViewController {
             for item in snapshot.children {
                 let twitsInitial = Twit(snapshot: item as! DataSnapshot)
                 twits.append(twitsInitial)
+                twits.sort(by: { $0.date.compare($1.date) == .orderedDescending })
                 
                 let twitForRealm = Messages()
                 twitForRealm.text = twitsInitial.text
