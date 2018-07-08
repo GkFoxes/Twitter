@@ -15,6 +15,7 @@ class EditTwitTableViewController: UITableViewController {
     var twitToDelete = Messages()
     var ref: DatabaseReference!
     var user: Username!
+    var twitToEdit: Twit!
     
     @IBOutlet weak var editTwitTextView: UITextView!
     
@@ -30,15 +31,11 @@ class EditTwitTableViewController: UITableViewController {
             let twitlItem = Messages()
             twitlItem.text = editTwitTextView.text!
             
-            try! realm.write({
-                realm.add(twitlItem, update: false)
-            })
+            try! realm.write {
+                twitToDelete.text = twitlItem.text
+            }
             
-            try! realm.write({
-                realm.delete(twitToDelete)
-            })
-            
-            //ref.child("users").child("\(user.uid)").child("twits").updateChildValues([AnyHashable : Any])
+            ref.child(twitToEdit.postId).updateChildValues(["text" : editTwitTextView.text])
             performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
         }
     }
@@ -48,6 +45,11 @@ class EditTwitTableViewController: UITableViewController {
         
         self.tableView.tableFooterView = UIView()
         editTwitTextView.text = editTwitText
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        editTwitTextView.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
