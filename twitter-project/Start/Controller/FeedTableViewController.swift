@@ -11,12 +11,7 @@ import RealmSwift
 import Firebase
 
 class FeedTableViewController: UITableViewController {
-    
-    @IBOutlet var tableTwitContent: UITableView!
-    @IBAction func close(segue: UIStoryboardSegue) {
-        tableTwitContent.reloadData()
-    }
-    
+   
     var twitList: Results<Messages>!
     
     var reference: DatabaseReference!
@@ -25,28 +20,31 @@ class FeedTableViewController: UITableViewController {
     let myEmail = "dima26tamys@gmail.com"
     let myPassword = "xyz123456"
     
+    @IBOutlet var tableTwitContent: UITableView!
+    @IBAction func close(segue: UIStoryboardSegue) {
+        tableTwitContent.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         realm = try! Realm()
         
-        //fetchCurrentWeatherData()
-        
         //reference = Database.database().reference(withPath: "users")
         
-        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
-            if user == nil {
-                Auth.auth().signIn(withEmail: (self?.myEmail)!, password: (self?.myPassword)!) { (user, error) in
-                    if error != nil {
-                        let alert = UIAlertController(title: "Can not sign", message: "Please check again.", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                            NSLog("The \"OK\" alert occured.")
-                        }))
-                        self?.present(alert, animated: true, completion: nil)
-                    }
-                }
-            }
-        })
+//        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
+//            if user == nil {
+//                Auth.auth().signIn(withEmail: (self?.myEmail)!, password: (self?.myPassword)!) { (user, error) in
+//                    if error != nil {
+//                        let alert = UIAlertController(title: "Can not sign", message: "Please check again.", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+//                            NSLog("The \"OK\" alert occured.")
+//                        }))
+//                        self?.present(alert, animated: true, completion: nil)
+//                    }
+//                }
+//            }
+//        })
         
 //        guard let currentUser = Auth.auth().currentUser else { return }
 //        user = Username(user: currentUser)
@@ -176,21 +174,4 @@ class FeedTableViewController: UITableViewController {
         })
         UserDefaults.standard.set(true, forKey: "db_install")
     }
-    
-    // MARK: - This Data for Weather API
-    
-//    lazy var weatherManager = APIWeatherManager(apiKey: "416e4d01fc649f94c5c4b5c68ec20ed6")
-//    
-//    let coordinates = [
-//        Coordinates(latitude: 59.939095, longitude: 30.315868, name: "St. Petersburg"),
-//        Coordinates(latitude: 55.755814, longitude: 37.617635, name: "Moscow"),
-//        Coordinates(latitude: 54.707390, longitude: 20.507307, name: "Kaliningrad"),
-//        Coordinates(latitude: 53.195063, longitude: 45.018316, name: "Penza"),
-//        Coordinates(latitude: 55.030199, longitude: 82.920430, name: "Novosibirsk"),
-//        Coordinates(latitude: 55.796289, longitude: 49.108795, name: "Kazan"),
-//        Coordinates(latitude: 58.522810, longitude: 31.269915, name: "Veliky Novgorod"),
-//        Coordinates(latitude: 56.326887, longitude: 44.005986, name: "Nizhny Novgorod"),
-//        Coordinates(latitude: 54.989342, longitude: 73.368212, name: "Omsk"),
-//        Coordinates(latitude: 53.195538, longitude: 50.101783, name: "Samara")
-//    ]
 }

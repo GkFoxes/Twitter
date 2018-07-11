@@ -74,36 +74,19 @@
         <!--twitter-project-->
         <scene sceneID="mKz-bs-3Yg">
             <objects>
-                <viewController id="C5U-N3-YbA" sceneMemberID="viewController">
+                <viewController id="C5U-N3-YbA" customClass="LoginViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C87-IN-hts">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This user does not exist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7B1-XR-45g">
-                                <rect key="frame" x="85.333333333333329" y="333.66666666666669" width="204.66666666666669" height="24"/>
+                                <rect key="frame" x="85.333333333333329" y="220.66666666666666" width="204.66666666666669" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.058155415096606489" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K0A-RS-QHI">
-                                <rect key="frame" x="16" y="395.66666666666669" width="343" height="75"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-V5-Q55">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywE-cY-liT">
-                                        <rect key="frame" x="0.0" y="45" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O2Z-TI-dL6">
-                                <rect key="frame" x="102.66666666666669" y="497.66666666666674" width="170" height="108"/>
+                                <rect key="frame" x="102.66666666666669" y="384" width="170" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbh-fN-nva">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="44"/>
@@ -115,12 +98,19 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.makesToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="agZ-QI-8LN" kind="show" id="ARd-Y7-kF4"/>
+                                            <action selector="loginTapped:" destination="C5U-N3-YbA" eventType="touchUpInside" id="GRa-Ud-28L"/>
+                                            <segue destination="agZ-QI-8LN" kind="show" identifier="feedSegue" id="ARd-Y7-kF4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xG-vA-kcw">
-                                        <rect key="frame" x="0.0" y="63.999999999999943" width="170" height="44"/>
+                                        <rect key="frame" x="0.0" y="64" width="170" height="44"/>
                                         <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="sF4-NP-slQ"/>
@@ -128,6 +118,12 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.makesToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="N5e-H7-rFM" kind="show" id="i9i-CZ-DK3"/>
                                         </connections>
@@ -138,11 +134,28 @@
                                     <constraint firstAttribute="width" constant="170" id="jQ6-mc-lNL"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K0A-RS-QHI">
+                                <rect key="frame" x="16" y="282" width="343" height="75"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-V5-Q55">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywE-cY-liT">
+                                        <rect key="frame" x="0.0" y="45" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.2593340342285948" green="0.67913491936462766" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="3EI-iQ-5Wb" firstAttribute="trailing" secondItem="K0A-RS-QHI" secondAttribute="trailing" constant="16" id="10y-xO-DaR"/>
-                            <constraint firstItem="K0A-RS-QHI" firstAttribute="centerY" secondItem="3EI-iQ-5Wb" secondAttribute="centerY" id="1GR-xz-oZo"/>
+                            <constraint firstItem="K0A-RS-QHI" firstAttribute="centerY" secondItem="3EI-iQ-5Wb" secondAttribute="centerY" constant="-113.5" id="1GR-xz-oZo"/>
                             <constraint firstItem="7B1-XR-45g" firstAttribute="centerX" secondItem="3EI-iQ-5Wb" secondAttribute="centerX" id="CLr-Yx-F2g"/>
                             <constraint firstItem="XD9-V5-Q55" firstAttribute="top" secondItem="7B1-XR-45g" secondAttribute="bottom" constant="37.5" id="IsR-au-PDI"/>
                             <constraint firstItem="K0A-RS-QHI" firstAttribute="leading" secondItem="3EI-iQ-5Wb" secondAttribute="leading" constant="16" id="J9q-dP-KdS"/>
@@ -152,7 +165,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3EI-iQ-5Wb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="twitter-project" id="06a-tb-Wlm"/>
+                    <navigationItem key="navigationItem" title="twitter-project" id="06a-tb-Wlm">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="hSn-Y9-PoX"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="XD9-V5-Q55" id="mR3-1I-1c8"/>
+                        <outlet property="passwordTextField" destination="ywE-cY-liT" id="EyV-mt-KzZ"/>
+                        <outlet property="warningLabel" destination="7B1-XR-45g" id="jT0-wb-dYz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOj-L4-OxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,7 +233,7 @@
         <!--twitter-project-->
         <scene sceneID="MvX-30-7bY">
             <objects>
-                <viewController id="N5e-H7-rFM" sceneMemberID="viewController">
+                <viewController id="N5e-H7-rFM" customClass="RegisterViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJo-5s-T7W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,13 +251,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9tr-9c-nf2">
                                         <rect key="frame" x="0.0" y="45" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -253,6 +273,15 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.makesToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="registerTapped:" destination="N5e-H7-rFM" eventType="touchUpInside" id="t6X-tW-SB4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -261,7 +290,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.46520408210000003" green="0.70300793610000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.25933403420000001" green="0.67913491940000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="KbP-kR-DP5" firstAttribute="centerY" secondItem="C7o-QX-Tuf" secondAttribute="centerY" id="1Jr-Qq-Fgz"/>
                             <constraint firstItem="KbP-kR-DP5" firstAttribute="leading" secondItem="C7o-QX-Tuf" secondAttribute="leading" constant="16" id="AL4-wc-Avi"/>
@@ -277,6 +306,11 @@
                         <viewLayoutGuide key="safeArea" id="C7o-QX-Tuf"/>
                     </view>
                     <navigationItem key="navigationItem" title="twitter-project" id="a8Z-At-Wuy"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="RRp-Hh-3Or" id="HV3-S4-ijI"/>
+                        <outlet property="passwordTextField" destination="9tr-9c-nf2" id="zM6-D2-rAH"/>
+                        <outlet property="warningLabel" destination="Bru-8P-IdJ" id="JIj-v0-oqZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZd-cC-JOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
