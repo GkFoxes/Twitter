@@ -19,27 +19,6 @@ class EditTwitTableViewController: UITableViewController {
     
     @IBOutlet weak var editTwitTextView: UITextView!
     
-    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        if ((editTwitTextView.text?.isEmpty)! || editTwitTextView.text == " ") {
-            let alert = UIAlertController(title: "Can not save", message: "You did not fill all the fields, please check again.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            
-            let twitlItem = Messages()
-            twitlItem.text = editTwitTextView.text!
-            
-            try! realm.write {
-                twitToDelete.text = twitlItem.text
-            }
-            
-            ref.child(twitToEdit.postId).updateChildValues(["text" : editTwitTextView.text])
-            performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,5 +43,28 @@ class EditTwitTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+    }
+    
+    // MARK: - Button Action
+    
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        if ((editTwitTextView.text?.isEmpty)! || editTwitTextView.text == " ") {
+            let alert = UIAlertController(title: "Can not save", message: "You did not fill all the fields, please check again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            
+            let twitlItem = Messages()
+            twitlItem.text = editTwitTextView.text!
+            
+            try! realm.write {
+                twitToDelete.text = twitlItem.text
+            }
+            
+            ref.child(twitToEdit.postId).updateChildValues(["text" : editTwitTextView.text])
+            performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
+        }
     }
 }
