@@ -92,13 +92,21 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Button Action
     
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            
-        } catch {
-            print(error.localizedDescription)
+        let alert = UIAlertController(title: "dima26tamys@gmail.com", message: "GkFoxes", preferredStyle: .alert)
+        
+        let exit = UIAlertAction(title: "Exit", style: .destructive) { _ in
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print(error.localizedDescription)
+            }
+            self.dismiss(animated: true, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        alert.addAction(cancel)
+        alert.addAction(exit)
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Delete and edit from table

@@ -12,6 +12,8 @@ import Firebase
 class LoginViewController: UIViewController {
     
     var reference: DatabaseReference!
+    fileprivate(set) var auth:Auth?
+    fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -23,12 +25,18 @@ class LoginViewController: UIViewController {
         warningLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users")
-        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
+//        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
+//            guard user != nil else {
+//                self?.performSegue(withIdentifier: "feedSegue", sender: nil)
+//                return
+//            }
+//        })
+        self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
             guard user != nil else {
-                self?.performSegue(withIdentifier: "feedSegue", sender: nil)
+                self.performSegue(withIdentifier: "feedSegue", sender: nil)
                 return
             }
-        })
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
