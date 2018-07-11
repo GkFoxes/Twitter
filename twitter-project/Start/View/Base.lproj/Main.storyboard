@@ -52,6 +52,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dIa-YL-cUs">
+                        <barButtonItem key="leftBarButtonItem" image="user" id="Vgr-mj-ZXm">
+                            <connections>
+                                <action selector="signOutTapped:" destination="1Kh-UX-b6y" id="5dh-bd-MM1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="58V-Qu-kwl">
                             <connections>
                                 <segue destination="7xN-Ad-Awa" kind="popoverPresentation" identifier="addSegue" popoverAnchorBarButtonItem="58V-Qu-kwl" id="4bl-bC-mq5">
@@ -80,13 +85,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This user does not exist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7B1-XR-45g">
-                                <rect key="frame" x="85.333333333333329" y="220.66666666666666" width="204.66666666666669" height="24"/>
+                                <rect key="frame" x="85.333333333333329" y="180.66666666666666" width="204.66666666666669" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.058155415096606489" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O2Z-TI-dL6">
-                                <rect key="frame" x="102.66666666666669" y="384" width="170" height="108"/>
+                                <rect key="frame" x="102.66666666666669" y="344" width="170" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbh-fN-nva">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="44"/>
@@ -106,7 +111,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginTapped:" destination="C5U-N3-YbA" eventType="touchUpInside" id="GRa-Ud-28L"/>
-                                            <segue destination="agZ-QI-8LN" kind="show" identifier="feedSegue" id="ARd-Y7-kF4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xG-vA-kcw">
@@ -135,7 +139,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K0A-RS-QHI">
-                                <rect key="frame" x="16" y="282" width="343" height="75"/>
+                                <rect key="frame" x="16" y="242" width="343" height="75"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-V5-Q55">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -147,7 +151,7 @@
                                         <rect key="frame" x="0.0" y="45" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -155,7 +159,7 @@
                         <color key="backgroundColor" red="0.2593340342285948" green="0.67913491936462766" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="3EI-iQ-5Wb" firstAttribute="trailing" secondItem="K0A-RS-QHI" secondAttribute="trailing" constant="16" id="10y-xO-DaR"/>
-                            <constraint firstItem="K0A-RS-QHI" firstAttribute="centerY" secondItem="3EI-iQ-5Wb" secondAttribute="centerY" constant="-113.5" id="1GR-xz-oZo"/>
+                            <constraint firstItem="K0A-RS-QHI" firstAttribute="centerY" secondItem="3EI-iQ-5Wb" secondAttribute="centerY" constant="-153.5" id="1GR-xz-oZo"/>
                             <constraint firstItem="7B1-XR-45g" firstAttribute="centerX" secondItem="3EI-iQ-5Wb" secondAttribute="centerX" id="CLr-Yx-F2g"/>
                             <constraint firstItem="XD9-V5-Q55" firstAttribute="top" secondItem="7B1-XR-45g" secondAttribute="bottom" constant="37.5" id="IsR-au-PDI"/>
                             <constraint firstItem="K0A-RS-QHI" firstAttribute="leading" secondItem="3EI-iQ-5Wb" secondAttribute="leading" constant="16" id="J9q-dP-KdS"/>
@@ -172,6 +176,7 @@
                         <outlet property="emailTextField" destination="XD9-V5-Q55" id="mR3-1I-1c8"/>
                         <outlet property="passwordTextField" destination="ywE-cY-liT" id="EyV-mt-KzZ"/>
                         <outlet property="warningLabel" destination="7B1-XR-45g" id="jT0-wb-dYz"/>
+                        <segue destination="agZ-QI-8LN" kind="show" identifier="feedSegue" id="efZ-Fc-l1K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOj-L4-OxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,7 +262,7 @@
                                         <rect key="frame" x="0.0" y="45" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -317,4 +322,7 @@
             <point key="canvasLocation" x="-322" y="505"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="user" width="30" height="30"/>
+    </resources>
 </document>

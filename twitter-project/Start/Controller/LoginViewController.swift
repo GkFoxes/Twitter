@@ -24,11 +24,13 @@ class LoginViewController: UIViewController {
         
         reference = Database.database().reference(withPath: "users")
         Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
-            if user != nil {
+            guard user != nil else {
                 self?.performSegue(withIdentifier: "feedSegue", sender: nil)
+                return
             }
         })
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
