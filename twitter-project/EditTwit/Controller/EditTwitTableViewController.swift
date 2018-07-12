@@ -12,10 +12,10 @@ import Firebase
 class EditTwitTableViewController: UITableViewController {
     
     var editTwitText = "Twit"
-    var twitToDelete = Messages()
     var ref: DatabaseReference!
     var user: Username!
-    var twitToEdit: Twit!
+    var twitRealmToEdit = Messages()
+    var twitFirebaseToEdit: Twit!
     
     @IBOutlet weak var editTwitTextView: UITextView!
     
@@ -60,10 +60,10 @@ class EditTwitTableViewController: UITableViewController {
             twitlItem.text = editTwitTextView.text!
             
             try! realm.write {
-                twitToDelete.text = twitlItem.text
+                twitRealmToEdit.text = twitlItem.text
             }
             
-            ref.child(twitToEdit.postId).updateChildValues(["text" : editTwitTextView.text])
+            ref.child(twitFirebaseToEdit.postId!).updateChildValues(["text" : editTwitTextView.text])
             performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
         }
     }

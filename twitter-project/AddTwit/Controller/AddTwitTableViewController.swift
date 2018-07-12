@@ -69,8 +69,9 @@ class AddTwitTableViewController: UITableViewController {
             
             let taskRef = self.ref.childByAutoId()
             taskRef.setValue(twit.convertToDictionary())
-            
+
             twit.reference = taskRef.ref
+            twit.postId = taskRef.key
             twits.insert(twit, at: 0)
 
             performSegue(withIdentifier: "unwindSegueFromNewTwit", sender: self)

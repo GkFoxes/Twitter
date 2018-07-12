@@ -25,12 +25,6 @@ class LoginViewController: UIViewController {
         warningLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users")
-        //        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
-        //            guard user != nil else {
-        //                self?.performSegue(withIdentifier: "feedSegue", sender: nil)
-        //                return
-        //            }
-        //        })
         self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
             guard user != nil else {
                 self.performSegue(withIdentifier: "feedSegue", sender: nil)
