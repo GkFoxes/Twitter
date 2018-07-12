@@ -12,17 +12,17 @@ import Firebase
 var twits = Array<Twit>()
 
 struct Twit {
-    var postId: String = ""
+    var postId: String?
     let text: String
     let username: String
     let date: Date
     var reference: DatabaseReference?
     
     init(text: String, username: String, date: Date) {
-        //self.postId = postId
         self.text = text
         self.username = username
         self.date = date
+        self.postId = nil
         self.reference = nil
     }
     

@@ -159,15 +159,19 @@ class FeedTableViewController: UITableViewController {
             let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitTableViewController
             
             let index = sender as! Int
+            
             let object = twitList[index]
-            let objectToFirebase = twits[index]
+            let objectToRealm = object
             let editText = object.text
             
+            var objectToFirebase = twits[index]
+            //objectToFirebase.postId = self.reference.childByAutoId()
+            
             destinationEditViewController.editTwitText = editText
-            destinationEditViewController.twitToDelete = object
             destinationEditViewController.ref = reference
             destinationEditViewController.user = user
-            destinationEditViewController.twitToEdit = objectToFirebase
+            destinationEditViewController.twitRealmToEdit = objectToRealm
+            destinationEditViewController.twitFirebaseToEdit = objectToFirebase
         }
     }
 }

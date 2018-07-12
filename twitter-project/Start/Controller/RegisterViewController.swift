@@ -44,9 +44,10 @@ class RegisterViewController: UIViewController {
                 return
             }
             
-            var user: Username!
-            let userRef = self?.reference.child(user.uid)
-            userRef?.setValue(["email": user?.email])
+            //var user: Username!
+            let userRef = self?.reference.child((user?.user.uid)!)
+            userRef?.setValue(["email": user?.user.email])
         })
+        self.performSegue(withIdentifier: "toLoginSegue", sender: nil)
     }
 }

@@ -315,6 +315,7 @@
                         <outlet property="emailTextField" destination="RRp-Hh-3Or" id="HV3-S4-ijI"/>
                         <outlet property="passwordTextField" destination="9tr-9c-nf2" id="zM6-D2-rAH"/>
                         <outlet property="warningLabel" destination="Bru-8P-IdJ" id="JIj-v0-oqZ"/>
+                        <segue destination="wsD-Cr-CFY" kind="show" identifier="toLoginSegue" id="RTa-An-vHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZd-cC-JOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
