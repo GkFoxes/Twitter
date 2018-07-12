@@ -31,7 +31,7 @@ class FeedTableViewController: UITableViewController {
         user = Username(user: currentUser)
         reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
-        self.reference.observe(.value, with: { (snapshot) in
+        self.reference.observeSingleEvent(of: .value, with: { (snapshot) in
             
             for item in snapshot.children {
                 let twitsInitial = Twit(snapshot: item as! DataSnapshot)
@@ -44,16 +44,18 @@ class FeedTableViewController: UITableViewController {
                 try! realm.write({
                     realm.add(twitForRealm)
                 })
+                
+                self.tableView.reloadData()
             }
         })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         twitList = realm.objects(Messages.self)
         self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending: false)
-
+        
         self.tableTwitContent.setEditing(false, animated: true)
         self.tableTwitContent.reloadData()
     }
@@ -95,12 +97,18 @@ class FeedTableViewController: UITableViewController {
         let alert = UIAlertController(title: "dima26tamys@gmail.com", message: "GkFoxes", preferredStyle: .alert)
         
         let exit = UIAlertAction(title: "Exit", style: .destructive) { _ in
+            
             do {
                 try Auth.auth().signOut()
             } catch {
                 print(error.localizedDescription)
             }
             self.dismiss(animated: true, completion: nil)
+            
+            twits.removeAll()
+            try! realm.write {
+                realm.deleteAll()
+            }
         }
         let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         
@@ -112,28 +120,30 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Delete and edit from table
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
+
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let item = self.twitList[indexPath.row]
-            
+
             let twit = twits[indexPath.row]
+            twits.remove(at: indexPath.row)
             twit.reference?.removeValue()
-            
+
             try! realm.write({
                 realm.delete(item)
             })
-            
+
             tableView.deleteRows(at:[indexPath], with: .automatic)
         }
-        
+
         let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
             let twitIndex = indexPath.row
             self.performSegue(withIdentifier: "editTwit", sender: twitIndex)
         }
-        
+
         edit.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         delete.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         return [delete, edit]
+        //return [edit]
     }
     
     // MARK: - Segues

@@ -25,12 +25,12 @@ class LoginViewController: UIViewController {
         warningLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users")
-//        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
-//            guard user != nil else {
-//                self?.performSegue(withIdentifier: "feedSegue", sender: nil)
-//                return
-//            }
-//        })
+        //        Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
+        //            guard user != nil else {
+        //                self?.performSegue(withIdentifier: "feedSegue", sender: nil)
+        //                return
+        //            }
+        //        })
         self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
             guard user != nil else {
                 self.performSegue(withIdentifier: "feedSegue", sender: nil)
@@ -61,11 +61,12 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        guard let email = emailTextField.text,
-            let password = passwordTextField.text,
+        guard let email = emailTextField.text, let password = passwordTextField.text,
             email != "", password != ""
-            else { displayWarningLabel(withText: "Info is incorrect")
-                return }
+            else {
+                displayWarningLabel(withText: "Info is incorrect")
+                return
+        }
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
             if error != nil {
