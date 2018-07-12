@@ -16,7 +16,7 @@ struct Twit {
     let text: String
     let username: String
     let date: Date
-    let reference: DatabaseReference?
+    var reference: DatabaseReference?
     
     init(text: String, username: String, date: Date) {
         //self.postId = postId

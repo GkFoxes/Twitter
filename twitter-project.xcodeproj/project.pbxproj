@@ -11,6 +11,8 @@
 		A940D7C520F0D64500AD67F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C420F0D64500AD67F4 /* User.swift */; };
 		A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */; };
 		A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */; };
+		A9ACA80120F61CB8002C78E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */; };
+		A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */; };
 		A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A44520EE588400E55550 /* AppDelegate.swift */; };
 		A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44920EE588400E55550 /* Main.storyboard */; };
 		A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44C20EE588600E55550 /* Assets.xcassets */; };
@@ -22,10 +24,6 @@
 		A9D1A47220EE643600E55550 /* AddTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */; };
 		A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */; };
 		A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */; };
-		A9D1A48020EEAD5B00E55550 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47F20EEAD5B00E55550 /* APIManager.swift */; };
-		A9D1A48220EEAD8000E55550 /* APIWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */; };
-		A9D1A48420EEADBA00E55550 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48320EEADBA00E55550 /* ErrorManager.swift */; };
-		A9D1A48620EEADE000E55550 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A48520EEADE000E55550 /* CurrentWeather.swift */; };
 		A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +33,8 @@
 		A940D7C420F0D64500AD67F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitFirebase.swift; sourceTree = "<group>"; };
 		A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditTwit.storyboard; sourceTree = "<group>"; };
+		A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A9D1A44220EE588400E55550 /* twitter-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "twitter-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D1A44520EE588400E55550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D1A44A20EE588400E55550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,10 +48,6 @@
 		A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitTableViewController.swift; sourceTree = "<group>"; };
 		A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddTwit.storyboard; path = ../../../../../../../.Trash/AddTwit.storyboard; sourceTree = "<group>"; };
 		A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTwitTableViewController.swift; sourceTree = "<group>"; };
-		A9D1A47F20EEAD5B00E55550 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeatherManager.swift; sourceTree = "<group>"; };
-		A9D1A48320EEADBA00E55550 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
-		A9D1A48520EEADE000E55550 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +160,8 @@
 		A9D1A45E20EE5F7600E55550 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */,
+				A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */,
 				A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */,
 				A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */,
 			);
@@ -181,7 +179,6 @@
 		A9D1A46020EE5F8500E55550 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A9D1A47E20EEAD2D00E55550 /* WeatherAPI */,
 				A940D7C820F0DB8600AD67F4 /* Database */,
 			);
 			path = Model;
@@ -261,17 +258,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A9D1A47E20EEAD2D00E55550 /* WeatherAPI */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1A47F20EEAD5B00E55550 /* APIManager.swift */,
-				A9D1A48120EEAD8000E55550 /* APIWeatherManager.swift */,
-				A9D1A48320EEADBA00E55550 /* ErrorManager.swift */,
-				A9D1A48520EEADE000E55550 /* CurrentWeather.swift */,
-			);
-			path = WeatherAPI;
 			sourceTree = "<group>";
 		};
 		CA07C0A917CC405C866C6CDB /* Frameworks */ = {
@@ -408,18 +394,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D1A48420EEADBA00E55550 /* ErrorManager.swift in Sources */,
+				A9ACA80120F61CB8002C78E7 /* LoginViewController.swift in Sources */,
+				A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */,
 				A9D1A47220EE643600E55550 /* AddTwitTableViewController.swift in Sources */,
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */,
 				A9D1A46720EE61A500E55550 /* FeedTableViewController.swift in Sources */,
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
-				A9D1A48620EEADE000E55550 /* CurrentWeather.swift in Sources */,
 				A940D7C520F0D64500AD67F4 /* User.swift in Sources */,
 				A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */,
-				A9D1A48020EEAD5B00E55550 /* APIManager.swift in Sources */,
 				A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */,
-				A9D1A48220EEAD8000E55550 /* APIWeatherManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

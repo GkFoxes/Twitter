@@ -17,35 +17,6 @@ class AddTwitTableViewController: UITableViewController {
     
     @IBOutlet weak var addTextView: UITextView!
     
-    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        if ((addTextView.text?.isEmpty)! || addTextView.text == " ") {
-            let alert = UIAlertController(title: "Can not save", message: "You did not fill all the fields, please check again.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            
-            let twitItem = Messages()
-            twitItem.text = addTextView.text!
-            
-            try! realm.write({
-                realm.add(twitItem)
-            })
-            
-            let dateNow = Date()
-            
-            let twit = Twit(text: addTextView.text!, username: ("GkFoxes"), date: dateNow)
-            twits.append(twit)
-            twits.sort(by: { $0.date.compare($1.date) == .orderedDescending })
-            
-            let taskRef = self.ref.childByAutoId()
-            taskRef.setValue(twit.convertToDictionary())
-            
-            performSegue(withIdentifier: "unwindSegueFromNewTwit", sender: self)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,5 +44,36 @@ class AddTwitTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Add new Twit"
+    }
+    
+    // MARK: - Button Action
+    
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        if ((addTextView.text?.isEmpty)! || addTextView.text == " ") {
+            let alert = UIAlertController(title: "Can not save", message: "You did not fill all the fields, please check again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            
+            let twitItem = Messages()
+            twitItem.text = addTextView.text!
+            
+            try! realm.write({
+                realm.add(twitItem)
+            })
+            
+            let dateNow = Date()
+            var twit = Twit(text: addTextView.text!, username: ("GkFoxes"), date: dateNow)
+            
+            let taskRef = self.ref.childByAutoId()
+            taskRef.setValue(twit.convertToDictionary())
+            
+            twit.reference = taskRef.ref
+            twits.insert(twit, at: 0)
+
+            performSegue(withIdentifier: "unwindSegueFromNewTwit", sender: self)
+        }
     }
 }
