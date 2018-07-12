@@ -94,7 +94,7 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Button Action
     
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "dima26tamys@gmail.com", message: "GkFoxes", preferredStyle: .alert)
+        let alert = UIAlertController(title: user.email, message: "", preferredStyle: .alert)
         
         let exit = UIAlertAction(title: "Exit", style: .destructive) { _ in
             
@@ -143,7 +143,6 @@ class FeedTableViewController: UITableViewController {
         edit.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         delete.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         return [delete, edit]
-        //return [edit]
     }
     
     // MARK: - Segues
@@ -162,10 +161,8 @@ class FeedTableViewController: UITableViewController {
             
             let object = twitList[index]
             let objectToRealm = object
+            let objectToFirebase = twits[index]
             let editText = object.text
-            
-            var objectToFirebase = twits[index]
-            //objectToFirebase.postId = self.reference.childByAutoId()
             
             destinationEditViewController.editTwitText = editText
             destinationEditViewController.ref = reference
