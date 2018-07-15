@@ -68,3 +68,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 .DS_Store
 
+twitter-project/Resources/GoogleService-Info.plist
