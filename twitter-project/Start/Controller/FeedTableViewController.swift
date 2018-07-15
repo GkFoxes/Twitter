@@ -14,7 +14,7 @@ class FeedTableViewController: UITableViewController {
     
     var twitList: Results<Messages>!
     
-    var reference: DatabaseReference!
+    var ref: DatabaseReference!
     var user: Username!
     
     @IBOutlet var tableTwitContent: UITableView!
@@ -29,9 +29,9 @@ class FeedTableViewController: UITableViewController {
         
         guard let currentUser = Auth.auth().currentUser else { return }
         user = Username(user: currentUser)
-        reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
+        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
-        self.reference.observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
             
             for item in snapshot.children {
                 let twitsInitial = Twit(snapshot: item as! DataSnapshot)
@@ -52,7 +52,7 @@ class FeedTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         twitList = realm.objects(Messages.self)
         self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending: false)
         
@@ -62,7 +62,7 @@ class FeedTableViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.reference.removeAllObservers()
+        self.ref.removeAllObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,7 +94,44 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Button Action
     
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "dima26tamys@gmail.com", message: "GkFoxes", preferredStyle: .alert)
+        let alert = UIAlertController(title: user.email, message: "You can update the data or sign out", preferredStyle: .alert)
+        alert.addTextField { (textFieldEmail) in
+            textFieldEmail.placeholder = "Email"
+        }
+        alert.addTextField { (textFieldPassword) in
+            textFieldPassword.placeholder = "Password"
+            textFieldPassword.isSecureTextEntry = true
+        }
+        
+        let update = UIAlertAction(title: "Save", style: .default) { _ in
+            
+            let currentUser = Auth.auth().currentUser
+            
+            if alert.textFields?.first?.text != "" {
+                let textFieldEmail = alert.textFields?.first?.text
+                
+                currentUser?.updateEmail(to: textFieldEmail!) { error in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        self.user.email = textFieldEmail!
+                        
+                        let userRef = Database.database().reference(withPath: "users").child(String(self.user.uid))
+                        userRef.updateChildValues(["email": textFieldEmail!])
+                    }
+                }
+            }
+            
+            if alert.textFields?[1].text != "" {
+                let textFieldPassword = alert.textFields?[1].text
+                
+                currentUser?.updatePassword(to: textFieldPassword!) { error in
+                    if let error = error {
+                        print(error)
+                    }
+                }
+            }
+        }
         
         let exit = UIAlertAction(title: "Exit", style: .destructive) { _ in
             
@@ -110,8 +147,10 @@ class FeedTableViewController: UITableViewController {
                 realm.deleteAll()
             }
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(update)
         alert.addAction(cancel)
         alert.addAction(exit)
         present(alert, animated: true, completion: nil)
@@ -120,30 +159,29 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Delete and edit from table
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-
+        
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let item = self.twitList[indexPath.row]
-
+            
             let twit = twits[indexPath.row]
             twits.remove(at: indexPath.row)
             twit.reference?.removeValue()
-
+            
             try! realm.write({
                 realm.delete(item)
             })
-
+            
             tableView.deleteRows(at:[indexPath], with: .automatic)
         }
-
+        
         let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
             let twitIndex = indexPath.row
             self.performSegue(withIdentifier: "editTwit", sender: twitIndex)
         }
-
+        
         edit.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         delete.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         return [delete, edit]
-        //return [edit]
     }
     
     // MARK: - Segues
@@ -151,7 +189,7 @@ class FeedTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addSegue" {
             let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitTableViewController
-            destinationEditViewController.ref = reference
+            destinationEditViewController.ref = ref
             destinationEditViewController.user = user
         }
         
@@ -162,13 +200,11 @@ class FeedTableViewController: UITableViewController {
             
             let object = twitList[index]
             let objectToRealm = object
+            let objectToFirebase = twits[index]
             let editText = object.text
             
-            var objectToFirebase = twits[index]
-            //objectToFirebase.postId = self.reference.childByAutoId()
-            
             destinationEditViewController.editTwitText = editText
-            destinationEditViewController.ref = reference
+            destinationEditViewController.ref = ref
             destinationEditViewController.user = user
             destinationEditViewController.twitRealmToEdit = objectToRealm
             destinationEditViewController.twitFirebaseToEdit = objectToFirebase

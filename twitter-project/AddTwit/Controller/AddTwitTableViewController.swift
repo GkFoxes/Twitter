@@ -65,7 +65,7 @@ class AddTwitTableViewController: UITableViewController {
             })
             
             let dateNow = Date()
-            var twit = Twit(text: addTextView.text!, username: ("GkFoxes"), date: dateNow)
+            var twit = Twit(text: addTextView.text!, username: (user.email), date: dateNow)
             
             let taskRef = self.ref.childByAutoId()
             taskRef.setValue(twit.convertToDictionary())
