@@ -100,6 +100,7 @@ class FeedTableViewController: UITableViewController {
         }
         alert.addTextField { (textFieldPassword) in
             textFieldPassword.placeholder = "Password"
+            textFieldPassword.isSecureTextEntry = true
         }
         
         let update = UIAlertAction(title: "Save", style: .default) { _ in
