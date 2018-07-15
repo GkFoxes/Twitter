@@ -11,7 +11,7 @@ import Firebase
 
 struct Username {
     let uid: String
-    let email: String
+    var email: String
     
     init(user: User) {
         self.uid = user.uid

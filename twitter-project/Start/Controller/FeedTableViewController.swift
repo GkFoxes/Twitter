@@ -14,7 +14,7 @@ class FeedTableViewController: UITableViewController {
     
     var twitList: Results<Messages>!
     
-    var reference: DatabaseReference!
+    var ref: DatabaseReference!
     var user: Username!
     
     @IBOutlet var tableTwitContent: UITableView!
@@ -29,9 +29,9 @@ class FeedTableViewController: UITableViewController {
         
         guard let currentUser = Auth.auth().currentUser else { return }
         user = Username(user: currentUser)
-        reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
+        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
-        self.reference.observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
             
             for item in snapshot.children {
                 let twitsInitial = Twit(snapshot: item as! DataSnapshot)
@@ -62,7 +62,7 @@ class FeedTableViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.reference.removeAllObservers()
+        self.ref.removeAllObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,29 +102,33 @@ class FeedTableViewController: UITableViewController {
             textFieldPassword.placeholder = "Password"
         }
         
-        let update = UIAlertAction(title: "Update", style: .default) { _ in
+        let update = UIAlertAction(title: "Save", style: .default) { _ in
             
             let currentUser = Auth.auth().currentUser
             
             if alert.textFields?.first?.text != "" {
-                currentUser?.updateEmail(to: self.user.email) { error in
+                let textFieldEmail = alert.textFields?.first?.text
+                
+                currentUser?.updateEmail(to: textFieldEmail!) { error in
                     if let error = error {
                         print(error)
                     } else {
-                        // Email updated.
-                        currentUser?.updatePassword(password) { error in
-                            if let error = error {
-                                
-                            } else {
-                                // Password updated.
-                                print("success")
-                                
-                            }
-                        }
+                        self.user.email = textFieldEmail!
+                        
+                        let userRef = Database.database().reference(withPath: "users").child(String(self.user.uid))
+                        userRef.updateChildValues(["email": textFieldEmail!])
                     }
                 }
-            } else {
-                return
+            }
+            
+            if alert.textFields?[1].text != "" {
+                let textFieldPassword = alert.textFields?[1].text
+                
+                currentUser?.updatePassword(to: textFieldPassword!) { error in
+                    if let error = error {
+                        print(error)
+                    }
+                }
             }
         }
         
@@ -184,7 +188,7 @@ class FeedTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addSegue" {
             let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitTableViewController
-            destinationEditViewController.ref = reference
+            destinationEditViewController.ref = ref
             destinationEditViewController.user = user
         }
         
@@ -199,7 +203,7 @@ class FeedTableViewController: UITableViewController {
             let editText = object.text
             
             destinationEditViewController.editTwitText = editText
-            destinationEditViewController.ref = reference
+            destinationEditViewController.ref = ref
             destinationEditViewController.user = user
             destinationEditViewController.twitRealmToEdit = objectToRealm
             destinationEditViewController.twitFirebaseToEdit = objectToFirebase

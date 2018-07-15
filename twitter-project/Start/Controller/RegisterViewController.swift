@@ -43,8 +43,7 @@ class RegisterViewController: UIViewController {
                 print(error!.localizedDescription)
                 return
             }
-            
-            //var user: Username!
+
             let userRef = self?.reference.child((user?.user.uid)!)
             userRef?.setValue(["email": user?.user.email])
         })
