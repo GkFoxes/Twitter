@@ -24,35 +24,18 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         realm = try! Realm()
         
         guard let currentUser = Auth.auth().currentUser else { return }
         user = Username(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
-        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            for item in snapshot.children {
-                let twitsInitial = Twit(snapshot: item as! DataSnapshot)
-                twits.append(twitsInitial)
-                twits.sort(by: { $0.date.compare($1.date) == .orderedDescending })
-                
-                let twitForRealm = Messages()
-                twitForRealm.text = twitsInitial.text
-                
-                try! realm.write({
-                    realm.add(twitForRealm)
-                })
-                
-                self.tableView.reloadData()
-            }
-        })
+        initialData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         twitList = realm.objects(Messages.self)
         self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending: false)
         
@@ -62,15 +45,11 @@ class FeedTableViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.ref.removeAllObservers()
+        //self.ref.removeAllObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         tableTwitContent.reloadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // MARK: - Table view data source
@@ -146,6 +125,8 @@ class FeedTableViewController: UITableViewController {
             try! realm.write {
                 realm.deleteAll()
             }
+            
+            isLogin = false
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
