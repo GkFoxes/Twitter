@@ -25,11 +25,8 @@ class LoginViewController: UIViewController {
         warningLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users")
-        self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
-            guard user != nil else {
-                self.performSegue(withIdentifier: "feedSegue", sender: nil)
-                return
-            }
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "feedSegue", sender: nil)
         }
     }
     
@@ -76,5 +73,4 @@ class LoginViewController: UIViewController {
             self?.displayWarningLabel(withText: "No such user")
         })
     }
-    
 }
