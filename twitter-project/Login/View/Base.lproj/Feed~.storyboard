@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wsD-Cr-CFY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,11 +70,12 @@
                         <segue destination="Hsp-hz-MTO" kind="popoverPresentation" identifier="editTwit" popoverAnchorBarButtonItem="58V-Qu-kwl" id="SR1-o9-zfl">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="wsD-Cr-CFY" kind="showDetail" identifier="unwindToLogin" id="59v-lK-ZU6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53b-NJ-JZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247" y="-183"/>
+            <point key="canvasLocation" x="1804" y="-183"/>
         </scene>
         <!--twitter-project-->
         <scene sceneID="mKz-bs-3Yg">
@@ -176,7 +177,7 @@
                         <outlet property="emailTextField" destination="XD9-V5-Q55" id="mR3-1I-1c8"/>
                         <outlet property="passwordTextField" destination="ywE-cY-liT" id="EyV-mt-KzZ"/>
                         <outlet property="warningLabel" destination="7B1-XR-45g" id="jT0-wb-dYz"/>
-                        <segue destination="agZ-QI-8LN" kind="show" identifier="feedSegue" id="efZ-Fc-l1K"/>
+                        <segue destination="agZ-QI-8LN" kind="presentation" identifier="feedSegue" id="efZ-Fc-l1K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOj-L4-OxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,7 +187,6 @@
         <!--Navigation Controller-->
         <scene sceneID="VON-0c-Zrh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dtb-if-UP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="agZ-QI-8LN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hzz-FC-bgf">
@@ -198,8 +198,9 @@
                         <segue destination="1Kh-UX-b6y" kind="relationship" relationship="rootViewController" id="II4-zu-zBP"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dtb-if-UP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="-183"/>
+            <point key="canvasLocation" x="1084" y="-183"/>
         </scene>
         <!--AddTwit-->
         <scene sceneID="a7U-1j-XfJ">
@@ -207,7 +208,7 @@
                 <viewControllerPlaceholder storyboardName="AddTwit" id="7xN-Ad-Awa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHS-FF-AMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-448"/>
+            <point key="canvasLocation" x="2340" y="-449"/>
         </scene>
         <!--EditTwit-->
         <scene sceneID="VJb-6X-S2S">
@@ -215,7 +216,7 @@
                 <viewControllerPlaceholder storyboardName="EditTwit" id="Hsp-hz-MTO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IM8-44-Pdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="40"/>
+            <point key="canvasLocation" x="2339" y="40"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xHi-aD-L2i">
@@ -326,4 +327,8 @@
     <resources>
         <image name="user" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="II4-zu-zBP"/>
+        <segue reference="59v-lK-ZU6"/>
+    </inferredMetricsTieBreakers>
 </document>

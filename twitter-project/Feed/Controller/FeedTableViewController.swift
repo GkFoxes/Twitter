@@ -24,6 +24,7 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         realm = try! Realm()
         
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -31,7 +32,7 @@ class FeedTableViewController: UITableViewController {
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
         initialDataToFirebase()
-        if isLogin == true {
+        if isLoginFirst {
             initialDataToRealm()
         }
     }
@@ -85,7 +86,6 @@ class FeedTableViewController: UITableViewController {
         }
         
         let update = UIAlertAction(title: "Save", style: .default) { _ in
-            
             let currentUser = Auth.auth().currentUser
             
             if alert.textFields?.first?.text != "" {
@@ -128,7 +128,9 @@ class FeedTableViewController: UITableViewController {
                 realm.deleteAll()
             }
             
+            isLoginFirst = false
             isLogin = false
+            self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -171,13 +173,13 @@ class FeedTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addSegue" {
-            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitTableViewController
+            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitViewController
             destinationEditViewController.ref = ref
             destinationEditViewController.user = user
         }
         
         if segue.identifier == "editTwit" {
-            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitTableViewController
+            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitViewController
             
             let index = sender as! Int
             

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EditTwitTableViewController: UITableViewController {
+class EditTwitViewController: UIViewController {
     
     var editTwitText = "Twit"
     var ref: DatabaseReference!
@@ -22,7 +22,6 @@ class EditTwitTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.tableFooterView = UIView()
         editTwitTextView.text = editTwitText
     }
     
@@ -35,24 +34,12 @@ class EditTwitTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
     // MARK: - Button Action
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if ((editTwitTextView.text?.isEmpty)! || editTwitTextView.text == " ") {
             let alert = UIAlertController(title: "Can not save", message: "You did not fill all the fields, please check again.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             
@@ -64,7 +51,7 @@ class EditTwitTableViewController: UITableViewController {
             }
             
             ref.child(twitFirebaseToEdit.postId!).updateChildValues(["text" : editTwitTextView.text])
-            performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
+            performSegue(withIdentifier: "unwindSegueFromEditTwit", sender: self)
         }
     }
 }

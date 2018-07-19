@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Firebase
 
-class AddTwitTableViewController: UITableViewController {
+class AddTwitViewController: UIViewController {
     
     var ref: DatabaseReference!
     var user: Username!
@@ -19,8 +19,6 @@ class AddTwitTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,28 +30,12 @@ class AddTwitTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Add new Twit"
-    }
-    
     // MARK: - Button Action
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if ((addTextView.text?.isEmpty)! || addTextView.text == " ") {
             let alert = UIAlertController(title: "Can not save", message: "You did not fill all the fields, please check again.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             
@@ -69,11 +51,11 @@ class AddTwitTableViewController: UITableViewController {
             
             let taskRef = self.ref.childByAutoId()
             taskRef.setValue(twit.convertToDictionary())
-
+            
             twit.reference = taskRef.ref
             twit.postId = taskRef.key
             twits.insert(twit, at: 0)
-
+            
             performSegue(withIdentifier: "unwindSegueFromNewTwit", sender: self)
         }
     }

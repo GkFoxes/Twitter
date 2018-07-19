@@ -21,11 +21,12 @@
 		A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46420EE603800E55550 /* TwitRealm.swift */; };
 		A9D1A46720EE61A500E55550 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */; };
 		A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */; };
-		A9D1A47220EE643600E55550 /* AddTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */; };
+		A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitViewController.swift */; };
 		A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */; };
-		A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */; };
+		A9D1A47D20EEAA6E00E55550 /* EditTwitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47C20EEAA6E00E55550 /* EditTwitViewController.swift */; };
 		A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */; };
 		A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D34E2B20FF651200F457F0 /* InitialData.swift */; };
+		A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D34E362100C2AA00F457F0 /* Feed.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +47,12 @@
 		A9D1A46420EE603800E55550 /* TwitRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitRealm.swift; sourceTree = "<group>"; };
 		A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitTableViewController.swift; sourceTree = "<group>"; };
+		A9D1A47120EE643600E55550 /* AddTwitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitViewController.swift; sourceTree = "<group>"; };
 		A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddTwit.storyboard; path = ../../../../../../../.Trash/AddTwit.storyboard; sourceTree = "<group>"; };
-		A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTwitTableViewController.swift; sourceTree = "<group>"; };
+		A9D1A47C20EEAA6E00E55550 /* EditTwitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTwitViewController.swift; sourceTree = "<group>"; };
 		A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9D34E2B20FF651200F457F0 /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
+		A9D34E362100C2AA00F457F0 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,16 +75,6 @@
 				496B0C2F17EFC5B543794DA6 /* Pods-twitter-project.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		A940D7C820F0DB8600AD67F4 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				A940D7C420F0D64500AD67F4 /* User.swift */,
-				A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */,
-				A9D1A46420EE603800E55550 /* TwitRealm.swift */,
-			);
-			path = Database;
 			sourceTree = "<group>";
 		};
 		A9D1A43920EE588400E55550 = {
@@ -108,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				A9D1A45920EE5DA600E55550 /* Application */,
-				A9D1A45D20EE5F6500E55550 /* Start */,
+				A9D1A45D20EE5F6500E55550 /* Login */,
+				A9D34E2F2100C15A00F457F0 /* Feed */,
 				A9D1A46A20EE633300E55550 /* AddTwit */,
 				A9D1A47520EEA93700E55550 /* EditTwit */,
 				A9D1A46120EE5F9C00E55550 /* Resources */,
@@ -149,14 +142,14 @@
 			path = Contreller;
 			sourceTree = "<group>";
 		};
-		A9D1A45D20EE5F6500E55550 /* Start */ = {
+		A9D1A45D20EE5F6500E55550 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				A9D1A46020EE5F8500E55550 /* Model */,
 				A9D1A45F20EE5F7F00E55550 /* View */,
 				A9D1A45E20EE5F7600E55550 /* Controller */,
 			);
-			path = Start;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A9D1A45E20EE5F7600E55550 /* Controller */ = {
@@ -164,8 +157,6 @@
 			children = (
 				A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */,
 				A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */,
-				A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */,
-				A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -181,8 +172,9 @@
 		A9D1A46020EE5F8500E55550 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A940D7C820F0DB8600AD67F4 /* Database */,
-				A9D34E2B20FF651200F457F0 /* InitialData.swift */,
+				A940D7C420F0D64500AD67F4 /* User.swift */,
+				A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */,
+				A9D1A46420EE603800E55550 /* TwitRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,7 +202,7 @@
 		A9D1A46B20EE634200E55550 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A9D1A47120EE643600E55550 /* AddTwitTableViewController.swift */,
+				A9D1A47120EE643600E55550 /* AddTwitViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,7 +235,7 @@
 		A9D1A47620EEA94700E55550 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A9D1A47C20EEAA6E00E55550 /* EditTwitTableViewController.swift */,
+				A9D1A47C20EEAA6E00E55550 /* EditTwitViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,6 +251,41 @@
 		A9D1A47820EEA95C00E55550 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9D34E2F2100C15A00F457F0 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				A9D34E332100C1CE00F457F0 /* Model */,
+				A9D34E322100C1A500F457F0 /* View */,
+				A9D34E302100C18A00F457F0 /* Controller */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		A9D34E302100C18A00F457F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */,
+				A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9D34E322100C1A500F457F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9D34E362100C2AA00F457F0 /* Feed.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9D34E332100C1CE00F457F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9D34E2B20FF651200F457F0 /* InitialData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +360,7 @@
 			files = (
 				A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */,
 				A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */,
+				A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */,
 				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
@@ -399,14 +427,14 @@
 			files = (
 				A9ACA80120F61CB8002C78E7 /* LoginViewController.swift in Sources */,
 				A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */,
-				A9D1A47220EE643600E55550 /* AddTwitTableViewController.swift in Sources */,
+				A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */,
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */,
 				A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */,
 				A9D1A46720EE61A500E55550 /* FeedTableViewController.swift in Sources */,
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
 				A940D7C520F0D64500AD67F4 /* User.swift in Sources */,
-				A9D1A47D20EEAA6E00E55550 /* EditTwitTableViewController.swift in Sources */,
+				A9D1A47D20EEAA6E00E55550 /* EditTwitViewController.swift in Sources */,
 				A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

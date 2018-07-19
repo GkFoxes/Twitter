@@ -9,20 +9,18 @@
 import UIKit
 import Firebase
 
-var isLogin = false
+var isLoginFirst = false
 
 class LoginViewController: UIViewController {
     
     var reference: DatabaseReference!
     
-    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        warningLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users")
     }
@@ -36,44 +34,42 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "feedSegue", sender: nil)
-        }
-    }
-
-    func displayWarningLabel(withText text: String) {
-        warningLabel.text = text
         
-        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: { [weak self] in
-            self?.warningLabel.alpha = 1
-        }) { [weak self] complete in
-            self?.warningLabel.alpha = 0
+        if Auth.auth().currentUser != nil {
+            isLogin = true
         }
+        emailTextField.becomeFirstResponder()
+    }
+    
+    // MARK: - Warning alert manager
+    
+    func alertWarning(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Button Action
     
     @IBAction func loginTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text,
-            email != "", password != ""
-            else {
-                displayWarningLabel(withText: "Info is incorrect")
+            email != "", password != "" else {
+                alertWarning(title: "Empty field", message: "You did not fill all the fields, please check again.")
                 return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                self?.displayWarningLabel(withText: "Error occured")
-                return
+                self.alertWarning(title: "Can not login", message: "Warning, please check the entered data.")
             }
             
             if user != nil {
                 isLogin = true
-                self?.performSegue(withIdentifier: "feedSegue", sender: nil)
-                return
+                isLoginFirst = true
+                
+                self.performSegue(withIdentifier: "feedSegue", sender: nil)
             }
-            
-            self?.displayWarningLabel(withText: "No such user")
+            self.alertWarning(title: "Can not login", message: "User does not exist, please check the entered data.")
         })
     }
 }
