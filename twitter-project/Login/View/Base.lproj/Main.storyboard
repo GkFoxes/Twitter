@@ -219,7 +219,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="FeedTableViewController" storyboardName="Feed" id="dUw-rQ-qQD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84F-XO-aso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="107"/>
+            <point key="canvasLocation" x="97" y="109"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
