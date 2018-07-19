@@ -15,14 +15,12 @@ class LoginViewController: UIViewController {
     
     var reference: DatabaseReference!
     
-    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        warningLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users")
     }

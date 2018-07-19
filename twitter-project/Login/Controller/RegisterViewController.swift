@@ -13,14 +13,13 @@ class RegisterViewController: UIViewController {
     
     var ref: DatabaseReference!
     
-    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var registerLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        warningLabel.alpha = 0
         ref = Database.database().reference(withPath: "users")
     }
     
@@ -30,6 +29,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         emailTextField.becomeFirstResponder()
     }
     
