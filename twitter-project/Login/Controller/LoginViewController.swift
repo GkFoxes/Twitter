@@ -40,18 +40,15 @@ class LoginViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             isLogin = true
         }
+        emailTextField.becomeFirstResponder()
     }
     
-    // MARK: - Warning label manager
+    // MARK: - Warning alert manager
     
-    func displayWarningLabel(withText text: String) {
-        warningLabel.text = text
-        
-        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: { [weak self] in
-            self?.warningLabel.alpha = 1
-        }) { [weak self] complete in
-            self?.warningLabel.alpha = 0
-        }
+    func alertWarning(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Button Action
@@ -59,24 +56,22 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text,
             email != "", password != "" else {
-                displayWarningLabel(withText: "Info is incorrect")
+                alertWarning(title: "Empty field", message: "You did not fill all the fields, please check again.")
                 return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                self?.displayWarningLabel(withText: "Error occured")
-                return
+                self.alertWarning(title: "Can not login", message: "Warning, please check the entered data.")
             }
             
             if user != nil {
                 isLogin = true
                 isLoginFirst = true
                 
-                self?.performSegue(withIdentifier: "feedSegue", sender: nil)
-                return
+                self.performSegue(withIdentifier: "feedSegue", sender: nil)
             }
-            self?.displayWarningLabel(withText: "No such user")
+            self.alertWarning(title: "Can not login", message: "User does not exist, please check the entered data.")
         })
     }
 }

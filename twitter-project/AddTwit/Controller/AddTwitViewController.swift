@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Firebase
 
-class AddTwitTableViewController: UITableViewController {
+class AddTwitViewController: UIViewController {
     
     var ref: DatabaseReference!
     var user: Username!
@@ -19,8 +19,6 @@ class AddTwitTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,20 +28,6 @@ class AddTwitTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Add new Twit"
     }
     
     // MARK: - Button Action
@@ -67,11 +51,11 @@ class AddTwitTableViewController: UITableViewController {
             
             let taskRef = self.ref.childByAutoId()
             taskRef.setValue(twit.convertToDictionary())
-
+            
             twit.reference = taskRef.ref
             twit.postId = taskRef.key
             twits.insert(twit, at: 0)
-
+            
             performSegue(withIdentifier: "unwindSegueFromNewTwit", sender: self)
         }
     }

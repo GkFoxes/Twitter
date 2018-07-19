@@ -96,7 +96,7 @@ class FeedTableViewController: UITableViewController {
                         print(error)
                     } else {
                         self.user.email = textFieldEmail!
-            
+                        
                         let userRef = Database.database().reference(withPath: "users").child(String(self.user.uid))
                         userRef.updateChildValues(["email": textFieldEmail!])
                     }
@@ -173,13 +173,13 @@ class FeedTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addSegue" {
-            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitTableViewController
+            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitViewController
             destinationEditViewController.ref = ref
             destinationEditViewController.user = user
         }
         
         if segue.identifier == "editTwit" {
-            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitTableViewController
+            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! EditTwitViewController
             
             let index = sender as! Int
             

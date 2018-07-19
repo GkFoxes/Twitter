@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EditTwitTableViewController: UITableViewController {
+class EditTwitViewController: UIViewController {
     
     var editTwitText = "Twit"
     var ref: DatabaseReference!
@@ -22,7 +22,6 @@ class EditTwitTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.tableFooterView = UIView()
         editTwitTextView.text = editTwitText
     }
     
@@ -33,16 +32,6 @@ class EditTwitTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
     }
     
     // MARK: - Button Action
@@ -62,7 +51,7 @@ class EditTwitTableViewController: UITableViewController {
             }
             
             ref.child(twitFirebaseToEdit.postId!).updateChildValues(["text" : editTwitTextView.text])
-            performSegue(withIdentifier: "unwindEditSegueFromNewTwit", sender: self)
+            performSegue(withIdentifier: "unwindSegueFromEditTwit", sender: self)
         }
     }
 }
