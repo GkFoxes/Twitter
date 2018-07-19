@@ -57,19 +57,35 @@ class LoginViewController: UIViewController {
                 alertWarning(title: "Empty field", message: "You did not fill all the fields, please check again.")
                 return
         }
-        
-        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            if error != nil {
-                self.alertWarning(title: "Can not login", message: "Warning, please check the entered data.")
+        let queue = DispatchQueue.global(qos: .background)
+        queue.async{
+            DispatchQueue.main.async {
+                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                    if error != nil {
+                        self.alertWarning(title: "Can not login", message: "Warning, please check the entered data.")
+                    }
+                    
+                    if user != nil {
+                        isLogin = true
+                        isLoginFirst = true
+                        
+                        self.performSegue(withIdentifier: "feedSegue", sender: nil)
+                    }
+                })
+                //print("Did download  image data")
             }
-            
-            if user != nil {
-                isLogin = true
-                isLoginFirst = true
-                
-                self.performSegue(withIdentifier: "feedSegue", sender: nil)
-            }
+            //        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            //            if error != nil {
+            //                self.alertWarning(title: "Can not login", message: "Warning, please check the entered data.")
+            //            }
+            //
+            //            if user != nil {
+            //                isLogin = true
+            //                isLoginFirst = true
+            //
+            //                self.performSegue(withIdentifier: "feedSegue", sender: nil)
+            //            }
             self.alertWarning(title: "Can not login", message: "User does not exist, please check the entered data.")
-        })
+        }
     }
 }
