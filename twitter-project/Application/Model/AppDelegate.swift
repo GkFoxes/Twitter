@@ -27,36 +27,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
         
         if isLogin != true {
+            let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
             let loginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             let navigationController = UINavigationController.init(rootViewController: loginViewController)
             self.window?.rootViewController = navigationController
             self.window?.makeKeyAndVisible()
         } else {
-            let feedViewController = mainStoryboard.instantiateViewController(withIdentifier: "FeedTableViewController") as! FeedTableViewController
+            let feedStoryboard = UIStoryboard.init(name: "Feed", bundle: nil)
+            let feedViewController = feedStoryboard.instantiateViewController(withIdentifier: "FeedTableViewController") as! FeedTableViewController
             let navigationController = UINavigationController.init(rootViewController: feedViewController)
             self.window?.rootViewController = navigationController
             self.window?.makeKeyAndVisible()
         }
 
         return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
     }
 }
 

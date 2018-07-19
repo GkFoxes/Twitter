@@ -86,7 +86,6 @@ class FeedTableViewController: UITableViewController {
         }
         
         let update = UIAlertAction(title: "Save", style: .default) { _ in
-            
             let currentUser = Auth.auth().currentUser
             
             if alert.textFields?.first?.text != "" {
@@ -97,7 +96,7 @@ class FeedTableViewController: UITableViewController {
                         print(error)
                     } else {
                         self.user.email = textFieldEmail!
-                        
+            
                         let userRef = Database.database().reference(withPath: "users").child(String(self.user.uid))
                         userRef.updateChildValues(["email": textFieldEmail!])
                     }

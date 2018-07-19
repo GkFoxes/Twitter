@@ -13,7 +13,6 @@ var isLoginFirst = false
 
 class LoginViewController: UIViewController {
     
-    
     var reference: DatabaseReference!
     
     @IBOutlet weak var warningLabel: UILabel!
@@ -37,12 +36,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
+        
         if Auth.auth().currentUser != nil {
             isLogin = true
-            //self.performSegue(withIdentifier: "feedSegue", sender: nil)
         }
     }
-
+    
+    // MARK: - Warning label manager
+    
     func displayWarningLabel(withText text: String) {
         warningLabel.text = text
         
@@ -57,8 +58,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text,
-            email != "", password != ""
-            else {
+            email != "", password != "" else {
                 displayWarningLabel(withText: "Info is incorrect")
                 return
         }
@@ -76,7 +76,6 @@ class LoginViewController: UIViewController {
                 self?.performSegue(withIdentifier: "feedSegue", sender: nil)
                 return
             }
-            
             self?.displayWarningLabel(withText: "No such user")
         })
     }

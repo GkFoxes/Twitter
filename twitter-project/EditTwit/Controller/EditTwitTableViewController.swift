@@ -50,9 +50,7 @@ class EditTwitTableViewController: UITableViewController {
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if ((editTwitTextView.text?.isEmpty)! || editTwitTextView.text == " ") {
             let alert = UIAlertController(title: "Can not save", message: "You did not fill all the fields, please check again.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             
