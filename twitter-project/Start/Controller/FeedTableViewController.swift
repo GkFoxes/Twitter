@@ -30,12 +30,15 @@ class FeedTableViewController: UITableViewController {
         user = Username(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
-        initialData()
+        initialDataToFirebase()
+        if isLogin == true {
+            initialDataToRealm()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         twitList = realm.objects(Messages.self)
         self.twitList = self.twitList.sorted(byKeyPath: "createdAt", ascending: false)
         
@@ -43,13 +46,12 @@ class FeedTableViewController: UITableViewController {
         self.tableTwitContent.reloadData()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        //self.ref.removeAllObservers()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         tableTwitContent.reloadData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     // MARK: - Table view data source
