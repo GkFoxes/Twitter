@@ -24,7 +24,7 @@ extension FeedTableViewController {
                 self?.tableView.reloadData()
             }
         })
-        isLogin = false
+        isLoginFirst = false
     }
     
     func initialDataToFirebase() {

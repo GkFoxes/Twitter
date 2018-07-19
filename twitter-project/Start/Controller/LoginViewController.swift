@@ -9,9 +9,10 @@
 import UIKit
 import Firebase
 
-var isLogin = false
+var isLoginFirst = false
 
 class LoginViewController: UIViewController {
+    
     
     var reference: DatabaseReference!
     
@@ -37,7 +38,8 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "feedSegue", sender: nil)
+            isLogin = true
+            //self.performSegue(withIdentifier: "feedSegue", sender: nil)
         }
     }
 
@@ -69,6 +71,8 @@ class LoginViewController: UIViewController {
             
             if user != nil {
                 isLogin = true
+                isLoginFirst = true
+                
                 self?.performSegue(withIdentifier: "feedSegue", sender: nil)
                 return
             }

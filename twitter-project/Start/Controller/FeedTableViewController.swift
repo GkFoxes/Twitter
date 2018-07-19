@@ -24,6 +24,7 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         realm = try! Realm()
         
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -31,7 +32,7 @@ class FeedTableViewController: UITableViewController {
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
         initialDataToFirebase()
-        if isLogin == true {
+        if isLoginFirst {
             initialDataToRealm()
         }
     }
@@ -128,7 +129,9 @@ class FeedTableViewController: UITableViewController {
                 realm.deleteAll()
             }
             
+            isLoginFirst = false
             isLogin = false
+            self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
