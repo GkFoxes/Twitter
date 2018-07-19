@@ -9,11 +9,11 @@
 import UIKit
 import Firebase
 
+var isLogin = false
+
 class LoginViewController: UIViewController {
     
     var reference: DatabaseReference!
-    fileprivate(set) var auth:Auth?
-    fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,12 +25,6 @@ class LoginViewController: UIViewController {
         warningLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users")
-        self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
-            guard user != nil else {
-                self.performSegue(withIdentifier: "feedSegue", sender: nil)
-                return
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,10 +34,13 @@ class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "feedSegue", sender: nil)
+        }
     }
-    
+
     func displayWarningLabel(withText text: String) {
         warningLabel.text = text
         
@@ -53,6 +50,8 @@ class LoginViewController: UIViewController {
             self?.warningLabel.alpha = 0
         }
     }
+    
+    // MARK: - Button Action
     
     @IBAction func loginTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text,
@@ -69,6 +68,7 @@ class LoginViewController: UIViewController {
             }
             
             if user != nil {
+                isLogin = true
                 self?.performSegue(withIdentifier: "feedSegue", sender: nil)
                 return
             }
@@ -76,5 +76,4 @@ class LoginViewController: UIViewController {
             self?.displayWarningLabel(withText: "No such user")
         })
     }
-    
 }

@@ -11,7 +11,7 @@ import Firebase
 
 class RegisterViewController: UIViewController {
     
-    var reference: DatabaseReference!
+    var ref: DatabaseReference!
     
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,7 +21,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         
         warningLabel.alpha = 0
-        reference = Database.database().reference(withPath: "users")
+        ref = Database.database().reference(withPath: "users")
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +44,7 @@ class RegisterViewController: UIViewController {
                 return
             }
 
-            let userRef = self?.reference.child((user?.user.uid)!)
+            let userRef = self?.ref.child((user?.user.uid)!)
             userRef?.setValue(["email": user?.user.email])
         })
         self.performSegue(withIdentifier: "toLoginSegue", sender: nil)

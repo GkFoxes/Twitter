@@ -14,7 +14,7 @@
         <!--Feed Table View Controller-->
         <scene sceneID="8Nl-Ht-8kH">
             <objects>
-                <tableViewController id="1Kh-UX-b6y" customClass="FeedTableViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FeedTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Kh-UX-b6y" customClass="FeedTableViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OCP-GO-lNn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
         <!--twitter-project-->
         <scene sceneID="mKz-bs-3Yg">
             <objects>
-                <viewController id="C5U-N3-YbA" customClass="LoginViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C5U-N3-YbA" customClass="LoginViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C87-IN-hts">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,11 +181,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOj-L4-OxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="-183"/>
+            <point key="canvasLocation" x="-271" y="-183"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VON-0c-Zrh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dtb-if-UP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="agZ-QI-8LN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hzz-FC-bgf">
@@ -197,7 +198,6 @@
                         <segue destination="1Kh-UX-b6y" kind="relationship" relationship="rootViewController" id="II4-zu-zBP"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dtb-if-UP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="527" y="-183"/>
         </scene>
@@ -320,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZd-cC-JOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="505"/>
+            <point key="canvasLocation" x="-271" y="532"/>
         </scene>
     </scenes>
     <resources>
