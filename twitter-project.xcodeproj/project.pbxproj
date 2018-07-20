@@ -332,6 +332,11 @@
 				TargetAttributes = {
 					A9D1A44120EE588400E55550 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
