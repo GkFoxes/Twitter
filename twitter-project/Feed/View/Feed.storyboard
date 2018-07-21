@@ -79,7 +79,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VON-0c-Zrh">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController-agZ-QI-8LN" automaticallyAdjustsScrollViewInsets="NO" id="agZ-QI-8LN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationFeed" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="agZ-QI-8LN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hzz-FC-bgf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -113,7 +113,7 @@
         <!--NavigationMain-->
         <scene sceneID="UqD-d5-ziG">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="NavigationMain" id="X2j-Xa-Qlb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="NavigationMain" storyboardName="Main" referencedIdentifier="NavigationMain" id="X2j-Xa-Qlb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK9-ke-DZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1437" y="268"/>

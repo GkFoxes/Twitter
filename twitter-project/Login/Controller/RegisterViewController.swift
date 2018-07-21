@@ -50,38 +50,43 @@ class RegisterViewController: UIViewController {
                 alertWarning(title: "Empty field", message: "You did not fill all the fields, please check again.")
                 return
         }
-//        let queue = DispatchQueue.global(qos: .background)
-//        queue.async{
-//                DispatchQueue.main.async {
-//                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-//                        guard error == nil, user != nil else {
-//                            if password.count < 6 {
-//                                self.alertWarning(title: "Can not register", message: "Warning, password must be longer than 5 characters.")
-//                            } else {
-//                                self.alertWarning(title: "Can not register", message: "Warning, please check the entered data.")
-//                            }
-//                            return
-//                        }
-//                        
-//                        let userRef = self.ref.child((user?.user.uid)!)
-//                        userRef.setValue(["email": user?.user.email])
-//                        self.performSegue(withIdentifier: "feedFromRegister", sender: nil)
-//                    })
-//                }
-//        }
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            guard error == nil, user != nil else {
-                if password.count < 6 {
-                    self.alertWarning(title: "Can not register", message: "Warning, password must be longer than 5 characters.")
-                } else {
-                    self.alertWarning(title: "Can not register", message: "Warning, please check the entered data.")
+        //        let queue = DispatchQueue.global(qos: .background)
+        //        queue.async{
+        //                DispatchQueue.main.async {
+        //                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+        //                        guard error == nil, user != nil else {
+        //                            if password.count < 6 {
+        //                                self.alertWarning(title: "Can not register", message: "Warning, password must be longer than 5 characters.")
+        //                            } else {
+        //                                self.alertWarning(title: "Can not register", message: "Warning, please check the entered data.")
+        //                            }
+        //                            return
+        //                        }
+        //
+        //                        let userRef = self.ref.child((user?.user.uid)!)
+        //                        userRef.setValue(["email": user?.user.email])
+        //                        self.performSegue(withIdentifier: "feedFromRegister", sender: nil)
+        //                    })
+        //                }
+        //        }
+        let queue = DispatchQueue.global(qos: .userInteractive)
+        queue.async{
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                guard error == nil, user != nil else {
+                    if password.count < 6 {
+                        self.alertWarning(title: "Can not register", message: "Warning, password must be longer than 5 characters.")
+                    } else {
+                        self.alertWarning(title: "Can not register", message: "Warning, please check the entered data.")
+                    }
+                    return
                 }
-                return
-            }
-
-            let userRef = self.ref.child((user?.user.uid)!)
-            userRef.setValue(["email": user?.user.email])
-            self.performSegue(withIdentifier: "feedFromRegister", sender: nil)
-        })
+                let userRef = self.ref.child((user?.user.uid)!)
+                userRef.setValue(["email": user?.user.email])
+                
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "feedFromRegister", sender: nil)
+                }
+            })
+        }
     }
 }
