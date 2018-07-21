@@ -120,7 +120,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xHi-aD-L2i">
             <objects>
-                <navigationController storyboardIdentifier="NavigationMain" automaticallyAdjustsScrollViewInsets="NO" id="wsD-Cr-CFY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationMain" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wsD-Cr-CFY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b4e-AX-I9y">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -211,15 +211,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZd-cC-JOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-271" y="526"/>
+            <point key="canvasLocation" x="-272" y="615"/>
         </scene>
-        <!--Feed-->
+        <!--NavigationFeed-->
         <scene sceneID="vMi-Yy-vIq">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="FeedTableViewController" storyboardName="Feed" id="dUw-rQ-qQD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="FeedTableViewController" storyboardName="Feed" referencedIdentifier="NavigationFeed" id="dUw-rQ-qQD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84F-XO-aso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="109"/>
+            <point key="canvasLocation" x="357" y="101"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
