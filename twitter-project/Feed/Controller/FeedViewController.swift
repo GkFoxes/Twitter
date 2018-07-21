@@ -1,8 +1,8 @@
 //
-//  StartTableViewController.swift
+//  FeedViewController.swift
 //  twitter-project
 //
-//  Created by Дмитрий Матвеенко on 05.07.2018.
+//  Created by Дмитрий Матвеенко on 21.07.2018.
 //  Copyright © 2018 Дмитрий Матвеенко. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Firebase
 
-class FeedTableViewController: UITableViewController {
+class FeedViewController: UIViewController {
     
     var twitList: Results<Messages>!
     
@@ -24,6 +24,8 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableTwitContent.delegate = self
+        tableTwitContent.dataSource = self
         
         realm = try! Realm()
         
@@ -53,24 +55,6 @@ class FeedTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return twitList.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedTableViewCell
-        
-        let item = twitList[indexPath.row]
-        cell.textTwitLabel.text = item.text
-        return cell
     }
     
     // MARK: - Button Action
@@ -143,7 +127,7 @@ class FeedTableViewController: UITableViewController {
     
     // MARK: - Delete and edit from table
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let item = self.twitList[indexPath.row]
@@ -194,5 +178,24 @@ class FeedTableViewController: UITableViewController {
             destinationEditViewController.twitRealmToEdit = objectToRealm
             destinationEditViewController.twitFirebaseToEdit = objectToFirebase
         }
+    }
+}
+
+extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return twitList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedTableViewCell
+        
+        let item = twitList[indexPath.row]
+        cell.textTwitLabel.text = item.text
+        return cell
     }
 }

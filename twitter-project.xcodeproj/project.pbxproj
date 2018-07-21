@@ -10,6 +10,7 @@
 		86FAB1878B711E1C53FB3FFF /* Pods_twitter_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F7180908A2F7F28FA16D12 /* Pods_twitter_project.framework */; };
 		A940D7C520F0D64500AD67F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C420F0D64500AD67F4 /* User.swift */; };
 		A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */; };
+		A9AB97A4210395270038716F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB97A3210395270038716F /* FeedViewController.swift */; };
 		A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */; };
 		A9ACA80120F61CB8002C78E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */; };
 		A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */; };
@@ -19,7 +20,6 @@
 		A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44E20EE588600E55550 /* LaunchScreen.storyboard */; };
 		A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A45720EE5D8F00E55550 /* .gitignore */; };
 		A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46420EE603800E55550 /* TwitRealm.swift */; };
-		A9D1A46720EE61A500E55550 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */; };
 		A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */; };
 		A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitViewController.swift */; };
 		A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */; };
@@ -34,6 +34,7 @@
 		496B0C2F17EFC5B543794DA6 /* Pods-twitter-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.release.xcconfig"; sourceTree = "<group>"; };
 		A940D7C420F0D64500AD67F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitFirebase.swift; sourceTree = "<group>"; };
+		A9AB97A3210395270038716F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditTwit.storyboard; sourceTree = "<group>"; };
 		A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		A9D1A45120EE588600E55550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D1A45720EE5D8F00E55550 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A9D1A46420EE603800E55550 /* TwitRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitRealm.swift; sourceTree = "<group>"; };
-		A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		A9D1A47120EE643600E55550 /* AddTwitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitViewController.swift; sourceTree = "<group>"; };
 		A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddTwit.storyboard; path = ../../../../../../../.Trash/AddTwit.storyboard; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */,
-				A9D1A46620EE61A500E55550 /* FeedTableViewController.swift */,
+				A9AB97A3210395270038716F /* FeedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -436,10 +436,10 @@
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */,
 				A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */,
-				A9D1A46720EE61A500E55550 /* FeedTableViewController.swift in Sources */,
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
 				A940D7C520F0D64500AD67F4 /* User.swift in Sources */,
 				A9D1A47D20EEAA6E00E55550 /* EditTwitViewController.swift in Sources */,
+				A9AB97A4210395270038716F /* FeedViewController.swift in Sources */,
 				A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

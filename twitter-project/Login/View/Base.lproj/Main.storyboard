@@ -216,7 +216,7 @@
         <!--NavigationFeed-->
         <scene sceneID="vMi-Yy-vIq">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="FeedTableViewController" storyboardName="Feed" referencedIdentifier="NavigationFeed" id="dUw-rQ-qQD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="FeedViewController" storyboardName="Feed" referencedIdentifier="NavigationFeed" id="dUw-rQ-qQD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84F-XO-aso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="357" y="101"/>
