@@ -37,6 +37,11 @@ class FeedViewController: UIViewController {
         if isLoginFirst {
             initialDataToRealm()
         }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showProfile),
+                                               name: NSNotification.Name("ShowProfile"),
+                                               object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +65,6 @@ class FeedViewController: UIViewController {
     // MARK: - Button Action
     
     @IBAction func onProfileTapped(_ sender: UIBarButtonItem) {
-        print("TOGGLE SIDE MENU")
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }
     
@@ -117,6 +121,10 @@ class FeedViewController: UIViewController {
             destinationEditViewController.twitRealmToEdit = objectToRealm
             destinationEditViewController.twitFirebaseToEdit = objectToFirebase
         }
+    }
+    
+    @objc func showProfile() {
+        performSegue(withIdentifier: "showProfile", sender: nil)
     }
 }
 

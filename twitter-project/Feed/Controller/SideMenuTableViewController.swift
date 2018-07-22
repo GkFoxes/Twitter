@@ -8,17 +8,30 @@
 
 import UIKit
 
+class SideMenuTableViewCell: UITableViewCell {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+}
+
 class SideMenuTableViewController: UITableViewController {
     
+    @IBOutlet var sideMenuTable: UITableView!
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
         
+//        let emailCell = SideMenuTable.dequeueReusableCell(withIdentifier: "Email") as! SideMenuTableViewCell
+//        let cells = [emailCell]
+        
         switch indexPath.row {
-        case 0: NotificationCenter.default.post(name: NSNotification.Name("ShowProfile"), object: nil)
-        case 1: NotificationCenter.default.post(name: NSNotification.Name("ShowSettings"), object: nil)
-        case 2: NotificationCenter.default.post(name: NSNotification.Name("ShowSignIn"), object: nil)
-        default: break
+            case 0: NotificationCenter.default.post(name: NSNotification.Name("ShowProfile"), object: nil)
+            default: break
         }
     }
     
