@@ -70,3 +70,4 @@ fastlane/test_output
 
 twitter-project/Resources/GoogleService-Info.plist
 Feed~.storyboard
+.DS_Store

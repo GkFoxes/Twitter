@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Firebase
 
-extension FeedTableViewController {
+extension FeedViewController {
     func initialDataToRealm() {
         ref.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             for item in snapshot.children {
@@ -21,7 +21,7 @@ extension FeedTableViewController {
                     realm.add(twitForRealm)
                 })
                 
-                self?.tableView.reloadData()
+                self?.tableTwitContent.reloadData()
             }
         })
         isLoginFirst = false
