@@ -10,6 +10,8 @@
 		86FAB1878B711E1C53FB3FFF /* Pods_twitter_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F7180908A2F7F28FA16D12 /* Pods_twitter_project.framework */; };
 		A940D7C520F0D64500AD67F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C420F0D64500AD67F4 /* User.swift */; };
 		A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */; };
+		A9759B16210497BB002FBBE3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9759B15210497BB002FBBE3 /* SideMenuViewController.swift */; };
+		A9759B1821049802002FBBE3 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9759B1721049802002FBBE3 /* SideMenuTableViewController.swift */; };
 		A9AB97A4210395270038716F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB97A3210395270038716F /* FeedViewController.swift */; };
 		A9AB97A621046F720038716F /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AB97A521046F720038716F /* AddTwit.storyboard */; };
 		A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */; };
@@ -34,6 +36,8 @@
 		496B0C2F17EFC5B543794DA6 /* Pods-twitter-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.release.xcconfig"; sourceTree = "<group>"; };
 		A940D7C420F0D64500AD67F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitFirebase.swift; sourceTree = "<group>"; };
+		A9759B15210497BB002FBBE3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		A9759B1721049802002FBBE3 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		A9AB97A3210395270038716F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A9AB97A521046F720038716F /* AddTwit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTwit.storyboard; sourceTree = "<group>"; };
 		A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditTwit.storyboard; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 			children = (
 				A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */,
 				A9AB97A3210395270038716F /* FeedViewController.swift */,
+				A9759B15210497BB002FBBE3 /* SideMenuViewController.swift */,
+				A9759B1721049802002FBBE3 /* SideMenuTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -431,9 +437,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9ACA80120F61CB8002C78E7 /* LoginViewController.swift in Sources */,
+				A9759B1821049802002FBBE3 /* SideMenuTableViewController.swift in Sources */,
 				A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */,
 				A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */,
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
+				A9759B16210497BB002FBBE3 /* SideMenuViewController.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */,
 				A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */,
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,

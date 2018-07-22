@@ -53,7 +53,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="or5-pH-81Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eKN-r8-raQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="611"/>
+            <point key="canvasLocation" x="2775" y="610"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5LW-4o-a1X">
