@@ -11,6 +11,7 @@
 		A940D7C520F0D64500AD67F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C420F0D64500AD67F4 /* User.swift */; };
 		A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */; };
 		A9AB97A4210395270038716F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB97A3210395270038716F /* FeedViewController.swift */; };
+		A9AB97A621046F720038716F /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AB97A521046F720038716F /* AddTwit.storyboard */; };
 		A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */; };
 		A9ACA80120F61CB8002C78E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */; };
 		A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */; };
@@ -22,7 +23,6 @@
 		A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46420EE603800E55550 /* TwitRealm.swift */; };
 		A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */; };
 		A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitViewController.swift */; };
-		A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */; };
 		A9D1A47D20EEAA6E00E55550 /* EditTwitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47C20EEAA6E00E55550 /* EditTwitViewController.swift */; };
 		A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */; };
 		A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D34E2B20FF651200F457F0 /* InitialData.swift */; };
@@ -35,6 +35,7 @@
 		A940D7C420F0D64500AD67F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitFirebase.swift; sourceTree = "<group>"; };
 		A9AB97A3210395270038716F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A9AB97A521046F720038716F /* AddTwit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTwit.storyboard; sourceTree = "<group>"; };
 		A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditTwit.storyboard; sourceTree = "<group>"; };
 		A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		A9D1A46420EE603800E55550 /* TwitRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitRealm.swift; sourceTree = "<group>"; };
 		A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		A9D1A47120EE643600E55550 /* AddTwitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitViewController.swift; sourceTree = "<group>"; };
-		A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddTwit.storyboard; path = ../../../../../../../.Trash/AddTwit.storyboard; sourceTree = "<group>"; };
 		A9D1A47C20EEAA6E00E55550 /* EditTwitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTwitViewController.swift; sourceTree = "<group>"; };
 		A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9D34E2B20FF651200F457F0 /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		A9D1A46C20EE634A00E55550 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A9D1A47320EE7E7800E55550 /* AddTwit.storyboard */,
+				A9AB97A521046F720038716F /* AddTwit.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,8 +364,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */,
-				A9D1A47420EE7E7800E55550 /* AddTwit.storyboard in Resources */,
 				A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */,
+				A9AB97A621046F720038716F /* AddTwit.storyboard in Resources */,
 				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
