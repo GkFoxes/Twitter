@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p9f-8Z-Pq9">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,7 +16,7 @@
             <objects>
                 <tableViewController id="Hcr-RC-cGa" customClass="SideMenuTableViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="u6E-TX-FgU">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -138,27 +138,24 @@
         <!--Side Menu View Controller-->
         <scene sceneID="gjY-z8-vWq">
             <objects>
-                <viewController storyboardIdentifier="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p9f-8Z-Pq9" customClass="SideMenuViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p9f-8Z-Pq9" customClass="SideMenuViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="etH-Cx-scn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VME-PI-TtZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="dEj-Rt-to5"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="o43-eX-d4Z" kind="embed" id="ys6-Bw-lIW"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWx-DS-Im6" customClass="SideMenuView" customModule="twitter_project" customModuleProvider="target">
-                                <rect key="frame" x="-250" y="0.0" width="250" height="667"/>
+                                <rect key="frame" x="-250" y="0.0" width="250" height="568"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="lHu-dm-FUR"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Hcr-RC-cGa" kind="embed" id="WrF-ur-AMa"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VME-PI-TtZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <segue destination="o43-eX-d4Z" kind="embed" id="ys6-Bw-lIW"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -167,10 +164,10 @@
                             <constraint firstAttribute="bottom" secondItem="VME-PI-TtZ" secondAttribute="bottom" id="BoQ-i5-JOO"/>
                             <constraint firstItem="LWx-DS-Im6" firstAttribute="leading" secondItem="etH-Cx-scn" secondAttribute="leading" constant="-250" id="IGn-vB-Eme"/>
                             <constraint firstItem="VME-PI-TtZ" firstAttribute="leading" secondItem="LWx-DS-Im6" secondAttribute="trailing" id="MIW-cR-Di4"/>
+                            <constraint firstItem="VME-PI-TtZ" firstAttribute="width" secondItem="etH-Cx-scn" secondAttribute="width" id="MJj-Yn-XNN"/>
                             <constraint firstAttribute="bottom" secondItem="LWx-DS-Im6" secondAttribute="bottom" id="Voo-Ao-Ctx"/>
                             <constraint firstItem="VME-PI-TtZ" firstAttribute="top" secondItem="etH-Cx-scn" secondAttribute="top" id="foh-B5-97h"/>
                             <constraint firstItem="LWx-DS-Im6" firstAttribute="top" secondItem="etH-Cx-scn" secondAttribute="top" id="hyd-2h-hfQ"/>
-                            <constraint firstAttribute="trailing" secondItem="VME-PI-TtZ" secondAttribute="trailing" id="vdv-0z-tW2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4rU-lr-IHV"/>
                     </view>
@@ -178,6 +175,9 @@
                         <barButtonItem key="leftBarButtonItem" image="user" id="n2i-IQ-een"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yYO-dC-Uca"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sideMenuConstraint" destination="IGn-vB-Eme" id="EG2-kd-Hum"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1i-aO-riN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,35 +191,50 @@
             </objects>
             <point key="canvasLocation" x="3546" y="864"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="WeV-Ia-Chh">
+            <objects>
+                <viewController id="wkw-kT-gPB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fiv-gI-G9J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="AUx-Fl-jVs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJV-Pl-9OL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2288" y="1419"/>
+        </scene>
         <!--NavigationMain-->
         <scene sceneID="UqD-d5-ziG">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="NavigationMain" storyboardName="Main" referencedIdentifier="NavigationMain" id="X2j-Xa-Qlb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK9-ke-DZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216" y="1036"/>
+            <point key="canvasLocation" x="1198" y="1100"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="sfA-6F-NdY">
             <objects>
-                <viewController id="XLE-Yo-KEj" customClass="FeedViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XLE-Yo-KEj" customClass="FeedViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ka0-Ed-UAg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MtI-5c-8w2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="aHl-hV-aQ0" customClass="FeedTableViewCell" customModule="twitter_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aHl-hV-aQ0" id="jS9-ET-jtd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2n1-ZK-suW">
-                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                    <rect key="frame" x="15" y="11" width="42" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -227,7 +242,6 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="2n1-ZK-suW" firstAttribute="bottom" secondItem="jS9-ET-jtd" secondAttribute="bottomMargin" id="P48-Fb-aiQ"/>
-                                                <constraint firstItem="2n1-ZK-suW" firstAttribute="trailing" secondItem="jS9-ET-jtd" secondAttribute="trailingMargin" id="a07-E8-Uiz"/>
                                                 <constraint firstItem="2n1-ZK-suW" firstAttribute="top" secondItem="jS9-ET-jtd" secondAttribute="topMargin" id="fDp-wO-0yb"/>
                                                 <constraint firstItem="2n1-ZK-suW" firstAttribute="leading" secondItem="jS9-ET-jtd" secondAttribute="leadingMargin" id="oOi-hU-pgS"/>
                                             </constraints>
@@ -252,9 +266,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZYn-ie-Cdl">
+                        <barButtonItem key="leftBarButtonItem" image="user" id="p9G-IN-Kkw">
+                            <connections>
+                                <action selector="onProfileTapped:" destination="XLE-Yo-KEj" id="KId-Sw-M3A"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EMv-Kt-mGa" customClass="addSegue">
                             <connections>
-                                <segue destination="7xN-Ad-Awa" kind="popoverPresentation" popoverAnchorBarButtonItem="EMv-Kt-mGa" id="Nmf-5a-caR">
+                                <segue destination="7xN-Ad-Awa" kind="popoverPresentation" identifier="addSegue" popoverAnchorBarButtonItem="EMv-Kt-mGa" id="Nmf-5a-caR">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -265,11 +284,12 @@
                         <segue destination="Hsp-hz-MTO" kind="popoverPresentation" identifier="editTwit" popoverAnchorBarButtonItem="EMv-Kt-mGa" id="uxa-W2-xMc">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="wkw-kT-gPB" kind="show" id="XgO-hc-0D2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pP-Jm-8BN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="618"/>
+            <point key="canvasLocation" x="3030" y="618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fxQ-Rq-mHI">
@@ -277,7 +297,7 @@
                 <navigationController storyboardIdentifier="NavigationFeed" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o43-eX-d4Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AoY-fL-JYV">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

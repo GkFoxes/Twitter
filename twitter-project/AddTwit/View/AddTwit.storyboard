@@ -42,12 +42,12 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="QG8-k0-9lC">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="kuG-Gf-xXq" id="IQJ-sH-kSE"/>
+                                <action selector="saveButtonPressed:" destination="kuG-Gf-xXq" id="r6g-c0-dtf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addTextView" destination="dvW-ly-Nsg" id="Ndj-eN-Hax"/>
+                        <outlet property="addTextView" destination="dvW-ly-Nsg" id="OQF-CQ-5P9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="or5-pH-81Z" userLabel="First Responder" sceneMemberID="firstResponder"/>

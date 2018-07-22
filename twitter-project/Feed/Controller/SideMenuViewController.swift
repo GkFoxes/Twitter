@@ -9,27 +9,27 @@
 import UIKit
 
 class SideMenuViewController: UIViewController {
-
+    
+    var sideMenuOpen = false
+    
+    @IBOutlet weak var sideMenuConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(toggleSideMenu),
+                                               name: NSNotification.Name("ToggleSideMenu"),
+                                               object: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func toggleSideMenu() {
+        if sideMenuOpen {
+            sideMenuOpen = false
+            sideMenuConstraint.constant = -250
+        } else {
+            sideMenuOpen = true
+            sideMenuConstraint.constant = 0
+        }
     }
-    */
-
 }
