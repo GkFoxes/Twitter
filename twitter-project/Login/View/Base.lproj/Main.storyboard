@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywE-cY-liT">
                                         <rect key="frame" x="0.0" y="45" width="288" height="30"/>
@@ -156,7 +156,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9tr-9c-nf2">
                                         <rect key="frame" x="0.0" y="45" width="288" height="30"/>
@@ -213,16 +213,16 @@
             </objects>
             <point key="canvasLocation" x="-272" y="615"/>
         </scene>
-        <!--NavigationFeed-->
+        <!--Feed-->
         <scene sceneID="vMi-Yy-vIq">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="FeedViewController" storyboardName="Feed" referencedIdentifier="NavigationFeed" id="dUw-rQ-qQD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="FeedViewController" storyboardName="Feed" id="dUw-rQ-qQD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84F-XO-aso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="101"/>
+            <point key="canvasLocation" x="326" y="101"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rKq-da-B4F"/>
+        <segue reference="hdk-zd-4XJ"/>
     </inferredMetricsTieBreakers>
 </document>

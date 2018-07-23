@@ -36,9 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         } else {
             let feedStoryboard = UIStoryboard.init(name: "Feed", bundle: nil)
-            let feedViewController = feedStoryboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
-            let navigationController = UINavigationController.init(rootViewController: feedViewController)
-            self.window?.rootViewController = navigationController
+            let sideMenuViewController = feedStoryboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+            self.window?.rootViewController = sideMenuViewController
             self.window?.makeKeyAndVisible()
         }
         
