@@ -29,6 +29,8 @@
 		A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */; };
 		A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D34E2B20FF651200F457F0 /* InitialData.swift */; };
 		A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D34E362100C2AA00F457F0 /* Feed.storyboard */; };
+		A9DC32C4210662C500E923FF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C3210662C500E923FF /* Profile.storyboard */; };
+		A9DC32C6210662E400E923FF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C5210662E400E923FF /* Settings.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9D34E2B20FF651200F457F0 /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
 		A9D34E362100C2AA00F457F0 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		A9DC32C3210662C500E923FF /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A9DC32C5210662E400E923FF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,8 @@
 				A9D1A45920EE5DA600E55550 /* Application */,
 				A9D1A45D20EE5F6500E55550 /* Login */,
 				A9D34E2F2100C15A00F457F0 /* Feed */,
+				A9DC32BB2106626500E923FF /* Profile */,
+				A9DC32BC2106626800E923FF /* Settings */,
 				A9D1A46A20EE633300E55550 /* AddTwit */,
 				A9D1A47520EEA93700E55550 /* EditTwit */,
 				A9D1A46120EE5F9C00E55550 /* Resources */,
@@ -296,6 +302,70 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A9DC32BB2106626500E923FF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A9DC32BF2106628B00E923FF /* Model */,
+				A9DC32BE2106628700E923FF /* View */,
+				A9DC32BD2106627C00E923FF /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A9DC32BC2106626800E923FF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A9DC32C22106629E00E923FF /* Model */,
+				A9DC32C12106628E00E923FF /* View */,
+				A9DC32C02106628D00E923FF /* Controller */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A9DC32BD2106627C00E923FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9DC32BE2106628700E923FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9DC32C3210662C500E923FF /* Profile.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9DC32BF2106628B00E923FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9DC32C02106628D00E923FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9DC32C12106628E00E923FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9DC32C5210662E400E923FF /* Settings.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9DC32C22106629E00E923FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CA07C0A917CC405C866C6CDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,8 +445,10 @@
 				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
+				A9DC32C4210662C500E923FF /* Profile.storyboard in Resources */,
 				A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */,
 				A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */,
+				A9DC32C6210662E400E923FF /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
