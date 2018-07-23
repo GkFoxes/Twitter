@@ -42,6 +42,10 @@ class FeedViewController: UIViewController {
                                                selector: #selector(showProfile),
                                                name: NSNotification.Name("ShowProfile"),
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showSettings),
+                                               name: NSNotification.Name("ShowSettings"),
+                                               object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,6 +129,9 @@ class FeedViewController: UIViewController {
     
     @objc func showProfile() {
         performSegue(withIdentifier: "showProfile", sender: nil)
+    }
+    @objc func showSettings() {
+        performSegue(withIdentifier: "showSettings", sender: nil)
     }
 }
 
