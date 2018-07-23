@@ -70,12 +70,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-OD-5zf">
-                                                    <rect key="frame" x="110" y="7" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Exit"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-OD-5zf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
+                                                    <state key="normal" title="Exit">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="exitTapped:" destination="Hcr-RC-cGa" eventType="touchUpInside" id="C0H-Rc-3ih"/>
+                                                        <segue destination="X2j-Xa-Qlb" kind="show" identifier="unwindToLogin" id="3Ud-Zh-l3H"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wpi-OD-5zf" firstAttribute="top" secondItem="BFR-1E-M2j" secondAttribute="top" id="UGp-fu-ixn"/>
+                                                <constraint firstAttribute="bottom" secondItem="wpi-OD-5zf" secondAttribute="bottom" id="aFJ-VG-sAJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="wpi-OD-5zf" secondAttribute="trailing" id="pvh-mG-WAH"/>
+                                                <constraint firstItem="wpi-OD-5zf" firstAttribute="leading" secondItem="BFR-1E-M2j" secondAttribute="leading" id="uCW-Ax-A5t"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -92,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWR-d6-AEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692.8" y="617.54122938530736"/>
+            <point key="canvasLocation" x="1692.753623188406" y="617.11956521739137"/>
         </scene>
         <!--AddTwit-->
         <scene sceneID="a7U-1j-XfJ">
@@ -160,7 +171,9 @@
         <!--NavigationMain-->
         <scene sceneID="UqD-d5-ziG">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="NavigationMain" storyboardName="Main" referencedIdentifier="NavigationMain" id="X2j-Xa-Qlb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="NavigationMain" storyboardName="Main" referencedIdentifier="NavigationMain" id="X2j-Xa-Qlb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tzQ-pg-Al5"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK9-ke-DZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1022" y="1084"/>

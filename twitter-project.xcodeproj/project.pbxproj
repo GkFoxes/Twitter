@@ -31,6 +31,8 @@
 		A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D34E362100C2AA00F457F0 /* Feed.storyboard */; };
 		A9DC32C4210662C500E923FF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C3210662C500E923FF /* Profile.storyboard */; };
 		A9DC32C6210662E400E923FF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C5210662E400E923FF /* Settings.storyboard */; };
+		A9DC32C8210663C100E923FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32C7210663C100E923FF /* ProfileViewController.swift */; };
+		A9DC32CA210663D800E923FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32C9210663D800E923FF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		A9D34E362100C2AA00F457F0 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		A9DC32C3210662C500E923FF /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A9DC32C5210662E400E923FF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A9DC32C7210663C100E923FF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A9DC32C9210663D800E923FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,6 +329,7 @@
 		A9DC32BD2106627C00E923FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A9DC32C7210663C100E923FF /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 		A9DC32C02106628D00E923FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A9DC32C9210663D800E923FF /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -512,9 +518,11 @@
 				A9759B1821049802002FBBE3 /* SideMenuTableViewController.swift in Sources */,
 				A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */,
 				A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */,
+				A9DC32C8210663C100E923FF /* ProfileViewController.swift in Sources */,
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
 				A9759B16210497BB002FBBE3 /* SideMenuViewController.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */,
+				A9DC32CA210663D800E923FF /* SettingsViewController.swift in Sources */,
 				A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */,
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
 				A940D7C520F0D64500AD67F4 /* User.swift in Sources */,

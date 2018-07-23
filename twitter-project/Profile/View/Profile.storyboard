@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QOX-Hh-6QD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,13 +13,13 @@
         <!--Profile-->
         <scene sceneID="WeV-Ia-Chh">
             <objects>
-                <viewController title="Profile" id="wkw-kT-gPB" sceneMemberID="viewController">
+                <viewController title="Profile" id="wkw-kT-gPB" customClass="ProfileViewController" customModule="twitter_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fiv-gI-G9J">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gp8-k7-VN1">
-                                <rect key="frame" x="174" y="86" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="86" width="66" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zwg-3q-Rcv"/>
                                 </constraints>
@@ -32,6 +36,9 @@
                         <viewLayoutGuide key="safeArea" id="AUx-Fl-jVs"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="zWx-5P-9SZ"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="gp8-k7-VN1" id="4Zz-Mt-x5r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJV-Pl-9OL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +51,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="s64-jJ-f6z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dMs-8C-DBC">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
