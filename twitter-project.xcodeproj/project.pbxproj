@@ -33,6 +33,7 @@
 		A9DC32C6210662E400E923FF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C5210662E400E923FF /* Settings.storyboard */; };
 		A9DC32C8210663C100E923FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32C7210663C100E923FF /* ProfileViewController.swift */; };
 		A9DC32CA210663D800E923FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32C9210663D800E923FF /* SettingsViewController.swift */; };
+		A9DC32CC21066B9E00E923FF /* WarningAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		A9DC32C5210662E400E923FF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A9DC32C7210663C100E923FF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A9DC32C9210663D800E923FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningAlertManager.swift; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D1A46020EE5F8500E55550 /* Model */,
+				A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */,
 				A9D1A45F20EE5F7F00E55550 /* View */,
 				A9D1A45E20EE5F7600E55550 /* Controller */,
 			);
@@ -527,6 +530,7 @@
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
 				A940D7C520F0D64500AD67F4 /* User.swift in Sources */,
 				A9D1A47D20EEAA6E00E55550 /* EditTwitViewController.swift in Sources */,
+				A9DC32CC21066B9E00E923FF /* WarningAlertManager.swift in Sources */,
 				A9AB97A4210395270038716F /* FeedViewController.swift in Sources */,
 				A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */,
 			);

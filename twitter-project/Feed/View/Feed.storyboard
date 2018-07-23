@@ -72,6 +72,9 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-OD-5zf">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="R9t-bk-SyN"/>
+                                                    </constraints>
                                                     <state key="normal" title="Exit">
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
