@@ -118,8 +118,7 @@
 				A9D34E2F2100C15A00F457F0 /* Feed */,
 				A9DC32BB2106626500E923FF /* Profile */,
 				A9DC32BC2106626800E923FF /* Settings */,
-				A9D1A46A20EE633300E55550 /* AddTwit */,
-				A9D1A47520EEA93700E55550 /* EditTwit */,
+				A9D1A46A20EE633300E55550 /* Add and Edit Twit */,
 				A9D1A46120EE5F9C00E55550 /* Resources */,
 			);
 			path = "twitter-project";
@@ -206,20 +205,21 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		A9D1A46A20EE633300E55550 /* AddTwit */ = {
+		A9D1A46A20EE633300E55550 /* Add and Edit Twit */ = {
 			isa = PBXGroup;
 			children = (
 				A9D1A46D20EE634F00E55550 /* Model */,
 				A9D1A46C20EE634A00E55550 /* View */,
 				A9D1A46B20EE634200E55550 /* Controller */,
 			);
-			path = AddTwit;
+			path = "Add and Edit Twit";
 			sourceTree = "<group>";
 		};
 		A9D1A46B20EE634200E55550 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				A9D1A47120EE643600E55550 /* AddTwitViewController.swift */,
+				A9D1A47C20EEAA6E00E55550 /* EditTwitViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,44 +228,12 @@
 			isa = PBXGroup;
 			children = (
 				A9AB97A521046F720038716F /* AddTwit.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A9D1A46D20EE634F00E55550 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A9D1A47520EEA93700E55550 /* EditTwit */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1A47820EEA95C00E55550 /* Model */,
-				A9D1A47720EEA94F00E55550 /* View */,
-				A9D1A47620EEA94700E55550 /* Controller */,
-			);
-			path = EditTwit;
-			sourceTree = "<group>";
-		};
-		A9D1A47620EEA94700E55550 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1A47C20EEAA6E00E55550 /* EditTwitViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		A9D1A47720EEA94F00E55550 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A9D1A47820EEA95C00E55550 /* Model */ = {
+		A9D1A46D20EE634F00E55550 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
