@@ -91,6 +91,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A94D5583212C236C00649282 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A45E20EE5F7600E55550 /* Login */,
+				A9D34E302100C18A00F457F0 /* Feed */,
+				A9DC32BD2106627C00E923FF /* Profile */,
+				A9DC32C02106628D00E923FF /* Settings */,
+				A9D1A46B20EE634200E55550 /* Add and Edit */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A9D1A43920EE588400E55550 = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				A9D1A45920EE5DA600E55550 /* Application */,
-				A9D1A45D20EE5F6500E55550 /* Login */,
 				A9D34E2F2100C15A00F457F0 /* Menu */,
 				A9D1A46120EE5F9C00E55550 /* Resources */,
 			);
@@ -146,42 +157,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A9D1A45D20EE5F6500E55550 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1A46020EE5F8500E55550 /* Model */,
-				A9D1A45F20EE5F7F00E55550 /* View */,
-				A9D1A45E20EE5F7600E55550 /* Controller */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		A9D1A45E20EE5F7600E55550 /* Controller */ = {
+		A9D1A45E20EE5F7600E55550 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */,
 				A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */,
 			);
-			path = Controller;
+			path = Login;
 			sourceTree = "<group>";
 		};
-		A9D1A45F20EE5F7F00E55550 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1A44920EE588400E55550 /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A9D1A46020EE5F8500E55550 /* Model */ = {
+		A9D1A46020EE5F8500E55550 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				A940D7C420F0D64500AD67F4 /* User.swift */,
 				A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */,
 				A9D1A46420EE603800E55550 /* TwitRealm.swift */,
-				A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */,
 			);
-			path = Model;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		A9D1A46120EE5F9C00E55550 /* Resources */ = {
@@ -208,10 +200,7 @@
 			children = (
 				A9D34E332100C1CE00F457F0 /* Model */,
 				A9D34E322100C1A500F457F0 /* View */,
-				A9D34E302100C18A00F457F0 /* Feed */,
-				A9DC32BD2106627C00E923FF /* Profile */,
-				A9DC32C02106628D00E923FF /* Settings */,
-				A9D1A46B20EE634200E55550 /* Add and Edit */,
+				A94D5583212C236C00649282 /* Controller */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -230,6 +219,7 @@
 		A9D34E322100C1A500F457F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1A44920EE588400E55550 /* Main.storyboard */,
 				A9D34E362100C2AA00F457F0 /* Feed.storyboard */,
 				A9DC32C3210662C500E923FF /* Profile.storyboard */,
 				A9DC32C5210662E400E923FF /* Settings.storyboard */,
@@ -242,6 +232,8 @@
 		A9D34E332100C1CE00F457F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1A46020EE5F8500E55550 /* Data */,
+				A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */,
 				A9D34E2B20FF651200F457F0 /* InitialData.swift */,
 			);
 			path = Model;
@@ -566,7 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NKCB3S776;
+				DEVELOPMENT_TEAM = VC5TLBB559;
 				INFOPLIST_FILE = "$(SRCROOT)/twitter-project/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NKCB3S776;
+				DEVELOPMENT_TEAM = VC5TLBB559;
 				INFOPLIST_FILE = "$(SRCROOT)/twitter-project/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
