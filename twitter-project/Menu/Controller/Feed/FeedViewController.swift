@@ -18,6 +18,7 @@ class FeedViewController: UIViewController {
     var user: Username!
     
     @IBOutlet var tableTwitContent: UITableView!
+    
     @IBAction func close(segue: UIStoryboardSegue) {
         tableTwitContent.reloadData()
     }
@@ -107,6 +108,7 @@ class FeedViewController: UIViewController {
             let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitViewController
             destinationEditViewController.ref = ref
             destinationEditViewController.user = user
+            print("YES")
         }
         
         if segue.identifier == "editTwit" {

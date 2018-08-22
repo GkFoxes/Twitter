@@ -13,8 +13,6 @@
 		A9759B16210497BB002FBBE3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9759B15210497BB002FBBE3 /* SideMenuViewController.swift */; };
 		A9759B1821049802002FBBE3 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9759B1721049802002FBBE3 /* SideMenuTableViewController.swift */; };
 		A9AB97A4210395270038716F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB97A3210395270038716F /* FeedViewController.swift */; };
-		A9AB97A621046F720038716F /* AddTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AB97A521046F720038716F /* AddTwit.storyboard */; };
-		A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */; };
 		A9ACA80120F61CB8002C78E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */; };
 		A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */; };
 		A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A44520EE588400E55550 /* AppDelegate.swift */; };
@@ -44,8 +42,6 @@
 		A9759B15210497BB002FBBE3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		A9759B1721049802002FBBE3 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		A9AB97A3210395270038716F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		A9AB97A521046F720038716F /* AddTwit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTwit.storyboard; sourceTree = "<group>"; };
-		A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditTwit.storyboard; sourceTree = "<group>"; };
 		A9ACA80020F61CB8002C78E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9ACA80220F61CCA002C78E7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A9D1A44220EE588400E55550 /* twitter-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "twitter-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,8 +219,6 @@
 				A9D34E362100C2AA00F457F0 /* Feed.storyboard */,
 				A9DC32C3210662C500E923FF /* Profile.storyboard */,
 				A9DC32C5210662E400E923FF /* Settings.storyboard */,
-				A9AB97A521046F720038716F /* AddTwit.storyboard */,
-				A9ACA7FC20F10D4C002C78E7 /* EditTwit.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,9 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9ACA7FD20F10D4C002C78E7 /* EditTwit.storyboard in Resources */,
 				A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */,
-				A9AB97A621046F720038716F /* AddTwit.storyboard in Resources */,
 				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
