@@ -27,11 +27,8 @@
 		A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */; };
 		A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D34E2B20FF651200F457F0 /* InitialData.swift */; };
 		A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D34E362100C2AA00F457F0 /* Feed.storyboard */; };
-		A9DC32C4210662C500E923FF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C3210662C500E923FF /* Profile.storyboard */; };
 		A9DC32C6210662E400E923FF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C5210662E400E923FF /* Settings.storyboard */; };
-		A9DC32C8210663C100E923FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32C7210663C100E923FF /* ProfileViewController.swift */; };
 		A9DC32CA210663D800E923FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32C9210663D800E923FF /* SettingsViewController.swift */; };
-		A9DC32CC21066B9E00E923FF /* WarningAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,11 +55,8 @@
 		A9D1A48720EF4A7700E55550 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9D34E2B20FF651200F457F0 /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
 		A9D34E362100C2AA00F457F0 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
-		A9DC32C3210662C500E923FF /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A9DC32C5210662E400E923FF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		A9DC32C7210663C100E923FF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A9DC32C9210663D800E923FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningAlertManager.swift; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +86,6 @@
 			children = (
 				A9D1A45E20EE5F7600E55550 /* Login */,
 				A9D34E302100C18A00F457F0 /* Feed */,
-				A9DC32BD2106627C00E923FF /* Profile */,
 				A9DC32C02106628D00E923FF /* Settings */,
 				A9D1A46B20EE634200E55550 /* Add and Edit */,
 			);
@@ -217,7 +210,6 @@
 			children = (
 				A9D1A44920EE588400E55550 /* Main.storyboard */,
 				A9D34E362100C2AA00F457F0 /* Feed.storyboard */,
-				A9DC32C3210662C500E923FF /* Profile.storyboard */,
 				A9DC32C5210662E400E923FF /* Settings.storyboard */,
 			);
 			path = View;
@@ -227,18 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				A9D1A46020EE5F8500E55550 /* Data */,
-				A9DC32CB21066B9E00E923FF /* WarningAlertManager.swift */,
 				A9D34E2B20FF651200F457F0 /* InitialData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A9DC32BD2106627C00E923FF /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				A9DC32C7210663C100E923FF /* ProfileViewController.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		A9DC32C02106628D00E923FF /* Settings */ = {
@@ -326,7 +309,6 @@
 				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
-				A9DC32C4210662C500E923FF /* Profile.storyboard in Resources */,
 				A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */,
 				A9D1A48820EF4A7700E55550 /* GoogleService-Info.plist in Resources */,
 				A9DC32C6210662E400E923FF /* Settings.storyboard in Resources */,
@@ -393,7 +375,6 @@
 				A9759B1821049802002FBBE3 /* SideMenuTableViewController.swift in Sources */,
 				A9ACA80320F61CCA002C78E7 /* RegisterViewController.swift in Sources */,
 				A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */,
-				A9DC32C8210663C100E923FF /* ProfileViewController.swift in Sources */,
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
 				A9759B16210497BB002FBBE3 /* SideMenuViewController.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */,
@@ -402,7 +383,6 @@
 				A9D1A44620EE588400E55550 /* AppDelegate.swift in Sources */,
 				A940D7C520F0D64500AD67F4 /* User.swift in Sources */,
 				A9D1A47D20EEAA6E00E55550 /* EditTwitViewController.swift in Sources */,
-				A9DC32CC21066B9E00E923FF /* WarningAlertManager.swift in Sources */,
 				A9AB97A4210395270038716F /* FeedViewController.swift in Sources */,
 				A940D7C720F0DA5B00AD67F4 /* TwitFirebase.swift in Sources */,
 			);

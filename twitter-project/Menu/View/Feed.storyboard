@@ -22,42 +22,8 @@
                         <sections>
                             <tableViewSection headerTitle="Profile" id="C2G-Yf-IXV">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sd1-gn-Ysp" customClass="SideMenuTableViewCell" customModule="twitter_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333333333333343" width="250" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sd1-gn-Ysp" id="1yh-Ah-V4V">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-gd-8ZQ">
-                                                    <rect key="frame" x="15" y="11" width="41" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yyc-eu-dLf" customClass="SideMenuTableViewCell" customModule="twitter_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.333333333333343" width="250" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyc-eu-dLf" id="XvD-lt-kbG">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-P6-G7R">
-                                                    <rect key="frame" x="15" y="11" width="64" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xGi-L5-EXY" customClass="SideMenuTableViewCell" customModule="twitter_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="143.33333333333334" width="250" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="250" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xGi-L5-EXY" id="BFR-1E-M2j">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="43.666666666666664"/>
@@ -236,7 +202,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableTwitContent" destination="MtI-5c-8w2" id="brv-1J-MsA"/>
-                        <segue destination="1OE-gp-JPC" kind="show" identifier="showProfile" id="XgO-hc-0D2"/>
                         <segue destination="jDR-qf-zhD" kind="show" identifier="showSettings" id="poc-ed-IwF"/>
                         <segue destination="HaQ-hG-nC6" kind="popoverPresentation" identifier="editTwit" popoverAnchorBarButtonItem="EMv-Kt-mGa" id="nzR-eS-FN3">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -251,7 +216,7 @@
         <scene sceneID="fxQ-Rq-mHI">
             <objects>
                 <navigationController storyboardIdentifier="NavigationFeed" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o43-eX-d4Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="zqe-XD-ICp"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed" id="zqe-XD-ICp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AoY-fL-JYV">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -279,23 +244,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="o43-eX-d4Z" kind="relationship" relationship="viewControllers" id="rwe-ae-R8S"/>
-                        <segue destination="1OE-gp-JPC" kind="relationship" relationship="viewControllers" id="TfJ-Iu-D9Y"/>
                         <segue destination="jDR-qf-zhD" kind="relationship" relationship="viewControllers" id="eNb-5I-TEX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqC-Nm-YZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2287" y="617"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="75e-zd-yQ3">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="1OE-gp-JPC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LUZ-r4-iEh"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Odo-sc-R0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2781" y="1233"/>
         </scene>
         <!--Settings-->
         <scene sceneID="fXv-W3-62s">
@@ -305,7 +259,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivI-Ld-0XR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3534" y="1233"/>
+            <point key="canvasLocation" x="2457" y="1062"/>
         </scene>
         <!--Add Twit-->
         <scene sceneID="jG8-Fv-nnj">
@@ -435,10 +389,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="feed" width="30" height="30"/>
         <image name="user" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="poc-ed-IwF"/>
-        <segue reference="XgO-hc-0D2"/>
+        <segue reference="eNb-5I-TEX"/>
     </inferredMetricsTieBreakers>
 </document>

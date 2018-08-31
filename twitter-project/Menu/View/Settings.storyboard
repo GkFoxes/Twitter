@@ -127,7 +127,7 @@
         <scene sceneID="MiY-Ng-0Ja">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q39-QR-w2X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="8rE-wX-2gq"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="8rE-wX-2gq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ogw-qP-L73">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -153,4 +153,7 @@
             <point key="canvasLocation" x="4451" y="1858"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="30" height="30"/>
+    </resources>
 </document>
