@@ -22,6 +22,8 @@ class SettingsViewController: UIViewController {
 
         guard let currentUser = Auth.auth().currentUser else { return }
         user = Username(user: currentUser)
+        
+        self.navigationItem.title = user.email
     }
 
     override func didReceiveMemoryWarning() {
