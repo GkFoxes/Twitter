@@ -3,7 +3,8 @@ like Twitter iOS App
 
 # Available:
 * Realization of СRUD functions in Realm and Firebase Realtime Database
-* Authorization, user registration, which supports the session
+* Authorization, user registration
+* Dynamic choice VC
 * Change login and password
 * Side menu view
 
