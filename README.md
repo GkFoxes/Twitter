@@ -1,5 +1,5 @@
-# twitter-project
-like Twitter iOS App
+# TwitterCRUD
+CRUD Firebase and Realm on like Twitter App
 
 # Available:
 * Realization of СRUD functions in Realm and Firebase Realtime Database
