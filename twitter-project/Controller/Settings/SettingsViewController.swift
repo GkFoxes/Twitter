@@ -14,18 +14,20 @@ class SettingsViewController: UIViewController {
     var ref: DatabaseReference!
     var user: Username!
     
+    let shared = SharedManager.shared
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         guard let currentUser = Auth.auth().currentUser else { return }
         user = Username(user: currentUser)
         
         self.navigationItem.title = user.email
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -69,13 +71,15 @@ class SettingsViewController: UIViewController {
         }
         self.dismiss(animated: true, completion: nil)
         
-        twits.removeAll()
+        shared.twits.removeAll()
+        
         try! realm.write {
             realm.deleteAll()
         }
         
-        isLoginFirst = false
-        isLogin = false
+        shared.isLoginFirst = false
+        shared.isLogin = false
+        
         self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
     }
 }

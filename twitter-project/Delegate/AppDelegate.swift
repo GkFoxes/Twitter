@@ -11,7 +11,6 @@ import RealmSwift
 import Firebase
 
 var realm : Realm!
-var isLogin = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,16 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let shared = SharedManager.shared
         
         FirebaseApp.configure()
         
         if Auth.auth().currentUser != nil {
-            isLogin = true
+            shared.isLogin = true
         }
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        if isLogin != true {
+        if shared.isLogin != true {
             let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
             let loginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             let navigationController = UINavigationController.init(rootViewController: loginViewController)

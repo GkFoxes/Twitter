@@ -22,18 +22,17 @@ class SideMenuTableViewCell: UITableViewCell {
 
 class SideMenuTableViewController: UITableViewController {
     
+    let shared = SharedManager.shared
+    
     @IBOutlet var sideMenuTable: UITableView!
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
         
-//        let emailCell = SideMenuTable.dequeueReusableCell(withIdentifier: "Email") as! SideMenuTableViewCell
-//        let cells = [emailCell]
-        
         switch indexPath.row {
-            case 0: NotificationCenter.default.post(name: NSNotification.Name("ShowProfile"), object: nil)
-            case 1: NotificationCenter.default.post(name: NSNotification.Name("ShowSettings"), object: nil)
-            default: break
+        case 0: NotificationCenter.default.post(name: NSNotification.Name("ShowProfile"), object: nil)
+        case 1: NotificationCenter.default.post(name: NSNotification.Name("ShowSettings"), object: nil)
+        default: break
         }
     }
     
@@ -45,13 +44,15 @@ class SideMenuTableViewController: UITableViewController {
         }
         self.dismiss(animated: true, completion: nil)
         
-        twits.removeAll()
+        shared.twits.removeAll()
+        
         try! realm.write {
             realm.deleteAll()
         }
         
-        isLoginFirst = false
-        isLogin = false
+        shared.isLoginFirst = false
+        shared.isLogin = false
+        
         self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
     }
 }

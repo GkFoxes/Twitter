@@ -9,11 +9,11 @@
 import UIKit
 import Firebase
 
-var isLoginFirst = false
-
 class LoginViewController: UIViewController {
     
     var reference: DatabaseReference!
+    
+    let shared = SharedManager.shared
     
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -36,8 +36,9 @@ class LoginViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if Auth.auth().currentUser != nil {
-            isLogin = true
+            shared.isLogin = true
         }
+        
         emailTextField.becomeFirstResponder()
     }
     
@@ -66,8 +67,8 @@ class LoginViewController: UIViewController {
                 }
                 
                 if user != nil {
-                    isLogin = true
-                    isLoginFirst = true
+                    self.shared.isLogin = true
+                    self.shared.isLoginFirst = true
                     
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "feedSegue", sender: nil)
