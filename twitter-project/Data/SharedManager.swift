@@ -10,17 +10,17 @@ import Foundation
 
 class SharedManager {
     
+    var isLoginFirst = false
     var isLogin = false
     var twits = Array<Twit>()
-    var isLoginFirst = false
     
     static let shared = SharedManager()
     
     private init() {}
     
     func reset() {
+        isLoginFirst = false
         isLogin = false
         twits = Array<Twit>()
-        isLoginFirst = false
     }
 }

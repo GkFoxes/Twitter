@@ -19,7 +19,6 @@
 		A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44920EE588400E55550 /* Main.storyboard */; };
 		A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44C20EE588600E55550 /* Assets.xcassets */; };
 		A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44E20EE588600E55550 /* LaunchScreen.storyboard */; };
-		A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A45720EE5D8F00E55550 /* .gitignore */; };
 		A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46420EE603800E55550 /* TwitRealm.swift */; };
 		A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */; };
 		A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitViewController.swift */; };
@@ -48,7 +47,6 @@
 		A9D1A44C20EE588600E55550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D1A44F20EE588600E55550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D1A45120EE588600E55550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9D1A45720EE5D8F00E55550 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A9D1A46420EE603800E55550 /* TwitRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitRealm.swift; sourceTree = "<group>"; };
 		A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		A9D1A47120EE643600E55550 /* AddTwitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 		A9D1A43920EE588400E55550 = {
 			isa = PBXGroup;
 			children = (
-				A9D1A45720EE5D8F00E55550 /* .gitignore */,
 				A9D1A44420EE588400E55550 /* twitter-project */,
 				A9D1A44320EE588400E55550 /* Products */,
 				68E145D0B4A240FEAA183865 /* Pods */,
@@ -286,7 +283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */,
-				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
 				A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */,
