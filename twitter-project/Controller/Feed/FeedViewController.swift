@@ -17,6 +17,8 @@ class FeedViewController: UIViewController {
     var ref: DatabaseReference!
     var user: Username!
     
+    let shared = SharedManager.shared
+    
     @IBOutlet var tableTwitContent: UITableView!
     
     @IBAction func close(segue: UIStoryboardSegue) {
@@ -25,6 +27,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableTwitContent.delegate = self
         tableTwitContent.dataSource = self
         
@@ -35,7 +38,8 @@ class FeedViewController: UIViewController {
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("twits")
         
         initialDataToFirebase()
-        if isLoginFirst {
+        
+        if shared.isLoginFirst {
             initialDataToRealm()
         }
         
@@ -76,12 +80,11 @@ class FeedViewController: UIViewController {
     // MARK: - Delete and edit from table
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let item = self.twitList[indexPath.row]
             
-            let twit = twits[indexPath.row]
-            twits.remove(at: indexPath.row)
+            let twit = self.shared.twits[indexPath.row]
+            self.shared.twits.remove(at: indexPath.row)
             twit.reference?.removeValue()
             
             try! realm.write({
@@ -108,7 +111,6 @@ class FeedViewController: UIViewController {
             let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! AddTwitViewController
             destinationEditViewController.ref = ref
             destinationEditViewController.user = user
-            print("YES")
         }
         
         if segue.identifier == "editTwit" {
@@ -118,7 +120,7 @@ class FeedViewController: UIViewController {
             
             let object = twitList[index]
             let objectToRealm = object
-            let objectToFirebase = twits[index]
+            let objectToFirebase = shared.twits[index]
             let editText = object.text
             
             destinationEditViewController.editTwitText = editText
@@ -132,6 +134,7 @@ class FeedViewController: UIViewController {
     @objc func showProfile() {
         performSegue(withIdentifier: "showProfile", sender: nil)
     }
+    
     @objc func showSettings() {
         performSegue(withIdentifier: "showSettings", sender: nil)
     }

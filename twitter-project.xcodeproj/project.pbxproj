@@ -19,7 +19,6 @@
 		A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44920EE588400E55550 /* Main.storyboard */; };
 		A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44C20EE588600E55550 /* Assets.xcassets */; };
 		A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A44E20EE588600E55550 /* LaunchScreen.storyboard */; };
-		A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A45720EE5D8F00E55550 /* .gitignore */; };
 		A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46420EE603800E55550 /* TwitRealm.swift */; };
 		A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */; };
 		A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A47120EE643600E55550 /* AddTwitViewController.swift */; };
@@ -29,6 +28,7 @@
 		A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D34E362100C2AA00F457F0 /* Feed.storyboard */; };
 		A9DC32C6210662E400E923FF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DC32C5210662E400E923FF /* Settings.storyboard */; };
 		A9DC32CA210663D800E923FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC32C9210663D800E923FF /* SettingsViewController.swift */; };
+		A9F725C0216E4ADB00AE8A92 /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F725BF216E4ADB00AE8A92 /* SharedManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,6 @@
 		A9D1A44C20EE588600E55550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D1A44F20EE588600E55550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D1A45120EE588600E55550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9D1A45720EE5D8F00E55550 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A9D1A46420EE603800E55550 /* TwitRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitRealm.swift; sourceTree = "<group>"; };
 		A9D1A46820EE620E00E55550 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		A9D1A47120EE643600E55550 /* AddTwitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwitViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		A9D34E362100C2AA00F457F0 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		A9DC32C5210662E400E923FF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A9DC32C9210663D800E923FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A9F725BF216E4ADB00AE8A92 /* SharedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
 		FA96F04314C8C7D8C040EABC /* Pods-twitter-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter-project/Pods-twitter-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,6 @@
 		A9D1A43920EE588400E55550 = {
 			isa = PBXGroup;
 			children = (
-				A9D1A45720EE5D8F00E55550 /* .gitignore */,
 				A9D1A44420EE588400E55550 /* twitter-project */,
 				A9D1A44320EE588400E55550 /* Products */,
 				68E145D0B4A240FEAA183865 /* Pods */,
@@ -114,36 +113,22 @@
 		A9D1A44420EE588400E55550 /* twitter-project */ = {
 			isa = PBXGroup;
 			children = (
-				A9D1A45920EE5DA600E55550 /* Application */,
-				A9D34E2F2100C15A00F457F0 /* Menu */,
+				A9D1A45A20EE5EFB00E55550 /* Delegate */,
+				A9D1A46020EE5F8500E55550 /* Data */,
+				A9D34E332100C1CE00F457F0 /* Model */,
+				A9D34E322100C1A500F457F0 /* View */,
+				A94D5583212C236C00649282 /* Controller */,
 				A9D1A46120EE5F9C00E55550 /* Resources */,
 			);
 			path = "twitter-project";
 			sourceTree = "<group>";
 		};
-		A9D1A45920EE5DA600E55550 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1A45A20EE5EFB00E55550 /* Model */,
-				A9D1A45B20EE5F1E00E55550 /* View */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		A9D1A45A20EE5EFB00E55550 /* Model */ = {
+		A9D1A45A20EE5EFB00E55550 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
 				A9D1A44520EE588400E55550 /* AppDelegate.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A9D1A45B20EE5F1E00E55550 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A9D1A44E20EE588600E55550 /* LaunchScreen.storyboard */,
-			);
-			path = View;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		A9D1A45E20EE5F7600E55550 /* Login */ = {
@@ -158,9 +143,8 @@
 		A9D1A46020EE5F8500E55550 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A940D7C420F0D64500AD67F4 /* User.swift */,
-				A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */,
-				A9D1A46420EE603800E55550 /* TwitRealm.swift */,
+				A9F725BF216E4ADB00AE8A92 /* SharedManager.swift */,
+				A9D34E2B20FF651200F457F0 /* InitialData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -184,16 +168,6 @@
 			path = "Add and Edit";
 			sourceTree = "<group>";
 		};
-		A9D34E2F2100C15A00F457F0 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				A9D34E332100C1CE00F457F0 /* Model */,
-				A9D34E322100C1A500F457F0 /* View */,
-				A94D5583212C236C00649282 /* Controller */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
 		A9D34E302100C18A00F457F0 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +182,7 @@
 		A9D34E322100C1A500F457F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1A44E20EE588600E55550 /* LaunchScreen.storyboard */,
 				A9D1A44920EE588400E55550 /* Main.storyboard */,
 				A9D34E362100C2AA00F457F0 /* Feed.storyboard */,
 				A9DC32C5210662E400E923FF /* Settings.storyboard */,
@@ -218,8 +193,9 @@
 		A9D34E332100C1CE00F457F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A9D1A46020EE5F8500E55550 /* Data */,
-				A9D34E2B20FF651200F457F0 /* InitialData.swift */,
+				A940D7C420F0D64500AD67F4 /* User.swift */,
+				A940D7C620F0DA5B00AD67F4 /* TwitFirebase.swift */,
+				A9D1A46420EE603800E55550 /* TwitRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,6 +250,7 @@
 				TargetAttributes = {
 					A9D1A44120EE588400E55550 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -306,7 +283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D34E372100C2AA00F457F0 /* Feed.storyboard in Resources */,
-				A9D1A45820EE5D8F00E55550 /* .gitignore in Resources */,
 				A9D1A45020EE588600E55550 /* LaunchScreen.storyboard in Resources */,
 				A9D1A44D20EE588600E55550 /* Assets.xcassets in Resources */,
 				A9D1A44B20EE588400E55550 /* Main.storyboard in Resources */,
@@ -377,6 +353,7 @@
 				A9D1A47220EE643600E55550 /* AddTwitViewController.swift in Sources */,
 				A9D1A46920EE620E00E55550 /* FeedTableViewCell.swift in Sources */,
 				A9759B16210497BB002FBBE3 /* SideMenuViewController.swift in Sources */,
+				A9F725C0216E4ADB00AE8A92 /* SharedManager.swift in Sources */,
 				A9D1A46520EE603800E55550 /* TwitRealm.swift in Sources */,
 				A9DC32CA210663D800E923FF /* SettingsViewController.swift in Sources */,
 				A9D34E2C20FF651200F457F0 /* InitialData.swift in Sources */,
@@ -530,7 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VC5TLBB559;
+				DEVELOPMENT_TEAM = 2NKCB3S776;
 				INFOPLIST_FILE = "$(SRCROOT)/twitter-project/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,7 +515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "GkFoxes.twitter-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -549,7 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VC5TLBB559;
+				DEVELOPMENT_TEAM = 2NKCB3S776;
 				INFOPLIST_FILE = "$(SRCROOT)/twitter-project/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,7 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "GkFoxes.twitter-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -9,8 +9,6 @@
 import Foundation
 import Firebase
 
-var twits = Array<Twit>()
-
 struct Twit {
     var postId: String?
     let text: String

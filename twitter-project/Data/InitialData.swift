@@ -11,12 +11,15 @@ import RealmSwift
 import Firebase
 
 extension FeedViewController {
+    
     func initialDataToRealm() {
         ref.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             for item in snapshot.children {
                 let twitsInitial = Twit(snapshot: item as! DataSnapshot)
                 let twitForRealm = Messages()
+                
                 twitForRealm.text = twitsInitial.text
+                
                 try! realm.write({
                     realm.add(twitForRealm)
                 })
@@ -24,15 +27,16 @@ extension FeedViewController {
                 self?.tableTwitContent.reloadData()
             }
         })
-        isLoginFirst = false
+        shared.isLoginFirst = false
     }
     
     func initialDataToFirebase() {
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             for item in snapshot.children {
                 let twitsInitial = Twit(snapshot: item as! DataSnapshot)
-                twits.append(twitsInitial)
-                twits.sort(by: { $0.date.compare($1.date) == .orderedDescending })
+                
+                self.shared.twits.append(twitsInitial)
+                self.shared.twits.sort(by: { $0.date.compare($1.date) == .orderedDescending })
             }
         })
     }

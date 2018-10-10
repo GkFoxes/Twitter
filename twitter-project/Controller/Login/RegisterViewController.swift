@@ -50,7 +50,7 @@ class RegisterViewController: UIViewController {
                 alertWarning(title: "Empty field", message: "You did not fill all the fields, please check again.")
                 return
         }
-
+        
         let queue = DispatchQueue.global(qos: .userInteractive)
         queue.async{
             Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -62,6 +62,7 @@ class RegisterViewController: UIViewController {
                     }
                     return
                 }
+                
                 let userRef = self.ref.child((user?.user.uid)!)
                 userRef.setValue(["email": user?.user.email])
                 
