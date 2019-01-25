@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 
@@ -54,6 +55,19 @@
 // MARK: - Login Button Action
 - (IBAction)loginTapeed:(id)sender {
     printf("Login working!\n");
+    
+    UIStoryboard *feedStoryboard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+    
+    UIViewController *sideMenu = [feedStoryboard instantiateViewControllerWithIdentifier:@"SideMenuViewController"];
+    UIViewController *feedView = [feedStoryboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:feedView leftDrawerViewController:sideMenu rightDrawerViewController:nil];
+    
+    self.drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    self.drawerController.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    appDelegate.window.rootViewController = self.drawerController;
     
     [self performSegueWithIdentifier:@"feedFromLoginSegue" sender:sender];
 }

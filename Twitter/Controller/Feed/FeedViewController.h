@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDrawerController.h"
 
 @interface FeedViewController : UIViewController
+
+@property (strong, nonatomic) MMDrawerController *drawerController;
 
 @end

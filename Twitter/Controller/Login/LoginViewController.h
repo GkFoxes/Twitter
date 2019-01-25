@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDrawerController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginViewController : UIViewController
+
+@property (strong, nonatomic) MMDrawerController *drawerController;
 
 @end
 

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A90614FF21F9D05100CB8C20 /* AppDelegate.m */; };
 		A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150221F9D05100CB8C20 /* FeedViewController.m */; };
-		A906150621F9D05100CB8C20 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150521F9D05100CB8C20 /* SecondViewController.m */; };
+		A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150521F9D05100CB8C20 /* SettingsViewController.m */; };
 		A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150721F9D05100CB8C20 /* Feed.storyboard */; };
 		A906150B21F9D05400CB8C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A906150A21F9D05400CB8C20 /* Assets.xcassets */; };
 		A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */; };
@@ -19,6 +19,12 @@
 		A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152621FA094200CB8C20 /* RegisterViewController.m */; };
 		A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152B21FB06EF00CB8C20 /* TwitViewController.m */; };
 		A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153521FB131D00CB8C20 /* FeedTableViewCell.m */; };
+		A906153921FB28F600CB8C20 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906153721FB28F600CB8C20 /* Settings.storyboard */; };
+		A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */; };
+		A906154821FB479A00CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153F21FB479A00CB8C20 /* UIViewController+MMDrawerController.m */; };
+		A906154921FB479A00CB8C20 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154121FB479A00CB8C20 /* MMDrawerVisualState.m */; };
+		A906154A21FB479A00CB8C20 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154221FB479A00CB8C20 /* MMDrawerBarButtonItem.m */; };
+		A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154321FB479A00CB8C20 /* MMDrawerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +33,8 @@
 		A90614FF21F9D05100CB8C20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A906150121F9D05100CB8C20 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		A906150221F9D05100CB8C20 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
-		A906150421F9D05100CB8C20 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		A906150521F9D05100CB8C20 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A906150421F9D05100CB8C20 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A906150521F9D05100CB8C20 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A906150821F9D05100CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
 		A906150A21F9D05400CB8C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A906150D21F9D05400CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +50,18 @@
 		A906152B21FB06EF00CB8C20 /* TwitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitViewController.m; sourceTree = "<group>"; };
 		A906153421FB131D00CB8C20 /* FeedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
 		A906153521FB131D00CB8C20 /* FeedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
+		A906153821FB28F600CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Twitter/View/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		A906153B21FB45BF00CB8C20 /* SideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
+		A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+		A906153F21FB479A00CB8C20 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A906154021FB479A00CB8C20 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		A906154121FB479A00CB8C20 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		A906154221FB479A00CB8C20 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		A906154321FB479A00CB8C20 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		A906154421FB479A00CB8C20 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		A906154521FB479A00CB8C20 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		A906154621FB479A00CB8C20 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		A906154721FB479A00CB8C20 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +118,7 @@
 				A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */,
 				A906151E21F9F4D700CB8C20 /* Login.storyboard */,
 				A906150721F9D05100CB8C20 /* Feed.storyboard */,
+				A906153721FB28F600CB8C20 /* Settings.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +128,8 @@
 			children = (
 				A906152021F9FEA700CB8C20 /* Login */,
 				A906152121F9FEAF00CB8C20 /* Feed */,
+				A906153A21FB296900CB8C20 /* Settings */,
+				A906153E21FB476800CB8C20 /* SideMenu */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,10 +164,35 @@
 				A906150221F9D05100CB8C20 /* FeedViewController.m */,
 				A906152A21FB06EF00CB8C20 /* TwitViewController.h */,
 				A906152B21FB06EF00CB8C20 /* TwitViewController.m */,
-				A906150421F9D05100CB8C20 /* SecondViewController.h */,
-				A906150521F9D05100CB8C20 /* SecondViewController.m */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		A906153A21FB296900CB8C20 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A906150421F9D05100CB8C20 /* SettingsViewController.h */,
+				A906150521F9D05100CB8C20 /* SettingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A906153E21FB476800CB8C20 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A906153B21FB45BF00CB8C20 /* SideMenuViewController.h */,
+				A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */,
+				A906154521FB479A00CB8C20 /* MMDrawerBarButtonItem.h */,
+				A906154221FB479A00CB8C20 /* MMDrawerBarButtonItem.m */,
+				A906154421FB479A00CB8C20 /* MMDrawerController.h */,
+				A906154321FB479A00CB8C20 /* MMDrawerController.m */,
+				A906154621FB479A00CB8C20 /* MMDrawerController+Subclass.h */,
+				A906154721FB479A00CB8C20 /* MMDrawerVisualState.h */,
+				A906154121FB479A00CB8C20 /* MMDrawerVisualState.m */,
+				A906154021FB479A00CB8C20 /* UIViewController+MMDrawerController.h */,
+				A906153F21FB479A00CB8C20 /* UIViewController+MMDrawerController.m */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +261,7 @@
 				A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */,
 				A906150B21F9D05400CB8C20 /* Assets.xcassets in Resources */,
 				A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */,
+				A906153921FB28F600CB8C20 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A906150621F9D05100CB8C20 /* SecondViewController.m in Sources */,
+				A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */,
+				A906154A21FB479A00CB8C20 /* MMDrawerBarButtonItem.m in Sources */,
+				A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */,
+				A906154921FB479A00CB8C20 /* MMDrawerVisualState.m in Sources */,
 				A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */,
+				A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */,
+				A906154821FB479A00CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
 				A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */,
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
 				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
@@ -253,6 +305,14 @@
 				A906150D21F9D05400CB8C20 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A906153721FB28F600CB8C20 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A906153821FB28F600CB8C20 /* Base */,
+			);
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
