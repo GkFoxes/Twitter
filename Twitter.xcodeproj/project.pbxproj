@@ -17,6 +17,8 @@
 		A906151F21F9F4D700CB8C20 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906151E21F9F4D700CB8C20 /* Login.storyboard */; };
 		A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152321F9FEDA00CB8C20 /* LoginViewController.m */; };
 		A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152621FA094200CB8C20 /* RegisterViewController.m */; };
+		A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152B21FB06EF00CB8C20 /* TwitViewController.m */; };
+		A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153521FB131D00CB8C20 /* FeedTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		A906152521FA094200CB8C20 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		A906152621FA094200CB8C20 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		A906152921FA17B800CB8C20 /* Twitter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twitter.entitlements; sourceTree = "<group>"; };
+		A906152A21FB06EF00CB8C20 /* TwitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitViewController.h; sourceTree = "<group>"; };
+		A906152B21FB06EF00CB8C20 /* TwitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitViewController.m; sourceTree = "<group>"; };
+		A906153421FB131D00CB8C20 /* FeedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
+		A906153521FB131D00CB8C20 /* FeedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +137,12 @@
 		A906152121F9FEAF00CB8C20 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				A906153421FB131D00CB8C20 /* FeedTableViewCell.h */,
+				A906153521FB131D00CB8C20 /* FeedTableViewCell.m */,
 				A906150121F9D05100CB8C20 /* FeedViewController.h */,
 				A906150221F9D05100CB8C20 /* FeedViewController.m */,
+				A906152A21FB06EF00CB8C20 /* TwitViewController.h */,
+				A906152B21FB06EF00CB8C20 /* TwitViewController.m */,
 				A906150421F9D05100CB8C20 /* SecondViewController.h */,
 				A906150521F9D05100CB8C20 /* SecondViewController.m */,
 			);
@@ -216,8 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A906150621F9D05100CB8C20 /* SecondViewController.m in Sources */,
+				A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */,
 				A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */,
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
+				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
 				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
 				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
