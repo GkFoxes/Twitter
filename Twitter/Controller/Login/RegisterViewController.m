@@ -40,6 +40,15 @@
     return YES;
 }
 
+// MARK: - Warning alert message
+- (void) showAlertMessageWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 // MARK: - Register Button Action
 - (IBAction)registerTapeed:(id)sender {
     printf("Register working!\n");

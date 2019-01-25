@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //test [self showAlertMessageWithTitle:@"Warning!" message:@"Some bla-bla"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -38,6 +40,14 @@
     }
     
     return YES;
+}
+// MARK: - Warning alert message
+- (void) showAlertMessageWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // MARK: - Login Button Action
