@@ -21,10 +21,8 @@
 		A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153521FB131D00CB8C20 /* FeedTableViewCell.m */; };
 		A906153921FB28F600CB8C20 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906153721FB28F600CB8C20 /* Settings.storyboard */; };
 		A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */; };
-		A906154821FB479A00CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153F21FB479A00CB8C20 /* UIViewController+MMDrawerController.m */; };
-		A906154921FB479A00CB8C20 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154121FB479A00CB8C20 /* MMDrawerVisualState.m */; };
-		A906154A21FB479A00CB8C20 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154221FB479A00CB8C20 /* MMDrawerBarButtonItem.m */; };
 		A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154321FB479A00CB8C20 /* MMDrawerController.m */; };
+		A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,15 +51,10 @@
 		A906153821FB28F600CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Twitter/View/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		A906153B21FB45BF00CB8C20 /* SideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
-		A906153F21FB479A00CB8C20 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
-		A906154021FB479A00CB8C20 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		A906154121FB479A00CB8C20 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
-		A906154221FB479A00CB8C20 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
 		A906154321FB479A00CB8C20 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
 		A906154421FB479A00CB8C20 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
-		A906154521FB479A00CB8C20 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		A906154621FB479A00CB8C20 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		A906154721FB479A00CB8C20 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		A906154F21FB663000CB8C20 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,15 +175,10 @@
 			children = (
 				A906153B21FB45BF00CB8C20 /* SideMenuViewController.h */,
 				A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */,
-				A906154521FB479A00CB8C20 /* MMDrawerBarButtonItem.h */,
-				A906154221FB479A00CB8C20 /* MMDrawerBarButtonItem.m */,
 				A906154421FB479A00CB8C20 /* MMDrawerController.h */,
 				A906154321FB479A00CB8C20 /* MMDrawerController.m */,
-				A906154621FB479A00CB8C20 /* MMDrawerController+Subclass.h */,
-				A906154721FB479A00CB8C20 /* MMDrawerVisualState.h */,
-				A906154121FB479A00CB8C20 /* MMDrawerVisualState.m */,
-				A906154021FB479A00CB8C20 /* UIViewController+MMDrawerController.h */,
-				A906153F21FB479A00CB8C20 /* UIViewController+MMDrawerController.m */,
+				A906154F21FB663000CB8C20 /* UIViewController+MMDrawerController.h */,
+				A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -272,13 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
 				A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */,
-				A906154A21FB479A00CB8C20 /* MMDrawerBarButtonItem.m in Sources */,
 				A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */,
-				A906154921FB479A00CB8C20 /* MMDrawerVisualState.m in Sources */,
 				A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */,
 				A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */,
-				A906154821FB479A00CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
 				A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */,
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
 				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
