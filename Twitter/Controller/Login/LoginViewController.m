@@ -40,9 +40,11 @@
     return YES;
 }
 
-// MARK: - Button Action
+// MARK: - Login Button Action
 - (IBAction)loginTapeed:(id)sender {
     printf("Login working!\n");
+    
+    [self performSegueWithIdentifier:@"feedFromLoginSegue" sender:sender];
 }
 
 @end

@@ -136,11 +136,20 @@
                     <connections>
                         <outlet property="passwordTextField" destination="D9Y-i9-jtg" id="cyA-hf-twD"/>
                         <outlet property="usernameTextField" destination="2sQ-uZ-KDZ" id="bqR-Pd-hxO"/>
+                        <segue destination="1K1-F7-esa" kind="presentation" identifier="feedFromLoginSegue" id="Qz6-4W-vzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRp-OK-lsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="151.57421289355324"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="k3x-ex-mkM">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="FeedViewController" storyboardName="Feed" id="1K1-F7-esa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LZ-XL-N7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="456"/>
         </scene>
         <!--Twitter-->
         <scene sceneID="TYu-WB-sCJ">
@@ -228,6 +237,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="rK1-zw-DjD" id="yJu-NR-aNF"/>
                         <outlet property="usernameTextField" destination="JAK-Rk-Uhe" id="Kuj-Xw-mpY"/>
+                        <segue destination="1K1-F7-esa" kind="presentation" identifier="feedFromRegisterSegue" id="kpr-I3-0Dc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DH5-9G-hIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,4 +245,7 @@
             <point key="canvasLocation" x="300" y="887"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qz6-4W-vzF"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -40,9 +40,11 @@
     return YES;
 }
 
-// MARK: - Button Action
+// MARK: - Register Button Action
 - (IBAction)registerTapeed:(id)sender {
     printf("Register working!\n");
+    
+    [self performSegueWithIdentifier:@"feedFromRegisterSegue" sender:sender];
 }
 
 @end
