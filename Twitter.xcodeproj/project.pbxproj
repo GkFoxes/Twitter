@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A90614FF21F9D05100CB8C20 /* AppDelegate.m */; };
-		A906150321F9D05100CB8C20 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150221F9D05100CB8C20 /* FirstViewController.m */; };
+		A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150221F9D05100CB8C20 /* FeedViewController.m */; };
 		A906150621F9D05100CB8C20 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150521F9D05100CB8C20 /* SecondViewController.m */; };
 		A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150721F9D05100CB8C20 /* Feed.storyboard */; };
 		A906150B21F9D05400CB8C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A906150A21F9D05400CB8C20 /* Assets.xcassets */; };
@@ -23,8 +23,8 @@
 		A90614FB21F9D05100CB8C20 /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90614FE21F9D05100CB8C20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A90614FF21F9D05100CB8C20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A906150121F9D05100CB8C20 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		A906150221F9D05100CB8C20 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A906150121F9D05100CB8C20 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		A906150221F9D05100CB8C20 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		A906150421F9D05100CB8C20 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		A906150521F9D05100CB8C20 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		A906150821F9D05100CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 		A906152121F9FEAF00CB8C20 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				A906150121F9D05100CB8C20 /* FirstViewController.h */,
-				A906150221F9D05100CB8C20 /* FirstViewController.m */,
+				A906150121F9D05100CB8C20 /* FeedViewController.h */,
+				A906150221F9D05100CB8C20 /* FeedViewController.m */,
 				A906150421F9D05100CB8C20 /* SecondViewController.h */,
 				A906150521F9D05100CB8C20 /* SecondViewController.m */,
 			);
@@ -219,7 +219,7 @@
 				A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */,
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
-				A906150321F9D05100CB8C20 /* FirstViewController.m in Sources */,
+				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
 				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

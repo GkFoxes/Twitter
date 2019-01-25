@@ -27,7 +27,7 @@
     [_usernameTextField becomeFirstResponder];
 }
 
-//Choose next TextField or Register, when click Return key
+// Choose next TextField or Register, when click Return key
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     if (textField == _usernameTextField) {
@@ -40,7 +40,7 @@
     return YES;
 }
 
-// MARK: - Warning alert message
+// Warning alert message
 - (void) showAlertMessageWithTitle:(NSString *)title message:(NSString *)message {
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];

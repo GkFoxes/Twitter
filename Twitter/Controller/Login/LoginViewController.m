@@ -22,14 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //test [self showAlertMessageWithTitle:@"Warning!" message:@"Some bla-bla"];
+    // test [self showAlertMessageWithTitle:@"Warning!" message:@"Some bla-bla"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [_usernameTextField becomeFirstResponder];
 }
 
-//Choose next TextField or Login, when click Return key
+// Choose next TextField or Login, when click Return key
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     if (textField == _usernameTextField) {
@@ -41,7 +41,8 @@
     
     return YES;
 }
-// MARK: - Warning alert message
+
+// Warning alert message
 - (void) showAlertMessageWithTitle:(NSString *)title message:(NSString *)message {
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
