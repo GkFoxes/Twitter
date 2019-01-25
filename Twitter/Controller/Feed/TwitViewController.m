@@ -10,15 +10,21 @@
 
 @interface TwitViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
-
 @end
 
 @implementation TwitViewController
 
+@synthesize usernameLabel;
+@synthesize textLabel;
+
+@synthesize username;
+@synthesize text;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    usernameLabel.text = username;
+    textLabel.text = text;
 }
 
 @end

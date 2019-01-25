@@ -12,7 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TwitViewController : UIViewController
 
-//@property (nonatomic)
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *text;
 
 @end
 

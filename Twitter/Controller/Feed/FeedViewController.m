@@ -8,6 +8,7 @@
 
 #import "FeedViewController.h"
 #import "FeedTableViewCell.h"
+#import "TwitViewController.h"
 
 @interface FeedViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -25,6 +26,10 @@
     
     self.testUsernameArray = [[NSMutableArray alloc] initWithObjects:@"GkFoxes", @"Some Name", @"BLA-BLA", nil];
     self.testTextArray = [[NSMutableArray alloc] initWithObjects:@"Hello World!", @"Some text, text, Some text, text, Some text, text", @"MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA", nil];
+    
+    self.tableFeedContent.rowHeight = UITableViewAutomaticDimension;
+    self.tableFeedContent.estimatedRowHeight = 56.0;
+    self.tableFeedContent.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -51,6 +56,19 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+}
+
+// MARK: - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showTwit"]) {
+        NSIndexPath *indexPath = [self.tableFeedContent indexPathForSelectedRow];
+       
+        TwitViewController *destViewController = segue.destinationViewController;
+        
+        destViewController.username = [_testUsernameArray objectAtIndex:indexPath.row];
+        destViewController.text = [_testTextArray objectAtIndex:indexPath.row];
+    }
 }
 
 @end
