@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  LoginViewController.h
 //  Twitter
 //
 //  Created by Дмитрий Матвеенко on 24/01/2019.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface LoginViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -8,27 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A90614FF21F9D05100CB8C20 /* AppDelegate.m */; };
-		A906150321F9D05100CB8C20 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150221F9D05100CB8C20 /* FirstViewController.m */; };
+		A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150221F9D05100CB8C20 /* FeedViewController.m */; };
 		A906150621F9D05100CB8C20 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150521F9D05100CB8C20 /* SecondViewController.m */; };
-		A906150921F9D05100CB8C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150721F9D05100CB8C20 /* Main.storyboard */; };
+		A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150721F9D05100CB8C20 /* Feed.storyboard */; };
 		A906150B21F9D05400CB8C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A906150A21F9D05400CB8C20 /* Assets.xcassets */; };
 		A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */; };
 		A906151121F9D05400CB8C20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A906151021F9D05400CB8C20 /* main.m */; };
+		A906151F21F9F4D700CB8C20 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906151E21F9F4D700CB8C20 /* Login.storyboard */; };
+		A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152321F9FEDA00CB8C20 /* LoginViewController.m */; };
+		A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152621FA094200CB8C20 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A90614FB21F9D05100CB8C20 /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90614FE21F9D05100CB8C20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A90614FF21F9D05100CB8C20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A906150121F9D05100CB8C20 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		A906150221F9D05100CB8C20 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A906150121F9D05100CB8C20 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		A906150221F9D05100CB8C20 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		A906150421F9D05100CB8C20 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		A906150521F9D05100CB8C20 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		A906150821F9D05100CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A906150821F9D05100CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
 		A906150A21F9D05400CB8C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A906150D21F9D05400CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A906150F21F9D05400CB8C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A906151021F9D05400CB8C20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A906151E21F9F4D700CB8C20 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A906152221F9FEDA00CB8C20 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A906152321F9FEDA00CB8C20 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A906152521FA094200CB8C20 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		A906152621FA094200CB8C20 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		A906152921FA17B800CB8C20 /* Twitter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twitter.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +70,73 @@
 		A90614FD21F9D05100CB8C20 /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				A906152921FA17B800CB8C20 /* Twitter.entitlements */,
+				A906151721F9D87500CB8C20 /* Delegate */,
+				A906151921F9D8AE00CB8C20 /* View */,
+				A906151A21F9D8C800CB8C20 /* Controller */,
+				A906151B21F9D8E500CB8C20 /* Resources */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		A906151721F9D87500CB8C20 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
 				A90614FE21F9D05100CB8C20 /* AppDelegate.h */,
 				A90614FF21F9D05100CB8C20 /* AppDelegate.m */,
-				A906150121F9D05100CB8C20 /* FirstViewController.h */,
-				A906150221F9D05100CB8C20 /* FirstViewController.m */,
-				A906150421F9D05100CB8C20 /* SecondViewController.h */,
-				A906150521F9D05100CB8C20 /* SecondViewController.m */,
-				A906150721F9D05100CB8C20 /* Main.storyboard */,
-				A906150A21F9D05400CB8C20 /* Assets.xcassets */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		A906151921F9D8AE00CB8C20 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */,
+				A906151E21F9F4D700CB8C20 /* Login.storyboard */,
+				A906150721F9D05100CB8C20 /* Feed.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A906151A21F9D8C800CB8C20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A906152021F9FEA700CB8C20 /* Login */,
+				A906152121F9FEAF00CB8C20 /* Feed */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A906151B21F9D8E500CB8C20 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A906150A21F9D05400CB8C20 /* Assets.xcassets */,
 				A906150F21F9D05400CB8C20 /* Info.plist */,
 				A906151021F9D05400CB8C20 /* main.m */,
 			);
-			path = Twitter;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A906152021F9FEA700CB8C20 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A906152221F9FEDA00CB8C20 /* LoginViewController.h */,
+				A906152321F9FEDA00CB8C20 /* LoginViewController.m */,
+				A906152521FA094200CB8C20 /* RegisterViewController.h */,
+				A906152621FA094200CB8C20 /* RegisterViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A906152121F9FEAF00CB8C20 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				A906150121F9D05100CB8C20 /* FeedViewController.h */,
+				A906150221F9D05100CB8C20 /* FeedViewController.m */,
+				A906150421F9D05100CB8C20 /* SecondViewController.h */,
+				A906150521F9D05100CB8C20 /* SecondViewController.m */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +170,11 @@
 				TargetAttributes = {
 					A90614FA21F9D05100CB8C20 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -133,9 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A906151F21F9F4D700CB8C20 /* Login.storyboard in Resources */,
 				A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */,
 				A906150B21F9D05400CB8C20 /* Assets.xcassets in Resources */,
-				A906150921F9D05100CB8C20 /* Main.storyboard in Resources */,
+				A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,21 +216,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A906150621F9D05100CB8C20 /* SecondViewController.m in Sources */,
+				A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */,
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
-				A906150321F9D05100CB8C20 /* FirstViewController.m in Sources */,
+				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
+				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A906150721F9D05100CB8C20 /* Main.storyboard */ = {
+		A906150721F9D05100CB8C20 /* Feed.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A906150821F9D05100CB8C20 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Feed.storyboard;
 			sourceTree = "<group>";
 		};
 		A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */ = {
@@ -291,9 +362,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Twitter/Twitter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NKCB3S776;
-				INFOPLIST_FILE = Twitter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Twitter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,9 +380,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Twitter/Twitter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NKCB3S776;
-				INFOPLIST_FILE = Twitter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Twitter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
