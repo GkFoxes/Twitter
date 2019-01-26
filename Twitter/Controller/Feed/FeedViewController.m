@@ -9,7 +9,6 @@
 #import "FeedViewController.h"
 #import "FeedTableViewCell.h"
 #import "TwitViewController.h"
-#import "AppDelegate.h"
 
 @interface FeedViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -33,12 +32,19 @@
     self.tableFeedContent.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //Add Side Menu swipe
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [appDelegate.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+}
+
 // MARK: - Button Action
 
 - (IBAction)showSideMenu:(id)sender {
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     [appDelegate.drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    printf("Side working!\n");
 }
 
 // MARK: - Segue

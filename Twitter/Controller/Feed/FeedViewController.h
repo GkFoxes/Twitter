@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface FeedViewController : UIViewController
+
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 - (IBAction)showSideMenu:(id)sender;
 

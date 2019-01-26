@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface SettingsViewController : UIViewController
+
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @end
