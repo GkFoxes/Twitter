@@ -9,7 +9,6 @@
 #import "FeedViewController.h"
 #import "FeedTableViewCell.h"
 #import "TwitViewController.h"
-#import "MMDrawerController.h"
 #import "AppDelegate.h"
 
 @interface FeedViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -37,9 +36,9 @@
 // MARK: - Button Action
 
 - (IBAction)showSideMenu:(id)sender {
-    //AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    //[appDelegate.drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    [self.drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [appDelegate.drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    printf("Side working!\n");
 }
 
 // MARK: - Segue

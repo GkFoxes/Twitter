@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCr-As-9m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="-768"/>
+            <point key="canvasLocation" x="1457" y="-666"/>
         </scene>
         <!--Feed-->
         <scene sceneID="hNz-n2-bh7">
@@ -95,9 +95,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="p0e-8N-kvf">
-                        <barButtonItem key="leftBarButtonItem" title="ICON" id="wtP-eA-cfO">
+                        <barButtonItem key="leftBarButtonItem" image="user" id="wtP-eA-cfO">
                             <connections>
-                                <action selector="showSideMenu:" destination="9pv-A4-QxB" id="sp4-03-VZw"/>
+                                <action selector="showSideMenu:" destination="9pv-A4-QxB" id="tae-ha-DV7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,7 +153,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController storyboardIdentifier="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="FeedTabBarViewController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -209,5 +209,6 @@
     </scenes>
     <resources>
         <image name="feed" width="45" height="45"/>
+        <image name="user" width="45" height="45"/>
     </resources>
 </document>
