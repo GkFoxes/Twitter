@@ -51,7 +51,10 @@
 
 // MARK: - Register Button Action
 - (IBAction)registerTapeed:(id)sender {
-    printf("Register working!\n");
+    
+    //Setting Side Menu
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [appDelegate settingFeedSideMenu];
     
     [self performSegueWithIdentifier:@"feedFromRegisterSegue" sender:sender];
 }

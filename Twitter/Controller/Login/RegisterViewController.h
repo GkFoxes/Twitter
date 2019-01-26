@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RegisterViewController : UIViewController
+
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @end
 

@@ -14,8 +14,31 @@
 
 @implementation AppDelegate
 
+@synthesize isLogin = _isLogin;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+//    if (_isLogin) {
+//        [self settingFeedSideMenu];
+//    }
+    
     return YES;
+}
+
+// MARK: - Side Menu
+-(void)settingFeedSideMenu {
+    
+    UIStoryboard *feedStoryboard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+
+    UIViewController *sideMenu = [feedStoryboard instantiateViewControllerWithIdentifier:@"SideMenuViewController"];
+    UITabBarController *feedView = [feedStoryboard instantiateViewControllerWithIdentifier:@"FeedTabBarViewController"];
+
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:feedView leftDrawerViewController:sideMenu];
+
+    self.drawerController.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+
+    _window.rootViewController = self.drawerController;
+    [_window makeKeyAndVisible];
 }
 
 @end
