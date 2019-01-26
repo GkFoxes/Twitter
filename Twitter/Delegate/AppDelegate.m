@@ -14,13 +14,20 @@
 
 @implementation AppDelegate
 
+@synthesize isLogin = _isLogin;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self opedFeedSideMenu];
+    
+//    if (_isLogin) {
+//        [self settingFeedSideMenu];
+//    }
+    
     return YES;
 }
 
-// MARK: - Side menu
--(void)opedFeedSideMenu {
+// MARK: - Side Menu
+-(void)settingFeedSideMenu {
+    
     UIStoryboard *feedStoryboard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
 
     UIViewController *sideMenu = [feedStoryboard instantiateViewControllerWithIdentifier:@"SideMenuViewController"];

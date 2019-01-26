@@ -17,13 +17,46 @@
                     <view key="view" contentMode="scaleToFill" id="gPU-cz-Dn3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Username" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLR-mk-j2d">
+                                <rect key="frame" x="16" y="72" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-iG-559">
+                                <rect key="frame" x="97.5" y="112" width="180" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="DPQ-no-8fA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="f2k-Uc-wsb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.makesToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.90626949069999996" green="0.92529600860000005" blue="0.94118219609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="dRk-iV-jEi" firstAttribute="trailing" secondItem="DLR-mk-j2d" secondAttribute="trailing" constant="16" id="F8i-Af-P53"/>
+                            <constraint firstItem="DLR-mk-j2d" firstAttribute="leading" secondItem="dRk-iV-jEi" secondAttribute="leading" constant="16" id="Gap-Hu-gGG"/>
+                            <constraint firstItem="DLR-mk-j2d" firstAttribute="top" secondItem="dRk-iV-jEi" secondAttribute="top" constant="52" id="Krx-vr-kzj"/>
+                            <constraint firstItem="Ofb-iG-559" firstAttribute="top" secondItem="DLR-mk-j2d" secondAttribute="bottom" constant="16" id="TU3-KZ-Pwg"/>
+                            <constraint firstItem="Ofb-iG-559" firstAttribute="centerX" secondItem="dRk-iV-jEi" secondAttribute="centerX" id="pbR-4j-qn8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dRk-iV-jEi"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCr-As-9m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="-666"/>
+            <point key="canvasLocation" x="1456.8" y="-666.11694152923542"/>
         </scene>
         <!--Feed-->
         <scene sceneID="hNz-n2-bh7">
