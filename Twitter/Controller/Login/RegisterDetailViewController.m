@@ -7,14 +7,12 @@
 //
 
 #import "RegisterDetailViewController.h"
-@import Firebase;
 
 @interface RegisterDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *handleTextField;
 
-@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 - (IBAction)registerTapped:(id)sender;
 
 @property (strong, nonatomic) FIRDatabaseReference *databaseRef;
@@ -29,6 +27,9 @@
     
     self.user = [FIRAuth auth].currentUser;
     self.databaseRef = [[FIRDatabase database] reference];
+    
+    //Hide cancel button
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,16 +75,16 @@
                 
                 //Update the handle
                 [[[self.databaseRef child:@"handles"] child:self.handleTextField.text.lowercaseString] setValue:self.user.uid];
+                
+                //Setting Side Menu
+                AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+                [appDelegate settingFeedSideMenu];
+                
+                [self performSegueWithIdentifier:@"feedFromRegisterSegue" sender:sender];
             }
         } withCancelBlock:^(NSError * _Nonnull error) {
             NSLog(@"%@", error.localizedDescription);
         }];
-        
-        //Setting Side Menu
-        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-        [appDelegate settingFeedSideMenu];
-        
-        [self performSegueWithIdentifier:@"feedFromRegisterSegue" sender:sender];
     } else {
         [self showAlertMessageWithTitle:@"Empty field" message:@"You did not fill all the fields, please check again."];
     }

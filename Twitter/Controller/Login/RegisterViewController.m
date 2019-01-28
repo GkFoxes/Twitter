@@ -7,14 +7,12 @@
 //
 
 #import "RegisterViewController.h"
-@import Firebase;
 
 @interface RegisterViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 - (IBAction)nextTapeed:(id)sender;
 
 @property (strong, nonatomic) FIRDatabaseReference *databaseRef;

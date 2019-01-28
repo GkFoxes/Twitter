@@ -10,10 +10,12 @@
 
 @interface LoginViewController ()<UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 - (IBAction)loginTapeed:(id)sender;
+
+@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
 
 @end
 
@@ -22,17 +24,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // test [self showAlertMessageWithTitle:@"Warning!" message:@"Some bla-bla"];
+    self.databaseRef = [[FIRDatabase database] reference];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [_usernameTextField becomeFirstResponder];
+    [_emailTextField becomeFirstResponder];
 }
 
 // Choose next TextField or Login, when click Return key
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if (textField == _usernameTextField) {
+    if (textField == _emailTextField) {
         [textField resignFirstResponder];
         [_passwordTextField becomeFirstResponder];
     } else if (textField == _passwordTextField) {
@@ -54,13 +56,30 @@
 // MARK: - Login Button Action
 - (IBAction)loginTapeed:(id)sender {
     
-    if (_usernameTextField.text.length > 0 && _passwordTextField.text.length >= 6) {
+    if (_emailTextField.text.length > 0 && _passwordTextField.text.length >= 6) {
         
-        //Setting Side Menu
-        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-        [appDelegate settingFeedSideMenu];
-        
-        [self performSegueWithIdentifier:@"feedFromLoginSegue" sender:sender];
+        [[FIRAuth auth] signInWithEmail:self->_emailTextField.text password:self->_passwordTextField.text completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+                                 
+            if (error == nil) {
+                [[[[self.databaseRef child:@"user_profiles"] child:authResult.user.uid] child:@"handle"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                    
+                    if (snapshot.exists) {
+                        
+                        //Setting Side Menu
+                        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+                        [appDelegate settingFeedSideMenu];
+                        
+                        [self performSegueWithIdentifier:@"feedFromLoginSegue" sender:sender];
+                    } else {
+                        [self performSegueWithIdentifier:@"registerDetailFromLogin" sender:sender];
+                    }
+                } withCancelBlock:^(NSError * _Nonnull error) {
+                    NSLog(@"%@", error.localizedDescription);
+                }];
+            } else {
+                [self showAlertMessageWithTitle:@"Something Wrong" message:@"Please try again later."];
+            }
+        }];
     } else {
         [self showAlertMessageWithTitle:@"Empty field" message:@"You did not fill all the fields or your password is small, please check again."];
     }

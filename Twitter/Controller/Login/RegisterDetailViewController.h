@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+@import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
 
