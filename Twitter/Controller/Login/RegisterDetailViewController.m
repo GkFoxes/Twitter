@@ -1,42 +1,45 @@
 //
-//  LoginViewController.m
+//  RegisterDetailViewController.m
 //  Twitter
 //
-//  Created by Дмитрий Матвеенко on 24/01/2019.
+//  Created by Дмитрий Матвеенко on 28/01/2019.
 //  Copyright © 2019 GkFoxes. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "RegisterDetailViewController.h"
+@import Firebase;
 
-@interface LoginViewController ()<UITextFieldDelegate>
+@interface RegisterDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-- (IBAction)loginTapeed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+- (IBAction)registerTapped:(id)sender;
 
 @end
 
-@implementation LoginViewController
+@implementation RegisterDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // test [self showAlertMessageWithTitle:@"Warning!" message:@"Some bla-bla"];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [_usernameTextField becomeFirstResponder];
+    [_nameTextField becomeFirstResponder];
 }
 
-// Choose next TextField or Login, when click Return key
+// Choose next TextField or Register, when click Return key
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if (textField == _usernameTextField) {
+    if (textField == _nameTextField) {
         [textField resignFirstResponder];
-        [_passwordTextField becomeFirstResponder];
-    } else if (textField == _passwordTextField) {
-        [self loginTapeed:self];
+        [_usernameTextField becomeFirstResponder];
+    } else if (textField == _usernameTextField) {
+        [self registerTapped:self];
     }
     
     return YES;
@@ -51,18 +54,16 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-// MARK: - Login Button Action
-- (IBAction)loginTapeed:(id)sender {
+- (IBAction)registerTapped:(id)sender {
     
-    if (_usernameTextField.text.length > 0 && _passwordTextField.text.length >= 6) {
-        
+    if (_nameTextField.text.length > 0 && _usernameTextField.text.length > 0) {
         //Setting Side Menu
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
         [appDelegate settingFeedSideMenu];
         
-        [self performSegueWithIdentifier:@"feedFromLoginSegue" sender:sender];
+        [self performSegueWithIdentifier:@"feedFromRegisterSegue" sender:sender];
     } else {
-        [self showAlertMessageWithTitle:@"Empty field" message:@"You did not fill all the fields or your password is small, please check again."];
+        [self showAlertMessageWithTitle:@"Empty field" message:@"You did not fill all the fields, please check again."];
     }
 }
 

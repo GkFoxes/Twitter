@@ -24,6 +24,7 @@
 		A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */; };
 		A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154321FB479A00CB8C20 /* MMDrawerController.m */; };
 		A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */; };
+		A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */; };
 		A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		A906154421FB479A00CB8C20 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
 		A906154F21FB663000CB8C20 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A970E98721FF2CDE00CF324F /* RegisterDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDetailViewController.h; sourceTree = "<group>"; };
+		A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterDetailViewController.m; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +174,8 @@
 				A906152321F9FEDA00CB8C20 /* LoginViewController.m */,
 				A906152521FA094200CB8C20 /* RegisterViewController.h */,
 				A906152621FA094200CB8C20 /* RegisterViewController.m */,
+				A970E98721FF2CDE00CF324F /* RegisterDetailViewController.h */,
+				A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */,
 				A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
 				A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */,
 				A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */,

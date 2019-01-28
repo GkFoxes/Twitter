@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MMDrawerController.h"
+@import Firebase;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

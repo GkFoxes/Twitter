@@ -18,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [FIRApp configure];
+    
 //    if (_isLogin) {
 //        [self settingFeedSideMenu];
 //    }
