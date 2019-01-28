@@ -12,11 +12,13 @@
 @interface RegisterDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-
+@property (weak, nonatomic) IBOutlet UITextField *handleTextField;
 
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 - (IBAction)registerTapped:(id)sender;
+
+@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
+@property (strong, nonatomic) FIRUser *user;
 
 @end
 
@@ -25,7 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.user = [FIRAuth auth].currentUser;
+    self.databaseRef = [[FIRDatabase database] reference];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -37,8 +40,8 @@
     
     if (textField == _nameTextField) {
         [textField resignFirstResponder];
-        [_usernameTextField becomeFirstResponder];
-    } else if (textField == _usernameTextField) {
+        [_handleTextField becomeFirstResponder];
+    } else if (textField == _handleTextField) {
         [self registerTapped:self];
     }
     
@@ -56,7 +59,26 @@
 
 - (IBAction)registerTapped:(id)sender {
     
-    if (_nameTextField.text.length > 0 && _usernameTextField.text.length > 0) {
+    if (_nameTextField.text.length > 0 && _handleTextField.text.length > 0) {
+        
+        [[[self.databaseRef child:@"handles"] child:_handleTextField.text] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+            if (snapshot.exists) {
+                [self showAlertMessageWithTitle:@"Username exist" message:@"Username already in use, please try another."];
+            } else {
+                
+                //Update the handle and create in the handles node
+                [[[[self.databaseRef child:@"user_profiles"] child:self.user.uid] child: @"handle"] setValue:self.handleTextField.text.lowercaseString];
+                
+                //Update the name of the user
+                [[[[self.databaseRef child:@"user_profiles"] child:self.user.uid] child: @"name"] setValue:self.nameTextField.text];
+                
+                //Update the handle
+                [[[self.databaseRef child:@"handles"] child:self.handleTextField.text.lowercaseString] setValue:self.user.uid];
+            }
+        } withCancelBlock:^(NSError * _Nonnull error) {
+            NSLog(@"%@", error.localizedDescription);
+        }];
+        
         //Setting Side Menu
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
         [appDelegate settingFeedSideMenu];
