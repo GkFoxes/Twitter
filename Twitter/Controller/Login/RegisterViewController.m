@@ -10,10 +10,12 @@
 
 @interface RegisterViewController ()<UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-- (IBAction)registerTapeed:(id)sender;
+- (IBAction)nextTapeed:(id)sender;
+
+@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
 
 @end
 
@@ -21,20 +23,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.databaseRef = [[FIRDatabase database] reference];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [_usernameTextField becomeFirstResponder];
+    [_emailTextField becomeFirstResponder];
 }
 
 // Choose next TextField or Register, when click Return key
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if (textField == _usernameTextField) {
+    if (textField == _emailTextField) {
         [textField resignFirstResponder];
         [_passwordTextField becomeFirstResponder];
     } else if (textField == _passwordTextField) {
-        [self registerTapeed:self];
+        [self nextTapeed:self];
     }
     
     return YES;
@@ -50,13 +54,30 @@
 }
 
 // MARK: - Register Button Action
-- (IBAction)registerTapeed:(id)sender {
+- (IBAction)nextTapeed:(id)sender {
     
-    //Setting Side Menu
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    [appDelegate settingFeedSideMenu];
-    
-    [self performSegueWithIdentifier:@"feedFromRegisterSegue" sender:sender];
+    if (_emailTextField.text.length > 0 && _passwordTextField.text.length >= 6) {
+        
+        [[FIRAuth auth] createUserWithEmail:_emailTextField.text password:_passwordTextField.text completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+        
+            if (error != nil) {
+                [self showAlertMessageWithTitle:@"Warning" message:@"Check your Email, please."];
+            } else {
+                [[FIRAuth auth] signInWithEmail:self->_emailTextField.text password:self->_passwordTextField.text completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+                    
+                    if (error != nil) {
+                        [self showAlertMessageWithTitle:@"Warning" message:@"Try again later, please."];
+                    } else {
+                        [[[self.databaseRef child:@"user_profiles"] child:authResult.user.uid] setValue:@{@"email": self->_emailTextField.text}];
+                            
+                        [self performSegueWithIdentifier:@"nextFromRegisterSegue" sender:sender];
+                    }
+                }];
+            }
+        }];
+    } else {
+        [self showAlertMessageWithTitle:@"Empty field" message:@"You did not fill all the fields or your password is small, please check again."];
+    }
 }
 
 @end

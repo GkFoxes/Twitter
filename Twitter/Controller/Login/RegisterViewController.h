@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+@import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RegisterViewController : UIViewController
-
-@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @end
 

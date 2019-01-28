@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MMDrawerController.h"
+@import Firebase;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) MMDrawerController *drawerController;
-
-@property (nonatomic) BOOL isLogin;
 
 -(void) settingFeedSideMenu;
 

@@ -10,17 +10,20 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) FIRUser *user;
+
 @end
 
 @implementation AppDelegate
 
-@synthesize isLogin = _isLogin;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    if (_isLogin) {
-//        [self settingFeedSideMenu];
-//    }
+    [FIRApp configure];
+    self.user = [FIRAuth auth].currentUser;
+    
+    if ([FIRAuth auth].currentUser) {
+        [self settingFeedSideMenu];
+    }
     
     return YES;
 }

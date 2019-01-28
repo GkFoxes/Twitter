@@ -16,9 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //Cancel Side Menu functions
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

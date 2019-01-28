@@ -14,8 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableFeedContent;
 
-@property (nonatomic, strong) NSMutableArray * testUsernameArray;
-@property (nonatomic, strong) NSMutableArray * testTextArray;
+@property (nonatomic, strong) NSMutableArray *testUsernameArray;
+@property (nonatomic, strong) NSMutableArray *testTextArray;
 
 @end
 

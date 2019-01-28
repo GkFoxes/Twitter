@@ -41,6 +41,9 @@
                                         <integer key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="exitTapped:" destination="2rN-JI-ozJ" eventType="touchUpInside" id="ZNb-75-wq4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90626949069999996" green="0.92529600860000005" blue="0.94118219609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -53,10 +56,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dRk-iV-jEi"/>
                     </view>
+                    <connections>
+                        <outlet property="usernameLabel" destination="DLR-mk-j2d" id="iRk-ZN-Jg7"/>
+                        <segue destination="vJa-Ny-Z1b" kind="show" identifier="unwindToLogin" id="ncW-8T-PNa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCr-As-9m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456.8" y="-666.11694152923542"/>
+            <point key="canvasLocation" x="1457" y="-674"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="4Td-ON-zn6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="vJa-Ny-Z1b" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGk-3d-E3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2002" y="-784"/>
         </scene>
         <!--Feed-->
         <scene sceneID="hNz-n2-bh7">
