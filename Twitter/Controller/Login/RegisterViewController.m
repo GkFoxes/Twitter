@@ -58,7 +58,6 @@
     
     if (_emailTextField.text.length > 0 && _passwordTextField.text.length >= 6) {
         
-        //Create user in Firebase
         [[FIRAuth auth] createUserWithEmail:_emailTextField.text password:_passwordTextField.text completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         
             if (error != nil) {

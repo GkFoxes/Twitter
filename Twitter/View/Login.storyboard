@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="t1J-Hx-d1g">
             <objects>
-                <navigationController id="iWn-8i-r6W" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="initialLoginView" id="iWn-8i-r6W" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IYX-F6-fF0">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -269,7 +269,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.29889336230000002" green="0.62296009060000002" blue="0.92163586620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" textContentType="username"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" textContentType="name"/>
                                         <connections>
                                             <outlet property="delegate" destination="6d1-c1-2gH" id="SjB-co-5gB"/>
                                         </connections>
