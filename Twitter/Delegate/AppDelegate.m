@@ -10,7 +10,6 @@
 
 @interface AppDelegate ()
 
-@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
 @property (strong, nonatomic) FIRUser *user;
 
 @end
@@ -21,18 +20,9 @@
     
     [FIRApp configure];
     self.user = [FIRAuth auth].currentUser;
-    self.databaseRef = [[FIRDatabase database] reference];
     
     if ([FIRAuth auth].currentUser) {
-        //Check create username info or not
-        [[[[self.databaseRef child:@"user_profiles"] child:self.user.uid] child: @"handle"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-
-            if (snapshot.exists) {
-                [self settingFeedSideMenu];
-            }
-        } withCancelBlock:^(NSError * _Nonnull error) {
-            NSLog(@"%@", error.localizedDescription);
-        }];
+        [self settingFeedSideMenu];
     }
     
     return YES;

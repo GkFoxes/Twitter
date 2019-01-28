@@ -73,8 +73,6 @@
                     } else {
                         [self performSegueWithIdentifier:@"registerDetailFromLogin" sender:sender];
                     }
-                } withCancelBlock:^(NSError * _Nonnull error) {
-                    NSLog(@"%@", error.localizedDescription);
                 }];
             } else {
                 [self showAlertMessageWithTitle:@"Something Wrong" message:@"Please try again later."];

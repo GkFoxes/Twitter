@@ -82,8 +82,6 @@
                 
                 [self performSegueWithIdentifier:@"feedFromRegisterSegue" sender:sender];
             }
-        } withCancelBlock:^(NSError * _Nonnull error) {
-            NSLog(@"%@", error.localizedDescription);
         }];
     } else {
         [self showAlertMessageWithTitle:@"Empty field" message:@"You did not fill all the fields, please check again."];

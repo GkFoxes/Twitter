@@ -69,7 +69,7 @@
                         [self showAlertMessageWithTitle:@"Warning" message:@"Try again later, please."];
                     } else {
                         [[[self.databaseRef child:@"user_profiles"] child:authResult.user.uid] setValue:@{@"email": self->_emailTextField.text}];
-                        
+                            
                         [self performSegueWithIdentifier:@"nextFromRegisterSegue" sender:sender];
                     }
                 }];
