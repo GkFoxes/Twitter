@@ -28,7 +28,7 @@
     self.testTextArray = [[NSMutableArray alloc] initWithObjects:@"Hello World!", @"Some text, text, Some text, text, Some text, text", @"MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA", nil];
     
     self.tableFeedContent.rowHeight = UITableViewAutomaticDimension;
-    self.tableFeedContent.estimatedRowHeight = 56.0;
+    self.tableFeedContent.estimatedRowHeight = 86.0;
     self.tableFeedContent.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
