@@ -13,9 +13,14 @@
 @interface FeedViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableFeedContent;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-@property (nonatomic, strong) NSMutableArray *testUsernameArray;
-@property (nonatomic, strong) NSMutableArray *testTextArray;
+@property (strong, nonatomic) FIRUser *user;
+@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
+@property (nonatomic) FIRDataSnapshot *userData;
+
+@property (nonatomic, strong) FIRDataSnapshot *tweetsFirebase;
+@property (nonatomic, strong) NSMutableArray *tweets;
 
 @end
 
@@ -23,13 +28,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.testUsernameArray = [[NSMutableArray alloc] initWithObjects:@"GkFoxes", @"Some Name", @"BLA-BLA", nil];
-    self.testTextArray = [[NSMutableArray alloc] initWithObjects:@"Hello World!", @"Some text, text, Some text, text, Some text, text", @"MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA", nil];
     
     self.tableFeedContent.rowHeight = UITableViewAutomaticDimension;
     self.tableFeedContent.estimatedRowHeight = 86.0;
     self.tableFeedContent.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    self.user = [FIRAuth auth].currentUser;
+    self.databaseRef = [[FIRDatabase database] reference];
+    NSString *uid = [FIRAuth auth].currentUser.uid;
+    NSString *uidTweets = [NSString stringWithFormat: @"tweets/%@",uid];
+    
+    //Users logged details
+    [[[self.databaseRef child:@"user_profiles"] child:uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+     
+        //Get all tweets to Feed
+        self.userData = snapshot;
+
+        [[self.databaseRef child:uidTweets] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+            
+            self.tweetsFirebase = snapshot;
+
+            NSLog(@"%@", self.tweets);
+            NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
+            [indexPaths addObject:[NSIndexPath indexPathForRow:0 inSection:0]];
+            [self.tableFeedContent insertRowsAtIndexPaths:indexPaths withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            
+            [self.activityIndicator stopAnimating];
+        } withCancelBlock:^(NSError * _Nonnull error) {
+            NSLog(@"%@", error.localizedDescription);
+        }];
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,15 +85,14 @@
         
         TwitViewController *destViewController = segue.destinationViewController;
         
-        destViewController.username = [_testUsernameArray objectAtIndex:indexPath.row];
-        destViewController.text = [_testTextArray objectAtIndex:indexPath.row];
+        destViewController.text = [_tweets objectAtIndex:indexPath.row];
     }
 }
 
 // MARK: - Table View data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.testUsernameArray.count;
+    return self.tweets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,11 +100,13 @@
     
     FeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSString * testUsername = [self.testUsernameArray objectAtIndex:indexPath.row];
-    NSString * testText = [self.testTextArray objectAtIndex:indexPath.row];
+    NSString *tweet = _tweets[((self.tweets.count-1) - indexPath.row)];
+    [tweet valueForKey:@"text"];
     
-    cell.usernameLabel.text = testUsername;
-    cell.textLabel.text = testText;
+    cell.nameLabel.text = self.userData.value[@"name"];
+    cell.handleLabel.text = self.userData.value[@"handle"];
+    cell.textLabel.text = tweet;
+    
     return cell;
 }
 

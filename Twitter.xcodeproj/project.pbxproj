@@ -25,6 +25,7 @@
 		A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */; };
 		A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */; };
 		A970E98B22004AC900CF324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A970E98A22004AC900CF324F /* Assets.xcassets */; };
+		A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98E2200626C00CF324F /* AddTweetViewController.m */; };
 		A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 		A970E98721FF2CDE00CF324F /* RegisterDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDetailViewController.h; sourceTree = "<group>"; };
 		A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterDetailViewController.m; sourceTree = "<group>"; };
 		A970E98A22004AC900CF324F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A970E98D2200626C00CF324F /* AddTweetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTweetViewController.h; sourceTree = "<group>"; };
+		A970E98E2200626C00CF324F /* AddTweetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTweetViewController.m; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +153,7 @@
 			children = (
 				A906152021F9FEA700CB8C20 /* Login */,
 				A906152121F9FEAF00CB8C20 /* Feed */,
+				A970E98C2200624B00CF324F /* Tweet */,
 				A906153A21FB296900CB8C20 /* Settings */,
 				A906153E21FB476800CB8C20 /* SideMenu */,
 			);
@@ -213,6 +217,15 @@
 				A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		A970E98C2200624B00CF324F /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				A970E98D2200626C00CF324F /* AddTweetViewController.h */,
+				A970E98E2200626C00CF324F /* AddTweetViewController.m */,
+			);
+			path = Tweet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +330,7 @@
 			files = (
 				A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */,
 				A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
+				A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */,
 				A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */,
 				A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */,
 				A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */,

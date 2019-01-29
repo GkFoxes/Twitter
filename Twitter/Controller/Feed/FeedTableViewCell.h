@@ -12,8 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FeedTableViewCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *handleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *textLabel;
+
+- (void)awakeFromNib;
 
 @end
 

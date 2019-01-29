@@ -58,6 +58,8 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+// MARK: - Register Detail Button Action
+
 - (IBAction)registerTapped:(id)sender {
     
     if (_nameTextField.text.length > 0 && _handleTextField.text.length > 0) {
