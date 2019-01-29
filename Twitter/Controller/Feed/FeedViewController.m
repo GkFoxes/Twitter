@@ -9,13 +9,18 @@
 #import "FeedViewController.h"
 #import "FeedTableViewCell.h"
 #import "TwitViewController.h"
+#import "TweetFirebase.h"
 
 @interface FeedViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableFeedContent;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-@property (nonatomic, strong) NSMutableArray *testUsernameArray;
-@property (nonatomic, strong) NSMutableArray *testTextArray;
+@property (strong, nonatomic) FIRUser *user;
+@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
+@property (nonatomic) FIRDataSnapshot *userData;
+
+@property (nonatomic, strong) NSMutableArray *tweets;
 
 @end
 
@@ -23,13 +28,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.testUsernameArray = [[NSMutableArray alloc] initWithObjects:@"GkFoxes", @"Some Name", @"BLA-BLA", nil];
-    self.testTextArray = [[NSMutableArray alloc] initWithObjects:@"Hello World!", @"Some text, text, Some text, text, Some text, text", @"MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA MORE MORE BLA_BLA", nil];
     
     self.tableFeedContent.rowHeight = UITableViewAutomaticDimension;
-    self.tableFeedContent.estimatedRowHeight = 56.0;
+    self.tableFeedContent.estimatedRowHeight = 86.0;
     self.tableFeedContent.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    self.user = [FIRAuth auth].currentUser;
+    self.databaseRef = [[FIRDatabase database] reference];
+    
+    self.tweets = [[NSMutableArray alloc] initWithCapacity:50];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,6 +45,36 @@
     //Add Side Menu swipe
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     [appDelegate.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    
+    
+    NSString *uid = [FIRAuth auth].currentUser.uid;
+    NSString *uidTweets = [NSString stringWithFormat: @"tweets/%@",uid];
+    [[[self.databaseRef child:@"user_profiles"] child:uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        
+        //Get all tweets to Feed
+        self.userData = snapshot;
+        
+        [[self.databaseRef child:uidTweets] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+            
+            [self.tweets removeAllObjects];
+            
+            for (FIRDataSnapshot * child in snapshot.children) {
+                NSDictionary *savedTweet = [child value];
+                NSString *text = [savedTweet objectForKey:@"text"];
+                NSString *time = [savedTweet objectForKey:@"timestamp"];
+                
+                TweetFirebase *tweet = [[TweetFirebase alloc] initWithText:text timestamp:time];
+                [self.tweets addObject:tweet];
+            }
+            
+            [self.tableFeedContent reloadData];
+            [self.activityIndicator stopAnimating];
+        } withCancelBlock:^(NSError * _Nonnull error) {
+            NSLog(@"%@", error.localizedDescription);
+        }];
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
 }
 
 // MARK: - Button Action
@@ -54,16 +91,22 @@
         NSIndexPath *indexPath = [self.tableFeedContent indexPathForSelectedRow];
         
         TwitViewController *destViewController = segue.destinationViewController;
+       
+        NSInteger tweetIndexPath = ((self.tweets.count-1) - indexPath.row);
+        TweetFirebase *tweetIndex = [self tweets][tweetIndexPath];
         
-        destViewController.username = [_testUsernameArray objectAtIndex:indexPath.row];
-        destViewController.text = [_testTextArray objectAtIndex:indexPath.row];
+        destViewController.text = [tweetIndex text];
+        destViewController.name = self.userData.value[@"name"];
+        NSString *handleStr = @"@";
+        handleStr = [handleStr stringByAppendingString:self.userData.value[@"handle"]];
+        destViewController.username = handleStr;
     }
 }
 
 // MARK: - Table View data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.testUsernameArray.count;
+    return self.tweets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,11 +114,15 @@
     
     FeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSString * testUsername = [self.testUsernameArray objectAtIndex:indexPath.row];
-    NSString * testText = [self.testTextArray objectAtIndex:indexPath.row];
+    NSInteger tweetIndexPath = ((self.tweets.count-1) - indexPath.row);
+    TweetFirebase *tweetIndex = [self tweets][tweetIndexPath];
     
-    cell.usernameLabel.text = testUsername;
-    cell.textLabel.text = testText;
+    cell.nameLabel.text = self.userData.value[@"name"];
+    NSString *handleStr = @"@";
+    handleStr = [handleStr stringByAppendingString:self.userData.value[@"handle"]];
+    cell.handleLabel.text = handleStr;
+    cell.textLabel.text = [tweetIndex text];
+    
     return cell;
 }
 

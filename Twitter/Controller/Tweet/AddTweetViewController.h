@@ -1,8 +1,8 @@
 //
-//  LoginViewController.h
+//  AddTweetViewController.h
 //  Twitter
 //
-//  Created by Дмитрий Матвеенко on 24/01/2019.
+//  Created by Дмитрий Матвеенко on 29/01/2019.
 //  Copyright © 2019 GkFoxes. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginViewController : UIViewController
+@interface AddTweetViewController : UIViewController
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 

@@ -12,7 +12,6 @@
 		A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150221F9D05100CB8C20 /* FeedViewController.m */; };
 		A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150521F9D05100CB8C20 /* SettingsViewController.m */; };
 		A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150721F9D05100CB8C20 /* Feed.storyboard */; };
-		A906150B21F9D05400CB8C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A906150A21F9D05400CB8C20 /* Assets.xcassets */; };
 		A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */; };
 		A906151121F9D05400CB8C20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A906151021F9D05400CB8C20 /* main.m */; };
 		A906151F21F9F4D700CB8C20 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906151E21F9F4D700CB8C20 /* Login.storyboard */; };
@@ -25,6 +24,9 @@
 		A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154321FB479A00CB8C20 /* MMDrawerController.m */; };
 		A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */; };
 		A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */; };
+		A970E98B22004AC900CF324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A970E98A22004AC900CF324F /* Assets.xcassets */; };
+		A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98E2200626C00CF324F /* AddTweetViewController.m */; };
+		A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9922200CF2700CF324F /* TweetFirebase.m */; };
 		A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +42,6 @@
 		A906150421F9D05100CB8C20 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		A906150521F9D05100CB8C20 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A906150821F9D05100CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
-		A906150A21F9D05400CB8C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A906150D21F9D05400CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A906150F21F9D05400CB8C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A906151021F9D05400CB8C20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +64,11 @@
 		A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		A970E98721FF2CDE00CF324F /* RegisterDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDetailViewController.h; sourceTree = "<group>"; };
 		A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterDetailViewController.m; sourceTree = "<group>"; };
+		A970E98A22004AC900CF324F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A970E98D2200626C00CF324F /* AddTweetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTweetViewController.h; sourceTree = "<group>"; };
+		A970E98E2200626C00CF324F /* AddTweetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTweetViewController.m; sourceTree = "<group>"; };
+		A970E9912200CF2700CF324F /* TweetFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetFirebase.h; sourceTree = "<group>"; };
+		A970E9922200CF2700CF324F /* TweetFirebase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetFirebase.m; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +124,7 @@
 			children = (
 				A906152921FA17B800CB8C20 /* Twitter.entitlements */,
 				A906151721F9D87500CB8C20 /* Delegate */,
+				A970E9902200CF0E00CF324F /* Model */,
 				A906151921F9D8AE00CB8C20 /* View */,
 				A906151A21F9D8C800CB8C20 /* Controller */,
 				A906151B21F9D8E500CB8C20 /* Resources */,
@@ -150,6 +157,7 @@
 			children = (
 				A906152021F9FEA700CB8C20 /* Login */,
 				A906152121F9FEAF00CB8C20 /* Feed */,
+				A970E98C2200624B00CF324F /* Tweet */,
 				A906153A21FB296900CB8C20 /* Settings */,
 				A906153E21FB476800CB8C20 /* SideMenu */,
 			);
@@ -159,7 +167,7 @@
 		A906151B21F9D8E500CB8C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A906150A21F9D05400CB8C20 /* Assets.xcassets */,
+				A970E98A22004AC900CF324F /* Assets.xcassets */,
 				A906150F21F9D05400CB8C20 /* Info.plist */,
 				A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */,
 				A906151021F9D05400CB8C20 /* main.m */,
@@ -213,6 +221,24 @@
 				A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		A970E98C2200624B00CF324F /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				A970E98D2200626C00CF324F /* AddTweetViewController.h */,
+				A970E98E2200626C00CF324F /* AddTweetViewController.m */,
+			);
+			path = Tweet;
+			sourceTree = "<group>";
+		};
+		A970E9902200CF0E00CF324F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A970E9912200CF2700CF324F /* TweetFirebase.h */,
+				A970E9922200CF2700CF324F /* TweetFirebase.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,9 +306,9 @@
 			files = (
 				A906151F21F9F4D700CB8C20 /* Login.storyboard in Resources */,
 				A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */,
-				A906150B21F9D05400CB8C20 /* Assets.xcassets in Resources */,
 				A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */,
 				A906153921FB28F600CB8C20 /* Settings.storyboard in Resources */,
+				A970E98B22004AC900CF324F /* Assets.xcassets in Resources */,
 				A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +343,7 @@
 			files = (
 				A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */,
 				A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
+				A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */,
 				A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */,
 				A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */,
 				A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */,
@@ -326,6 +353,7 @@
 				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
 				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
+				A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */,
 				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

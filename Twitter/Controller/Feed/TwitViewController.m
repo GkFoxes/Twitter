@@ -14,15 +14,18 @@
 
 @implementation TwitViewController
 
+@synthesize nameLabel;
 @synthesize usernameLabel;
 @synthesize textLabel;
 
+@synthesize name;
 @synthesize username;
 @synthesize text;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    nameLabel.text = name;
     usernameLabel.text = username;
     textLabel.text = text;
 }
