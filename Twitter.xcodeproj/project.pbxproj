@@ -26,6 +26,7 @@
 		A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */; };
 		A970E98B22004AC900CF324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A970E98A22004AC900CF324F /* Assets.xcassets */; };
 		A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98E2200626C00CF324F /* AddTweetViewController.m */; };
+		A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9922200CF2700CF324F /* TweetFirebase.m */; };
 		A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		A970E98A22004AC900CF324F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A970E98D2200626C00CF324F /* AddTweetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTweetViewController.h; sourceTree = "<group>"; };
 		A970E98E2200626C00CF324F /* AddTweetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTweetViewController.m; sourceTree = "<group>"; };
+		A970E9912200CF2700CF324F /* TweetFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetFirebase.h; sourceTree = "<group>"; };
+		A970E9922200CF2700CF324F /* TweetFirebase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetFirebase.m; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +124,7 @@
 			children = (
 				A906152921FA17B800CB8C20 /* Twitter.entitlements */,
 				A906151721F9D87500CB8C20 /* Delegate */,
+				A970E9902200CF0E00CF324F /* Model */,
 				A906151921F9D8AE00CB8C20 /* View */,
 				A906151A21F9D8C800CB8C20 /* Controller */,
 				A906151B21F9D8E500CB8C20 /* Resources */,
@@ -226,6 +230,15 @@
 				A970E98E2200626C00CF324F /* AddTweetViewController.m */,
 			);
 			path = Tweet;
+			sourceTree = "<group>";
+		};
+		A970E9902200CF0E00CF324F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A970E9912200CF2700CF324F /* TweetFirebase.h */,
+				A970E9922200CF2700CF324F /* TweetFirebase.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +353,7 @@
 				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
 				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
+				A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */,
 				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
