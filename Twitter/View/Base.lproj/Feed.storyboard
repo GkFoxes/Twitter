@@ -229,41 +229,60 @@
             </objects>
             <point key="canvasLocation" x="1456.8" y="-0.44977511244377816"/>
         </scene>
-        <!--Twit View Controller-->
+        <!--Tweet in details-->
         <scene sceneID="jkQ-9f-nsR">
             <objects>
-                <viewController id="z63-cw-D4p" customClass="TwitViewController" sceneMemberID="viewController">
+                <viewController title="Tweet in details" id="z63-cw-D4p" customClass="TwitViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IUI-Rk-VNk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Username" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwn-Ip-K50">
-                                <rect key="frame" x="16" y="80" width="343" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <rect key="frame" x="77" y="80" width="282" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text twit" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t51-em-W01">
-                                <rect key="frame" x="16" y="112" width="343" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="16" y="138" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi5-mH-o4c">
+                                <rect key="frame" x="77" y="110.5" width="282" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userTweet" translatesAutoresizingMaskIntoConstraints="NO" id="oVu-54-cvk">
+                                <rect key="frame" x="16" y="84" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="AVJ-rj-AJk"/>
+                                    <constraint firstAttribute="height" constant="45" id="g3u-lW-FRX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="t51-em-W01" firstAttribute="top" secondItem="Uwn-Ip-K50" secondAttribute="bottom" constant="8" id="8Ef-C1-AkM"/>
-                            <constraint firstItem="Uwn-Ip-K50" firstAttribute="leading" secondItem="gk9-PH-lbj" secondAttribute="leading" constant="16" id="AJK-bH-QHs"/>
+                            <constraint firstItem="gk9-PH-lbj" firstAttribute="trailing" secondItem="wi5-mH-o4c" secondAttribute="trailing" constant="16" id="3fB-LW-NSK"/>
+                            <constraint firstItem="Uwn-Ip-K50" firstAttribute="leading" secondItem="oVu-54-cvk" secondAttribute="trailing" constant="16" id="GaW-95-wgz"/>
+                            <constraint firstItem="oVu-54-cvk" firstAttribute="top" secondItem="gk9-PH-lbj" secondAttribute="top" constant="20" id="IMk-jb-1KI"/>
+                            <constraint firstItem="oVu-54-cvk" firstAttribute="leading" secondItem="IUI-Rk-VNk" secondAttribute="leading" constant="16" id="Nya-bm-upH"/>
                             <constraint firstItem="Uwn-Ip-K50" firstAttribute="top" secondItem="gk9-PH-lbj" secondAttribute="top" constant="16" id="cVb-l0-Ks1"/>
+                            <constraint firstItem="wi5-mH-o4c" firstAttribute="top" secondItem="Uwn-Ip-K50" secondAttribute="bottom" constant="4" id="m48-fn-uRy"/>
                             <constraint firstItem="gk9-PH-lbj" firstAttribute="trailing" secondItem="t51-em-W01" secondAttribute="trailing" constant="16" id="nRD-Y4-h42"/>
+                            <constraint firstItem="t51-em-W01" firstAttribute="top" secondItem="wi5-mH-o4c" secondAttribute="bottom" constant="8" id="nja-Vp-VVV"/>
+                            <constraint firstItem="wi5-mH-o4c" firstAttribute="leading" secondItem="oVu-54-cvk" secondAttribute="trailing" constant="16" id="pqk-hd-jaZ"/>
                             <constraint firstItem="t51-em-W01" firstAttribute="leading" secondItem="gk9-PH-lbj" secondAttribute="leading" constant="16" id="pwZ-4C-qyT"/>
                             <constraint firstItem="gk9-PH-lbj" firstAttribute="trailing" secondItem="Uwn-Ip-K50" secondAttribute="trailing" constant="16" id="x2v-Gw-AAD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gk9-PH-lbj"/>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="Uwn-Ip-K50" id="ybi-Nv-fad"/>
                         <outlet property="textLabel" destination="t51-em-W01" id="zD7-D2-gUT"/>
-                        <outlet property="usernameLabel" destination="Uwn-Ip-K50" id="ybi-Nv-fad"/>
+                        <outlet property="usernameLabel" destination="wi5-mH-o4c" id="ONR-y9-vCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eU0-A3-0hx" userLabel="First Responder" sceneMemberID="firstResponder"/>

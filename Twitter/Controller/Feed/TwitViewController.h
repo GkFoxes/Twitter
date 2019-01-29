@@ -15,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *text;
 

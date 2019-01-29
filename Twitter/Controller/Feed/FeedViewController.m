@@ -20,7 +20,6 @@
 @property (strong, nonatomic) FIRDatabaseReference *databaseRef;
 @property (nonatomic) FIRDataSnapshot *userData;
 
-@property (nonatomic, strong) FIRDataSnapshot *tweetsFirebase;
 @property (nonatomic, strong) NSMutableArray *tweets;
 
 @end
@@ -57,11 +56,9 @@
         
         [[self.databaseRef child:uidTweets] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             
-            self.tweetsFirebase = snapshot;
             [self.tweets removeAllObjects];
             
             for (FIRDataSnapshot * child in snapshot.children) {
-                
                 NSDictionary *savedTweet = [child value];
                 NSString *text = [savedTweet objectForKey:@"text"];
                 NSString *time = [savedTweet objectForKey:@"timestamp"];
@@ -94,15 +91,22 @@
         NSIndexPath *indexPath = [self.tableFeedContent indexPathForSelectedRow];
         
         TwitViewController *destViewController = segue.destinationViewController;
+       
+        NSInteger tweetIndexPath = ((self.tweets.count-1) - indexPath.row);
+        TweetFirebase *tweetIndex = [self tweets][tweetIndexPath];
         
-        //destViewController.text = [_tweets objectAtIndex:indexPath.row];
+        destViewController.text = [tweetIndex text];
+        destViewController.name = self.userData.value[@"name"];
+        NSString *handleStr = @"@";
+        handleStr = [handleStr stringByAppendingString:self.userData.value[@"handle"]];
+        destViewController.username = handleStr;
     }
 }
 
 // MARK: - Table View data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.tweetsFirebase.childrenCount;
+    return self.tweets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -114,7 +118,9 @@
     TweetFirebase *tweetIndex = [self tweets][tweetIndexPath];
     
     cell.nameLabel.text = self.userData.value[@"name"];
-    cell.handleLabel.text = self.userData.value[@"handle"];
+    NSString *handleStr = @"@";
+    handleStr = [handleStr stringByAppendingString:self.userData.value[@"handle"]];
+    cell.handleLabel.text = handleStr;
     cell.textLabel.text = [tweetIndex text];
     
     return cell;
