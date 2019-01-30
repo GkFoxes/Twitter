@@ -44,6 +44,9 @@
         [textField resignFirstResponder];
         [_handleTextField becomeFirstResponder];
     } else if (textField == _handleTextField) {
+        [textField resignFirstResponder];
+        [_aboutTextField becomeFirstResponder];
+    } else if (textField == _aboutTextField) {
         [self registerTapped:self];
     }
     

@@ -281,7 +281,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.29889336230000002" green="0.62296009060000002" blue="0.92163586620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" textContentType="name"/>
                                         <connections>
                                             <outlet property="delegate" destination="6d1-c1-2gH" id="LiI-ND-Ns9"/>
                                         </connections>
@@ -290,7 +290,7 @@
                                         <rect key="frame" x="0.0" y="84" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                             </stackView>

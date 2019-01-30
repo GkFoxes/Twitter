@@ -385,10 +385,10 @@
             </objects>
             <point key="canvasLocation" x="730" y="1"/>
         </scene>
-        <!--Settings-->
+        <!--Search-->
         <scene sceneID="n9c-0I-BpV">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="bM0-MZ-N1p" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Search" id="bM0-MZ-N1p" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="FoR-48-qg3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLW-ZI-8vY" userLabel="First Responder" sceneMemberID="firstResponder"/>
