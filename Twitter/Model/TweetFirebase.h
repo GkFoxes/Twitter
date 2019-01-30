@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(id) initWithText: (NSString *)tweetText timestamp: (NSString *)tweetTimestamp;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,7 +10,7 @@
 		605FC38D76B8F64C34A77601 /* libPods-Twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3CA58CFCAFEF165CD02CA3 /* libPods-Twitter.a */; };
 		A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A90614FF21F9D05100CB8C20 /* AppDelegate.m */; };
 		A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150221F9D05100CB8C20 /* FeedViewController.m */; };
-		A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150521F9D05100CB8C20 /* SettingsViewController.m */; };
+		A906150621F9D05100CB8C20 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906150521F9D05100CB8C20 /* SearchViewController.m */; };
 		A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150721F9D05100CB8C20 /* Feed.storyboard */; };
 		A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */; };
 		A906151121F9D05400CB8C20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A906151021F9D05400CB8C20 /* main.m */; };
@@ -19,7 +19,7 @@
 		A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152621FA094200CB8C20 /* RegisterViewController.m */; };
 		A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906152B21FB06EF00CB8C20 /* TwitViewController.m */; };
 		A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153521FB131D00CB8C20 /* FeedTableViewCell.m */; };
-		A906153921FB28F600CB8C20 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906153721FB28F600CB8C20 /* Settings.storyboard */; };
+		A906153921FB28F600CB8C20 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A906153721FB28F600CB8C20 /* Search.storyboard */; };
 		A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */; };
 		A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154321FB479A00CB8C20 /* MMDrawerController.m */; };
 		A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */; };
@@ -27,6 +27,8 @@
 		A970E98B22004AC900CF324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A970E98A22004AC900CF324F /* Assets.xcassets */; };
 		A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98E2200626C00CF324F /* AddTweetViewController.m */; };
 		A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9922200CF2700CF324F /* TweetFirebase.m */; };
+		A970E9962201CF3800CF324F /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9952201CF3800CF324F /* SearchTableViewCell.m */; };
+		A970E9992201E1A800CF324F /* UserFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9982201E1A800CF324F /* UserFirebase.m */; };
 		A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +41,8 @@
 		A90614FF21F9D05100CB8C20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A906150121F9D05100CB8C20 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		A906150221F9D05100CB8C20 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
-		A906150421F9D05100CB8C20 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		A906150521F9D05100CB8C20 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A906150421F9D05100CB8C20 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		A906150521F9D05100CB8C20 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		A906150821F9D05100CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
 		A906150D21F9D05400CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A906150F21F9D05400CB8C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		A906152B21FB06EF00CB8C20 /* TwitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitViewController.m; sourceTree = "<group>"; };
 		A906153421FB131D00CB8C20 /* FeedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
 		A906153521FB131D00CB8C20 /* FeedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
-		A906153821FB28F600CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Twitter/View/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		A906153821FB28F600CB8C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Twitter/View/Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		A906153B21FB45BF00CB8C20 /* SideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		A906154321FB479A00CB8C20 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
@@ -69,6 +71,10 @@
 		A970E98E2200626C00CF324F /* AddTweetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTweetViewController.m; sourceTree = "<group>"; };
 		A970E9912200CF2700CF324F /* TweetFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetFirebase.h; sourceTree = "<group>"; };
 		A970E9922200CF2700CF324F /* TweetFirebase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetFirebase.m; sourceTree = "<group>"; };
+		A970E9942201CF3800CF324F /* SearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		A970E9952201CF3800CF324F /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		A970E9972201E1A800CF324F /* UserFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserFirebase.h; sourceTree = "<group>"; };
+		A970E9982201E1A800CF324F /* UserFirebase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserFirebase.m; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +153,7 @@
 				A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */,
 				A906151E21F9F4D700CB8C20 /* Login.storyboard */,
 				A906150721F9D05100CB8C20 /* Feed.storyboard */,
-				A906153721FB28F600CB8C20 /* Settings.storyboard */,
+				A906153721FB28F600CB8C20 /* Search.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,8 +210,10 @@
 		A906153A21FB296900CB8C20 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A906150421F9D05100CB8C20 /* SettingsViewController.h */,
-				A906150521F9D05100CB8C20 /* SettingsViewController.m */,
+				A970E9942201CF3800CF324F /* SearchTableViewCell.h */,
+				A970E9952201CF3800CF324F /* SearchTableViewCell.m */,
+				A906150421F9D05100CB8C20 /* SearchViewController.h */,
+				A906150521F9D05100CB8C20 /* SearchViewController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -237,6 +245,8 @@
 			children = (
 				A970E9912200CF2700CF324F /* TweetFirebase.h */,
 				A970E9922200CF2700CF324F /* TweetFirebase.m */,
+				A970E9972201E1A800CF324F /* UserFirebase.h */,
+				A970E9982201E1A800CF324F /* UserFirebase.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,7 +317,7 @@
 				A906151F21F9F4D700CB8C20 /* Login.storyboard in Resources */,
 				A906150E21F9D05400CB8C20 /* LaunchScreen.storyboard in Resources */,
 				A906150921F9D05100CB8C20 /* Feed.storyboard in Resources */,
-				A906153921FB28F600CB8C20 /* Settings.storyboard in Resources */,
+				A906153921FB28F600CB8C20 /* Search.storyboard in Resources */,
 				A970E98B22004AC900CF324F /* Assets.xcassets in Resources */,
 				A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */,
 			);
@@ -345,16 +355,18 @@
 				A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
 				A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */,
 				A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */,
-				A906150621F9D05100CB8C20 /* SettingsViewController.m in Sources */,
+				A906150621F9D05100CB8C20 /* SearchViewController.m in Sources */,
 				A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */,
 				A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */,
 				A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */,
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
+				A970E9992201E1A800CF324F /* UserFirebase.m in Sources */,
 				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
 				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
 				A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */,
 				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
+				A970E9962201CF3800CF324F /* SearchTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,12 +389,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		A906153721FB28F600CB8C20 /* Settings.storyboard */ = {
+		A906153721FB28F600CB8C20 /* Search.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A906153821FB28F600CB8C20 /* Base */,
 			);
-			name = Settings.storyboard;
+			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

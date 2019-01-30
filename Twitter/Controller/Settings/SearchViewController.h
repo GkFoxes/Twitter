@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+@import Firebase;
 
-@interface SettingsViewController : UIViewController
+@interface SearchViewController : UIViewController<UISearchBarDelegate>
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 

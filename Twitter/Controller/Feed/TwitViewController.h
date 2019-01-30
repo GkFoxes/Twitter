@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *text;
 
+- (IBAction)changeTweet:(id)sender;
+
 @end
 
 NS_ASSUME_NONNULL_END
