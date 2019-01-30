@@ -260,7 +260,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6GS-45-7ta" userLabel="Text Field">
-                                <rect key="frame" x="16" y="136" width="343" height="76"/>
+                                <rect key="frame" x="16" y="136" width="343" height="114"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JH7-Ht-LN1">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
@@ -286,10 +286,16 @@
                                             <outlet property="delegate" destination="6d1-c1-2gH" id="LiI-ND-Ns9"/>
                                         </connections>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A few words about yourself" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gnk-GC-4Ub">
+                                        <rect key="frame" x="0.0" y="84" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BIV-Cs-ADp" userLabel="Button">
-                                <rect key="frame" x="97.5" y="236" width="180" height="44"/>
+                                <rect key="frame" x="97.5" y="274" width="180" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8A-r1-Iiz">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="44"/>
@@ -329,6 +335,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Twitter" id="A7Y-zT-hf6"/>
                     <connections>
+                        <outlet property="aboutTextField" destination="Gnk-GC-4Ub" id="RgZ-9c-DDv"/>
                         <outlet property="handleTextField" destination="weQ-Fe-qKn" id="KBJ-9x-Oct"/>
                         <outlet property="nameTextField" destination="JH7-Ht-LN1" id="ddt-QC-m2V"/>
                         <segue destination="1K1-F7-esa" kind="presentation" identifier="feedFromRegisterSegue" id="i0D-vS-gLG"/>

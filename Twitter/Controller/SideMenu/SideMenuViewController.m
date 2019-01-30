@@ -10,10 +10,15 @@
 
 @interface SideMenuViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *aboutLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followersLabel;
 
 - (IBAction)exitTapped:(id)sender;
 
+@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
 @property (strong, nonatomic) FIRUser *user;
 
 @end
@@ -23,8 +28,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.databaseRef = [[FIRDatabase database] reference];
     self.user = [FIRAuth auth].currentUser;
-    _usernameLabel.text = _user.uid;
+    
+    [[[self.databaseRef child:@"user_profiles"] child:self.user.uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        
+        self.nameLabel.text = snapshot.value[@"name"];
+        NSString *handleStr = @"@";
+        handleStr = [handleStr stringByAppendingString:snapshot.value[@"handle"]];
+        self.usernameLabel.text = handleStr;
+        self.aboutLabel.text = snapshot.value[@"about"];
+    }];
 }
 
 - (IBAction)exitTapped:(id)sender {
@@ -35,7 +49,6 @@
         NSLog(@"Error signing out: %@", signOutError);
         return;
     } else {
-        
         //Delete Slide Menu from stack
         UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
         UIViewController *initialLoginViewController = [loginStoryboard instantiateViewControllerWithIdentifier:@"initialLoginView"];

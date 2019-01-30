@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *handleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *aboutTextField;
 
 - (IBAction)registerTapped:(id)sender;
 
@@ -62,7 +63,7 @@
 
 - (IBAction)registerTapped:(id)sender {
     
-    if (_nameTextField.text.length > 0 && _handleTextField.text.length > 0) {
+    if (_nameTextField.text.length > 0 && _handleTextField.text.length > 0 && _aboutTextField.text.length > 0) {
         
         [[[self.databaseRef child:@"handles"] child:_handleTextField.text] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             if (snapshot.exists) {
@@ -75,8 +76,12 @@
                 //Update the name of the user
                 [[[[self.databaseRef child:@"user_profiles"] child:self.user.uid] child: @"name"] setValue:self.nameTextField.text];
                 
+                //Update the about of the user
+                [[[[self.databaseRef child:@"user_profiles"] child:self.user.uid] child: @"about"] setValue:self.aboutTextField.text];
+                
                 //Update the handle
                 [[[self.databaseRef child:@"handles"] child:self.handleTextField.text.lowercaseString] setValue:self.user.uid];
+                
                 
                 //Setting Side Menu
                 AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
