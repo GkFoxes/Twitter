@@ -60,12 +60,22 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxw-g5-cvZ">
+                                                    <rect key="frame" x="324" y="10.5" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="DRz-VR-KhU"/>
+                                                        <constraint firstAttribute="height" constant="35" id="hvH-Gv-7jc"/>
+                                                    </constraints>
+                                                    <state key="normal" title="+" image="follow"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mHk-Kk-SHm" firstAttribute="top" secondItem="zTF-3a-0yl" secondAttribute="top" id="0Js-Lx-kKQ"/>
                                                 <constraint firstItem="vqu-37-UPz" firstAttribute="leading" secondItem="zTF-3a-0yl" secondAttribute="trailing" constant="16" id="4Ve-uw-w5j"/>
+                                                <constraint firstItem="hxw-g5-cvZ" firstAttribute="centerY" secondItem="zTF-3a-0yl" secondAttribute="centerY" id="7Yd-Zm-AOz"/>
                                                 <constraint firstItem="mHk-Kk-SHm" firstAttribute="leading" secondItem="zTF-3a-0yl" secondAttribute="trailing" constant="16" id="8hQ-ba-sL4"/>
                                                 <constraint firstAttribute="trailing" secondItem="vqu-37-UPz" secondAttribute="trailing" constant="16" id="RTZ-G1-tKV"/>
+                                                <constraint firstAttribute="trailing" secondItem="hxw-g5-cvZ" secondAttribute="trailing" constant="16" id="a7D-YH-u7n"/>
                                                 <constraint firstItem="zTF-3a-0yl" firstAttribute="leading" secondItem="2f3-vO-c1s" secondAttribute="leading" constant="16" id="dNi-vR-ec5"/>
                                                 <constraint firstItem="zTF-3a-0yl" firstAttribute="centerY" secondItem="2f3-vO-c1s" secondAttribute="centerY" id="edU-SL-SHe"/>
                                                 <constraint firstAttribute="trailing" secondItem="mHk-Kk-SHm" secondAttribute="trailing" constant="16" id="g5g-YL-4LC"/>
@@ -132,6 +142,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="follow" width="180" height="180"/>
         <image name="search" width="45" height="45"/>
         <image name="userTweet" width="180" height="180"/>
     </resources>

@@ -44,7 +44,7 @@
     
     //Add Side Menu swipe
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    [appDelegate.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [appDelegate.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningCenterView];
     
     
     NSString *uid = [FIRAuth auth].currentUser.uid;
