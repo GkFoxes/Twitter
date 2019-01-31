@@ -14,13 +14,18 @@ class BookmarkViewController: UIViewController {
     
     var tableData: [Any] = []
     let tweetRealm: TweetRealm = TweetRealm();
+    var information: TweetRealm = TweetRealm();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.bookmarkTableContent.estimatedRowHeight = 64.0
+        bookmarkTableContent.delegate = self
+        bookmarkTableContent.dataSource = self
+        
         self.bookmarkTableContent.rowHeight = UITableView.automaticDimension
+        self.bookmarkTableContent.estimatedRowHeight = 64.0
         bookmarkTableContent.tableFooterView = UIView(frame: CGRect.zero)
+        bookmarkTableContent.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,11 +34,23 @@ class BookmarkViewController: UIViewController {
         tableData = tweetRealm.setTableData()
         bookmarkTableContent.reloadData()
         
-        print(tableData)
-        
         //Cancel Side Menu swipe
-        //let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        //appDelegate?.drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeNone
+        let appDelegate: AppDelegate = AppDelegate();
+        appDelegate.cancelSideMenu()
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! DetailBookmarkViewController
+        
+        let index = bookmarkTableContent.indexPathForSelectedRow?.row
+        information = tableData[index!] as! TweetRealm
+        
+        destinationViewController.text = information.text
+        destinationViewController.index = index!
+        destinationViewController.information = information
+        destinationViewController.tableData = tableData
     }
 }
 // MARK: - Table View data source
@@ -53,16 +70,11 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BookmarkTableViewCell
         
-        var information: TweetRealm = TweetRealm();
         information = tableData[indexPath.row] as! TweetRealm
 
         cell.textTwitLabel.text = information.text
         cell.nameLabel.text = information.name
 
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

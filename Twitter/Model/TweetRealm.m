@@ -22,4 +22,11 @@
     return tableDataArray;
 }
 
+-(void)updateDataObject:(TweetRealm*)object text:(NSString*)text{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    object.text = text;
+    [realm commitWriteTransaction];
+}
+
 @end

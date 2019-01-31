@@ -16,5 +16,6 @@
 @property (strong, nonatomic) MMDrawerController *drawerController;
 
 -(void) settingFeedSideMenu;
+-(void)cancelSideMenu;
 
 @end
