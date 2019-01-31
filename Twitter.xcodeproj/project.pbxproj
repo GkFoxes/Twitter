@@ -29,6 +29,8 @@
 		A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9922200CF2700CF324F /* TweetFirebase.m */; };
 		A970E9962201CF3800CF324F /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9952201CF3800CF324F /* SearchTableViewCell.m */; };
 		A970E9992201E1A800CF324F /* UserFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9982201E1A800CF324F /* UserFirebase.m */; };
+		A970E9BF2202E46200CF324F /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970E9BE2202E46200CF324F /* BookmarkViewController.swift */; };
+		A970E9C12202E48300CF324F /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */; };
 		A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,9 @@
 		A970E9952201CF3800CF324F /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		A970E9972201E1A800CF324F /* UserFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserFirebase.h; sourceTree = "<group>"; };
 		A970E9982201E1A800CF324F /* UserFirebase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserFirebase.m; sourceTree = "<group>"; };
+		A970E9BD2202E46200CF324F /* Twitter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Twitter-Bridging-Header.h"; sourceTree = "<group>"; };
+		A970E9BE2202E46200CF324F /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +170,7 @@
 				A906152121F9FEAF00CB8C20 /* Feed */,
 				A970E98C2200624B00CF324F /* Tweet */,
 				A906153A21FB296900CB8C20 /* Settings */,
+				A970E9BC2202E43600CF324F /* Bookmark */,
 				A906153E21FB476800CB8C20 /* SideMenu */,
 			);
 			path = Controller;
@@ -251,6 +257,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A970E9BC2202E43600CF324F /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				A970E9BD2202E46200CF324F /* Twitter-Bridging-Header.h */,
+				A970E9BE2202E46200CF324F /* BookmarkViewController.swift */,
+				A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,6 +299,7 @@
 				TargetAttributes = {
 					A90614FA21F9D05100CB8C20 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -362,9 +379,11 @@
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
 				A970E9992201E1A800CF324F /* UserFirebase.m in Sources */,
 				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
+				A970E9C12202E48300CF324F /* BookmarkTableViewCell.swift in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
 				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
 				A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */,
+				A970E9BF2202E46200CF324F /* BookmarkViewController.swift in Sources */,
 				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
 				A970E9962201CF3800CF324F /* SearchTableViewCell.m in Sources */,
 			);
@@ -517,6 +536,7 @@
 			baseConfigurationReference = 0160BBE7BAD668898327FB65 /* Pods-Twitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Twitter/Twitter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NKCB3S776;
@@ -527,6 +547,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GkFoxes.Twitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -536,6 +559,7 @@
 			baseConfigurationReference = 0DF59DBF5BF6958ABF6C1DC1 /* Pods-Twitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Twitter/Twitter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NKCB3S776;
@@ -546,6 +570,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GkFoxes.Twitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
