@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
 
 - (IBAction)tweetTapped:(id)sender;
+- (IBAction)bookmarkTapped:(id)sender;
 
 @property (strong, nonatomic) FIRDatabaseReference *databaseRef;
 @property (strong, nonatomic) FIRUser *user;
@@ -69,6 +70,20 @@
                                tweetTimeUpdates: timeUpdates};
         
         [self.databaseRef updateChildValues:childUpdates];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (IBAction)bookmarkTapped:(id)sender {
+    if (_tweetTextView.text.length > 0) {
+        
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        TweetRealm *information = [[TweetRealm alloc] init];
+        information.text = _tweetTextView.text;
+        [realm addObject:information];
+        [realm commitWriteTransaction];
         
         [self.navigationController popViewControllerAnimated:YES];
     }

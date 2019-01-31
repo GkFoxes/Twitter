@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "TweetRealm.h"
+#import <Realm/Realm.h>
 @import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
