@@ -23,12 +23,17 @@
 		A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906153C21FB45BF00CB8C20 /* SideMenuViewController.m */; };
 		A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906154321FB479A00CB8C20 /* MMDrawerController.m */; };
 		A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */; };
+		A9198E212203406E00ACEAC7 /* DetailBookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9198E202203406E00ACEAC7 /* DetailBookmarkViewController.swift */; };
 		A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */; };
 		A970E98B22004AC900CF324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A970E98A22004AC900CF324F /* Assets.xcassets */; };
 		A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E98E2200626C00CF324F /* AddTweetViewController.m */; };
 		A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9922200CF2700CF324F /* TweetFirebase.m */; };
 		A970E9962201CF3800CF324F /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9952201CF3800CF324F /* SearchTableViewCell.m */; };
 		A970E9992201E1A800CF324F /* UserFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = A970E9982201E1A800CF324F /* UserFirebase.m */; };
+		A970E9C12202E48300CF324F /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */; };
+		A9B3A8C32202ED9300502B6B /* TweetRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B3A8C22202ED9300502B6B /* TweetRealm.m */; };
+		A9B3A8C52202FBB700502B6B /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B3A8C42202FBB700502B6B /* libc++.1.tbd */; };
+		A9B3A8CA220315B800502B6B /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3A8C9220315B800502B6B /* BookmarkViewController.swift */; };
 		A9FBC50E21FF14A200F2DE98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +69,7 @@
 		A906154421FB479A00CB8C20 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
 		A906154F21FB663000CB8C20 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		A906155021FB663000CB8C20 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A9198E202203406E00ACEAC7 /* DetailBookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookmarkViewController.swift; sourceTree = "<group>"; };
 		A970E98721FF2CDE00CF324F /* RegisterDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDetailViewController.h; sourceTree = "<group>"; };
 		A970E98821FF2CDE00CF324F /* RegisterDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterDetailViewController.m; sourceTree = "<group>"; };
 		A970E98A22004AC900CF324F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +81,12 @@
 		A970E9952201CF3800CF324F /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		A970E9972201E1A800CF324F /* UserFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserFirebase.h; sourceTree = "<group>"; };
 		A970E9982201E1A800CF324F /* UserFirebase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserFirebase.m; sourceTree = "<group>"; };
+		A970E9BD2202E46200CF324F /* Twitter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Twitter-Bridging-Header.h"; sourceTree = "<group>"; };
+		A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
+		A9B3A8C12202ED9300502B6B /* TweetRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetRealm.h; sourceTree = "<group>"; };
+		A9B3A8C22202ED9300502B6B /* TweetRealm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetRealm.m; sourceTree = "<group>"; };
+		A9B3A8C42202FBB700502B6B /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		A9B3A8C9220315B800502B6B /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B3A8C52202FBB700502B6B /* libc++.1.tbd in Frameworks */,
 				605FC38D76B8F64C34A77601 /* libPods-Twitter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +115,7 @@
 		837130A0639BAD1035E359FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9B3A8C42202FBB700502B6B /* libc++.1.tbd */,
 				2D3CA58CFCAFEF165CD02CA3 /* libPods-Twitter.a */,
 			);
 			name = Frameworks;
@@ -165,6 +179,7 @@
 				A906152121F9FEAF00CB8C20 /* Feed */,
 				A970E98C2200624B00CF324F /* Tweet */,
 				A906153A21FB296900CB8C20 /* Settings */,
+				A970E9BC2202E43600CF324F /* Bookmark */,
 				A906153E21FB476800CB8C20 /* SideMenu */,
 			);
 			path = Controller;
@@ -247,8 +262,21 @@
 				A970E9922200CF2700CF324F /* TweetFirebase.m */,
 				A970E9972201E1A800CF324F /* UserFirebase.h */,
 				A970E9982201E1A800CF324F /* UserFirebase.m */,
+				A9B3A8C12202ED9300502B6B /* TweetRealm.h */,
+				A9B3A8C22202ED9300502B6B /* TweetRealm.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A970E9BC2202E43600CF324F /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				A970E9BD2202E46200CF324F /* Twitter-Bridging-Header.h */,
+				A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */,
+				A9B3A8C9220315B800502B6B /* BookmarkViewController.swift */,
+				A9198E202203406E00ACEAC7 /* DetailBookmarkViewController.swift */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +311,7 @@
 				TargetAttributes = {
 					A90614FA21F9D05100CB8C20 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -354,17 +383,21 @@
 				A970E98921FF2CDE00CF324F /* RegisterDetailViewController.m in Sources */,
 				A906155121FB663000CB8C20 /* UIViewController+MMDrawerController.m in Sources */,
 				A970E98F2200626C00CF324F /* AddTweetViewController.m in Sources */,
+				A9B3A8CA220315B800502B6B /* BookmarkViewController.swift in Sources */,
 				A906153D21FB45BF00CB8C20 /* SideMenuViewController.m in Sources */,
 				A906150621F9D05100CB8C20 /* SearchViewController.m in Sources */,
 				A906153621FB131D00CB8C20 /* FeedTableViewCell.m in Sources */,
 				A906154B21FB479A00CB8C20 /* MMDrawerController.m in Sources */,
 				A906152721FA094200CB8C20 /* RegisterViewController.m in Sources */,
 				A906150021F9D05100CB8C20 /* AppDelegate.m in Sources */,
+				A9B3A8C32202ED9300502B6B /* TweetRealm.m in Sources */,
 				A970E9992201E1A800CF324F /* UserFirebase.m in Sources */,
 				A906152C21FB06EF00CB8C20 /* TwitViewController.m in Sources */,
+				A970E9C12202E48300CF324F /* BookmarkTableViewCell.swift in Sources */,
 				A906151121F9D05400CB8C20 /* main.m in Sources */,
 				A906150321F9D05100CB8C20 /* FeedViewController.m in Sources */,
 				A970E9932200CF2700CF324F /* TweetFirebase.m in Sources */,
+				A9198E212203406E00ACEAC7 /* DetailBookmarkViewController.swift in Sources */,
 				A906152421F9FEDA00CB8C20 /* LoginViewController.m in Sources */,
 				A970E9962201CF3800CF324F /* SearchTableViewCell.m in Sources */,
 			);
@@ -517,6 +550,7 @@
 			baseConfigurationReference = 0160BBE7BAD668898327FB65 /* Pods-Twitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Twitter/Twitter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NKCB3S776;
@@ -527,6 +561,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GkFoxes.Twitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -536,6 +573,7 @@
 			baseConfigurationReference = 0DF59DBF5BF6958ABF6C1DC1 /* Pods-Twitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Twitter/Twitter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NKCB3S776;
@@ -546,6 +584,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GkFoxes.Twitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

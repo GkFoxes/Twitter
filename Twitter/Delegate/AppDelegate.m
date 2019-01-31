@@ -44,4 +44,9 @@
     [_window makeKeyAndVisible];
 }
 
+-(void)cancelSideMenu {
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [appDelegate.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+}
+
 @end
