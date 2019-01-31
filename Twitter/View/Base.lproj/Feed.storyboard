@@ -583,18 +583,11 @@
                         <viewLayoutGuide key="safeArea" id="8I4-cZ-Pp3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tweet" id="39J-qc-z5m">
-                        <rightBarButtonItems>
-                            <barButtonItem image="tweeting" id="AER-hn-m1D">
-                                <connections>
-                                    <action selector="tweetTapped:" destination="OGM-fN-NOU" id="BK2-Lz-EBv"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="done" id="uSy-8J-2Tu">
-                                <connections>
-                                    <action selector="doneTapped:" destination="OGM-fN-NOU" id="Fto-kT-Kqx"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="done" id="uSy-8J-2Tu">
+                            <connections>
+                                <action selector="doneTapped:" destination="OGM-fN-NOU" id="Fto-kT-Kqx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tweetTextField" destination="IOd-at-xoY" id="BXa-Og-l8N"/>

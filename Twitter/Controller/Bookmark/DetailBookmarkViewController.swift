@@ -16,8 +16,6 @@ class DetailBookmarkViewController: UIViewController, UITextFieldDelegate {
     var information: TweetRealm = TweetRealm();
     
     var text = String()
-    var index = Int()
-    var tableData: [Any] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +26,11 @@ class DetailBookmarkViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func doneTapped(_ sender: Any) {
         tweetRealm.updateDataObject(information, text: tweetTextField.text)
-        
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func tweetTapped(_ sender: Any) {
+        
         self.navigationController?.popViewController(animated: true)
     }
 }

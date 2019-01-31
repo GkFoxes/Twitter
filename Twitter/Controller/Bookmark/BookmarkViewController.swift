@@ -68,9 +68,7 @@ class BookmarkViewController: UIViewController {
         information = tableData[index!] as! TweetRealm
         
         destinationViewController.text = information.text
-        destinationViewController.index = index!
         destinationViewController.information = information
-        destinationViewController.tableData = tableData
     }
 }
 // MARK: - Table View data source
