@@ -78,14 +78,34 @@
 - (IBAction)bookmarkTapped:(id)sender {
     if (_tweetTextView.text.length > 0) {
         
-        RLMRealm *realm = [RLMRealm defaultRealm];
-        [realm beginWriteTransaction];
-        TweetRealm *information = [[TweetRealm alloc] init];
-        information.text = _tweetTextView.text;
-        [realm addObject:information];
-        [realm commitWriteTransaction];
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Enter the name of bookmark"
+                                                                       message:@"This text wiil be save for future tweet."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
         
-        [self.navigationController popViewControllerAnimated:YES];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Name";
+        }];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            NSArray * textfields = alert.textFields;
+            UITextField * nameTextField = textfields[0];
+            
+            //Save in Realm
+            RLMRealm *realm = [RLMRealm defaultRealm];
+            [realm beginWriteTransaction];
+            TweetRealm *information = [[TweetRealm alloc] init];
+            information.name = nameTextField.text;
+            information.text = self.tweetTextView.text;
+            [realm addObject:information];
+            [realm commitWriteTransaction];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }]];
+        
+         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {}];
+        [alert addAction:cancelAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 

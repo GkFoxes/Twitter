@@ -11,7 +11,6 @@ import UIKit
 class BookmarkTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var textTwitLabel: UILabel!
     
     override func awakeFromNib() {

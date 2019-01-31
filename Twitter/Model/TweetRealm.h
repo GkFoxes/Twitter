@@ -17,6 +17,7 @@ RLM_ARRAY_TYPE(TweetRealm)
     TweetRealm *dataObject;
 }
 
+@property NSString *name;
 @property NSString *text;
 
 - (NSArray *) setTableData;

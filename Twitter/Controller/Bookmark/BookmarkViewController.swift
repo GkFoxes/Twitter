@@ -18,17 +18,18 @@ class BookmarkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bookmarkTableContent.rowHeight = UITableView.automaticDimension
-        bookmarkTableContent.estimatedRowHeight = 60
+        self.bookmarkTableContent.estimatedRowHeight = 64.0
+        self.bookmarkTableContent.rowHeight = UITableView.automaticDimension
         bookmarkTableContent.tableFooterView = UIView(frame: CGRect.zero)
-        
-        tableData = tweetRealm.setTableData()
-        bookmarkTableContent.reloadData()
-        print(tableData)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        tableData = tweetRealm.setTableData()
+        bookmarkTableContent.reloadData()
+        
+        print(tableData)
         
         //Cancel Side Menu swipe
         //let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -52,16 +53,12 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BookmarkTableViewCell
         
-//        let tweetRealm: TweetRealm = TweetRealm();
-//
-//        var information: TweetRealm = TweetRealm();
-//        information = tableData[indexPath.row]
-//
-//        cell.nameLabel.text = userIndex?.name()
-//        var handleStr = "@"
-//        handleStr = handleStr + (userIndex?.handle() ?? "")
-//        cell?.usernameLabel.text = handleStr
-//
+        var information: TweetRealm = TweetRealm();
+        information = tableData[indexPath.row] as! TweetRealm
+
+        cell.textTwitLabel.text = information.text
+        cell.nameLabel.text = information.name
+
         return cell
     }
     
