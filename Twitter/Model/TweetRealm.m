@@ -29,4 +29,11 @@
     [realm commitWriteTransaction];
 }
 
+-(void)deleteDataObjectAtIndex:(int)index{
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    [[RLMRealm defaultRealm] deleteObject:[tableDataRealm objectAtIndex:index]];
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+    
+    tableDataRealm = [TweetRealm allObjects];
+ }
 @end

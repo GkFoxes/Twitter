@@ -22,5 +22,6 @@ RLM_ARRAY_TYPE(TweetRealm)
 
 - (NSArray *) setTableData;
 -(void)updateDataObject:(TweetRealm*)object text:(NSString*)text;
+-(void)deleteDataObjectAtIndex:(int)index;
 
 @end

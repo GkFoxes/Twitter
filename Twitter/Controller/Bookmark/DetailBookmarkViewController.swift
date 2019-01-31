@@ -31,6 +31,7 @@ class DetailBookmarkViewController: UIViewController, UITextFieldDelegate {
         
         self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func tweetTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

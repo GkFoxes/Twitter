@@ -32,11 +32,31 @@ class BookmarkViewController: UIViewController {
         super.viewWillAppear(animated)
         
         tableData = tweetRealm.setTableData()
+        self.bookmarkTableContent.setEditing(false, animated: true)
         bookmarkTableContent.reloadData()
         
         //Cancel Side Menu swipe
         let appDelegate: AppDelegate = AppDelegate();
         appDelegate.cancelSideMenu()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        bookmarkTableContent.reloadData()
+    }
+    
+    // MARK: - Delete and edit from table
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            
+            self.tableData.remove(at: indexPath.row)
+            self.tweetRealm.deleteDataObject(at: Int32(indexPath.row))
+            
+            self.bookmarkTableContent.deleteRows(at:[indexPath], with: .automatic)
+        }
+        
+        delete.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        return [delete]
     }
     
     // MARK: - Segues
