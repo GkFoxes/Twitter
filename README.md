@@ -3,6 +3,8 @@ CRUD Realm and Tweeting in Firebase on like Twitter App
 
 Objective-C + Swift
 
+Start ```pod install``` before run app!
+
 ## Available:
 * Realization of СRUD functions in Realm
 * Tweeting in Firebase Realtime Database
