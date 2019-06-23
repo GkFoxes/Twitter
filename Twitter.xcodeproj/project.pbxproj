@@ -143,25 +143,25 @@
 			isa = PBXGroup;
 			children = (
 				A906152921FA17B800CB8C20 /* Twitter.entitlements */,
-				A906151721F9D87500CB8C20 /* Delegate */,
-				A970E9902200CF0E00CF324F /* Model */,
-				A906151921F9D8AE00CB8C20 /* View */,
-				A906151A21F9D8C800CB8C20 /* Controller */,
+				A906151721F9D87500CB8C20 /* Delegates */,
+				A970E9902200CF0E00CF324F /* Models */,
+				A906151921F9D8AE00CB8C20 /* Views */,
+				A906151A21F9D8C800CB8C20 /* Controllers */,
 				A906151B21F9D8E500CB8C20 /* Resources */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
 		};
-		A906151721F9D87500CB8C20 /* Delegate */ = {
+		A906151721F9D87500CB8C20 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				A90614FE21F9D05100CB8C20 /* AppDelegate.h */,
 				A90614FF21F9D05100CB8C20 /* AppDelegate.m */,
 			);
-			path = Delegate;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
-		A906151921F9D8AE00CB8C20 /* View */ = {
+		A906151921F9D8AE00CB8C20 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A906150C21F9D05400CB8C20 /* LaunchScreen.storyboard */,
@@ -169,10 +169,10 @@
 				A906150721F9D05100CB8C20 /* Feed.storyboard */,
 				A906153721FB28F600CB8C20 /* Search.storyboard */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		A906151A21F9D8C800CB8C20 /* Controller */ = {
+		A906151A21F9D8C800CB8C20 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A906152021F9FEA700CB8C20 /* Login */,
@@ -182,7 +182,7 @@
 				A970E9BC2202E43600CF324F /* Bookmark */,
 				A906153E21FB476800CB8C20 /* SideMenu */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A906151B21F9D8E500CB8C20 /* Resources */ = {
@@ -255,7 +255,7 @@
 			path = Tweet;
 			sourceTree = "<group>";
 		};
-		A970E9902200CF0E00CF324F /* Model */ = {
+		A970E9902200CF0E00CF324F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A970E9912200CF2700CF324F /* TweetFirebase.h */,
@@ -265,7 +265,7 @@
 				A9B3A8C12202ED9300502B6B /* TweetRealm.h */,
 				A9B3A8C22202ED9300502B6B /* TweetRealm.m */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A970E9BC2202E43600CF324F /* Bookmark */ = {
@@ -306,12 +306,12 @@
 		A90614F321F9D05100CB8C20 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = GkFoxes;
 				TargetAttributes = {
 					A90614FA21F9D05100CB8C20 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -541,6 +541,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -563,7 +564,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -585,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GkFoxes.Twitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
