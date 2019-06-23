@@ -81,12 +81,12 @@
 		A970E9952201CF3800CF324F /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		A970E9972201E1A800CF324F /* UserFirebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserFirebase.h; sourceTree = "<group>"; };
 		A970E9982201E1A800CF324F /* UserFirebase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserFirebase.m; sourceTree = "<group>"; };
-		A970E9BD2202E46200CF324F /* Twitter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Twitter-Bridging-Header.h"; sourceTree = "<group>"; };
 		A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 		A9B3A8C12202ED9300502B6B /* TweetRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetRealm.h; sourceTree = "<group>"; };
 		A9B3A8C22202ED9300502B6B /* TweetRealm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetRealm.m; sourceTree = "<group>"; };
 		A9B3A8C42202FBB700502B6B /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		A9B3A8C9220315B800502B6B /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		A9F738DE22BFF851009B4173 /* Twitter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Twitter-Bridging-Header.h"; sourceTree = "<group>"; };
 		A9FBC50D21FF14A100F2DE98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,7 +271,7 @@
 		A970E9BC2202E43600CF324F /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
-				A970E9BD2202E46200CF324F /* Twitter-Bridging-Header.h */,
+				A9F738DE22BFF851009B4173 /* Twitter-Bridging-Header.h */,
 				A970E9C02202E48300CF324F /* BookmarkTableViewCell.swift */,
 				A9B3A8C9220315B800502B6B /* BookmarkViewController.swift */,
 				A9198E202203406E00ACEAC7 /* DetailBookmarkViewController.swift */,
@@ -562,7 +562,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GkFoxes.Twitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controllers/Bookmark/Twitter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -585,7 +585,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GkFoxes.Twitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controller/Bookmark/Twitter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter/Controllers/Bookmark/Twitter-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
