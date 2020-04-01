@@ -1,5 +1,5 @@
 //
-//  TwitViewController.h
+//  TweetViewController.h
 //  Twitter
 //
 //  Created by Дмитрий Матвеенко on 25/01/2019.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TwitViewController : UIViewController
+@interface TweetViewController : UIViewController
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 

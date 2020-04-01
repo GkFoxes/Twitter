@@ -1,18 +1,18 @@
 //
-//  TwitViewController.m
+//  TweetViewController.m
 //  Twitter
 //
 //  Created by Дмитрий Матвеенко on 25/01/2019.
 //  Copyright © 2019 GkFoxes. All rights reserved.
 //
 
-#import "TwitViewController.h"
+#import "TweetViewController.h"
 
-@interface TwitViewController ()
+@interface TweetViewController ()
 
 @end
 
-@implementation TwitViewController
+@implementation TweetViewController
 
 @synthesize nameLabel;
 @synthesize usernameLabel;
