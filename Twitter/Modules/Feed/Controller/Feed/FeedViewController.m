@@ -8,7 +8,7 @@
 
 #import "FeedViewController.h"
 #import "FeedTableViewCell.h"
-#import "TwitViewController.h"
+#import "TweetViewController.h"
 #import "TweetFirebase.h"
 
 @interface FeedViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -90,7 +90,7 @@
     if ([segue.identifier isEqualToString:@"showTwit"]) {
         NSIndexPath *indexPath = [self.tableFeedContent indexPathForSelectedRow];
         
-        TwitViewController *destViewController = segue.destinationViewController;
+        TweetViewController *destViewController = segue.destinationViewController;
        
         NSInteger tweetIndexPath = ((self.tweets.count-1) - indexPath.row);
         TweetFirebase *tweetIndex = [self tweets][tweetIndexPath];

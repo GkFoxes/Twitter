@@ -12,7 +12,7 @@ Start ```pod install``` before run app!
 * Search users
 * Side menu view
 
-## Future:
+## Improvements:
 - [ ] Follow users
 - [ ] Delete and Edit tweet
 - [ ] Likes, Retweet, Answer

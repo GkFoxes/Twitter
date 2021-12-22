@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGf-wU-9KL">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bookmarks-->
+        <scene sceneID="nTu-5r-gFZ">
+            <objects>
+                <viewController id="ytz-X2-LQD" customClass="BookmarkViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p45-Tp-XHm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K7L-dm-Rlc">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookmarkCell" rowHeight="62" id="ghi-oi-ziC" customClass="BookmarkTableViewCell" customModule="Twitter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ghi-oi-ziC" id="9zF-tF-8L3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name bookmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eg-eg-paE">
+                                                    <rect key="frame" x="16" y="8" width="343" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Twit text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNL-Yp-1Bt">
+                                                    <rect key="frame" x="16" y="34" width="343" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Eg-eg-paE" firstAttribute="leading" secondItem="9zF-tF-8L3" secondAttribute="leading" constant="16" id="EhP-gv-BqJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="QNL-Yp-1Bt" secondAttribute="trailing" constant="16" id="F4E-b7-04i"/>
+                                                <constraint firstItem="QNL-Yp-1Bt" firstAttribute="top" secondItem="6Eg-eg-paE" secondAttribute="bottom" constant="4" id="PCE-lt-WaO"/>
+                                                <constraint firstAttribute="bottom" secondItem="QNL-Yp-1Bt" secondAttribute="bottom" constant="8" id="Qb4-3C-Z8f"/>
+                                                <constraint firstItem="QNL-Yp-1Bt" firstAttribute="leading" secondItem="9zF-tF-8L3" secondAttribute="leading" constant="16" id="U8e-Zg-s46"/>
+                                                <constraint firstItem="6Eg-eg-paE" firstAttribute="top" secondItem="9zF-tF-8L3" secondAttribute="top" constant="8" id="c7I-9z-Tu7"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Eg-eg-paE" secondAttribute="trailing" constant="16" id="clg-iW-X7y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="6Eg-eg-paE" id="12h-J2-1Uw"/>
+                                            <outlet property="textLabel" destination="QNL-Yp-1Bt" id="Uwf-qb-dhj"/>
+                                            <outlet property="textTwitLabel" destination="QNL-Yp-1Bt" id="VqA-aq-QiD"/>
+                                            <segue destination="OGM-fN-NOU" kind="show" id="pqn-we-aqC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ytz-X2-LQD" id="4fG-xy-ARd"/>
+                                    <outlet property="delegate" destination="ytz-X2-LQD" id="XgV-4c-i4B"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="K7L-dm-Rlc" firstAttribute="leading" secondItem="USW-OR-nef" secondAttribute="leading" id="Bft-Ri-MdJ"/>
+                            <constraint firstItem="K7L-dm-Rlc" firstAttribute="bottom" secondItem="USW-OR-nef" secondAttribute="bottom" id="LEM-8b-jgP"/>
+                            <constraint firstItem="K7L-dm-Rlc" firstAttribute="top" secondItem="USW-OR-nef" secondAttribute="top" id="Pj4-lu-98W"/>
+                            <constraint firstItem="K7L-dm-Rlc" firstAttribute="trailing" secondItem="USW-OR-nef" secondAttribute="trailing" id="t5Q-JO-s5N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="USW-OR-nef"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bookmarks" id="Xw5-PV-f8z"/>
+                    <connections>
+                        <outlet property="bookmarkTableContent" destination="K7L-dm-Rlc" id="myx-RK-jpq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S27-9C-iVg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="770"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gfu-Br-caI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGf-wU-9KL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="bookmark" id="ifn-s0-IlN">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0RB-sS-85D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.29889336230000002" green="0.62296009060000002" blue="0.92163586620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.90626949069999996" green="0.92529600860000005" blue="0.94118219609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.29889336230000002" green="0.62296009060000002" blue="0.92163586620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ytz-X2-LQD" kind="relationship" relationship="rootViewController" id="5zI-tk-2wV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ece-DX-Jek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="770"/>
+        </scene>
+        <!--Tweet-->
+        <scene sceneID="gMO-QT-D13">
+            <objects>
+                <viewController id="OGM-fN-NOU" customClass="DetailBookmarkViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QfP-XU-Buv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's new?" translatesAutoresizingMaskIntoConstraints="NO" id="IOd-at-xoY">
+                                <rect key="frame" x="16" y="60" width="343" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IOd-at-xoY" firstAttribute="leading" secondItem="8I4-cZ-Pp3" secondAttribute="leading" constant="16" id="Aot-fb-biV"/>
+                            <constraint firstItem="IOd-at-xoY" firstAttribute="top" secondItem="8I4-cZ-Pp3" secondAttribute="top" constant="16" id="fOC-6d-Z3Q"/>
+                            <constraint firstItem="8I4-cZ-Pp3" firstAttribute="trailing" secondItem="IOd-at-xoY" secondAttribute="trailing" constant="16" id="lhC-iA-pZv"/>
+                            <constraint firstItem="8I4-cZ-Pp3" firstAttribute="bottom" secondItem="IOd-at-xoY" secondAttribute="bottom" constant="50" id="yiX-Pb-IS9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8I4-cZ-Pp3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tweet" id="39J-qc-z5m">
+                        <barButtonItem key="rightBarButtonItem" image="done" id="uSy-8J-2Tu">
+                            <connections>
+                                <action selector="doneTapped:" destination="OGM-fN-NOU" id="Fto-kT-Kqx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tweetTextField" destination="IOd-at-xoY" id="BXa-Og-l8N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ylH-Et-FE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="770"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bookmark" width="30" height="30"/>
+        <image name="done" width="30" height="30"/>
+    </resources>
+</document>
